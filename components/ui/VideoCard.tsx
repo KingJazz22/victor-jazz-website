@@ -7,51 +7,52 @@ type Props = {
   src: string
   poster: string
   title: string
+  isActive: boolean
+  onActivate: () => void
 }
 
-export default function VideoCard({ src, poster, title }: Props) {
+export default function VideoCard({ src, poster, title, isActive, onActivate }: Props) {
   const containerRef = useRef<HTMLDivElement>(null)
   const videoRef = useRef<HTMLVideoElement>(null)
   const [shouldLoad, setShouldLoad] = useState(false)
   const [isPlaying, setIsPlaying] = useState(false)
-  const [isMuted, setIsMuted] = useState(true)
+  const [isMuted, setIsMuted] = useState(false)
 
-  // Lazy-load via IntersectionObserver
   useEffect(() => {
     const el = containerRef.current
     if (!el) return
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setShouldLoad(true)
-          observer.disconnect()
-        }
-      },
+      ([entry]) => { if (entry.isIntersecting) { setShouldLoad(true); observer.disconnect() } },
       { rootMargin: '100px' }
     )
     observer.observe(el)
     return () => observer.disconnect()
   }, [])
 
-  const play = () => {
-    if (!videoRef.current) return
-    videoRef.current.muted = isMuted
-    videoRef.current.play().catch(() => {})
-    setIsPlaying(true)
-  }
+  // Stop when another card becomes active
+  useEffect(() => {
+    if (!isActive && isPlaying && videoRef.current) {
+      videoRef.current.pause()
+      videoRef.current.currentTime = 0
+      setIsPlaying(false)
+    }
+  }, [isActive, isPlaying])
 
-  const pause = () => {
-    if (!videoRef.current) return
-    videoRef.current.pause()
-    videoRef.current.currentTime = 0
-    setIsPlaying(false)
-  }
-
-  const handleMouseEnter = () => play()
-  const handleMouseLeave = () => pause()
+  useEffect(() => {
+    if (videoRef.current) videoRef.current.muted = isMuted
+  }, [isMuted])
 
   const handleClick = () => {
-    isPlaying ? pause() : play()
+    if (!videoRef.current) return
+    if (isPlaying) {
+      videoRef.current.pause()
+      setIsPlaying(false)
+    } else {
+      onActivate()
+      videoRef.current.muted = isMuted
+      videoRef.current.play().catch(() => {})
+      setIsPlaying(true)
+    }
   }
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -64,22 +65,10 @@ export default function VideoCard({ src, poster, title }: Props) {
   const toggleSound = (e: React.MouseEvent) => {
     e.stopPropagation()
     if (!videoRef.current) return
-    const newMuted = !isMuted
-    videoRef.current.muted = newMuted
-    setIsMuted(newMuted)
-    // If not already playing, start playing when user unmutes
-    if (!isPlaying) {
-      videoRef.current.play().catch(() => {})
-      setIsPlaying(true)
-    }
+    const next = !isMuted
+    videoRef.current.muted = next
+    setIsMuted(next)
   }
-
-  // Sync muted state to video element whenever it changes
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.muted = isMuted
-    }
-  }, [isMuted])
 
   return (
     <div
@@ -87,14 +76,11 @@ export default function VideoCard({ src, poster, title }: Props) {
       role="button"
       tabIndex={0}
       className="relative aspect-[9/16] overflow-hidden rounded-lg cursor-pointer group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a96e]"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
       onClick={handleClick}
       onKeyDown={handleKeyDown}
       aria-label={`${title} — tap to play`}
       aria-pressed={isPlaying}
     >
-      {/* Poster image */}
       <Image
         src={poster}
         alt={title}
@@ -107,18 +93,16 @@ export default function VideoCard({ src, poster, title }: Props) {
         <video
           ref={videoRef}
           src={src}
-          muted
           playsInline
           loop
           preload="none"
+          onEnded={() => setIsPlaying(false)}
           className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${isPlaying ? 'opacity-100' : 'opacity-0'}`}
         />
       )}
 
-      {/* Bottom gradient */}
       <div className="absolute inset-0 bg-gradient-to-t from-[#080808]/80 via-transparent to-transparent pointer-events-none" />
 
-      {/* Play icon — shown when not playing */}
       {!isPlaying && (
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <div className="w-12 h-12 rounded-full border border-[#c9a96e]/60 flex items-center justify-center bg-[#080808]/40 group-hover:border-[#c9a96e] group-hover:bg-[#080808]/60 transition-all duration-300">
@@ -129,13 +113,10 @@ export default function VideoCard({ src, poster, title }: Props) {
         </div>
       )}
 
-      {/* Sound toggle — always visible on hover; gold when sound is on */}
       <button
         onClick={toggleSound}
         className={`absolute top-3 right-3 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a96e] opacity-0 group-hover:opacity-100 ${
-          isMuted
-            ? 'bg-[#080808]/60 border border-white/20'
-            : 'bg-[#c9a96e] border border-[#c9a96e]'
+          isMuted ? 'bg-[#080808]/60 border border-white/20' : 'bg-[#c9a96e] border border-[#c9a96e]'
         }`}
         aria-label={isMuted ? 'Unmute video' : 'Mute video'}
       >

@@ -1,11 +1,14 @@
 'use client'
 
+import { useState } from 'react'
 import SectionHeading from '@/components/ui/SectionHeading'
 import VideoCard from '@/components/ui/VideoCard'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 import { GALLERY_VIDEOS } from '@/lib/constants'
 
 export default function VideoGallerySection() {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null)
+
   return (
     <section
       id="gallery"
@@ -21,8 +24,15 @@ export default function VideoGallerySection() {
         </AnimatedSection>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-          {GALLERY_VIDEOS.map((video) => (
-            <VideoCard key={video.src} src={video.src} poster={video.poster} title={video.title} />
+          {GALLERY_VIDEOS.map((video, i) => (
+            <VideoCard
+              key={video.src}
+              src={video.src}
+              poster={video.poster}
+              title={video.title}
+              isActive={activeIndex === i}
+              onActivate={() => setActiveIndex(i)}
+            />
           ))}
         </div>
 
