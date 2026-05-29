@@ -4,12 +4,12 @@ import { useEffect, useState } from 'react'
 import { SITE_CONFIG } from '@/lib/constants'
 
 const navLinks = [
-  { label: 'Gallery', href: '#gallery' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Experiences', href: '#pricing' },
+  { label: 'Videos', href: '#gallery' },
+  { label: 'Photos', href: '#photos' },
+  { label: 'Reviews', href: '#reviews' },
+  { label: 'Services', href: '#experience' },
   { label: 'Destinations', href: '#destinations' },
   { label: 'FAQ', href: '#faq' },
-  { label: 'Blog', href: '/blog' },
 ]
 
 export default function Header() {
