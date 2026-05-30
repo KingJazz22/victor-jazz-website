@@ -29,73 +29,37 @@ export const SERVICES = [
     id: 'ceremony',
     title: 'Wedding Ceremony',
     description:
-      'Elegant live saxophone as you walk down the aisle. An unforgettable soundtrack to your most important moment.',
+      'Live saxophone as you walk down the aisle — the most searched and most emotional moment of any Cyprus wedding. Processional, signing & recessional covered.',
     video: '/videos/ceremony.mp4',
     poster: '/images/posters/ceremony.jpg',
     icon: 'ceremony',
   },
   {
     id: 'cocktail',
-    title: 'Cocktail Hour',
+    title: 'Cocktail Hour & Reception',
     description:
-      'Sophisticated background music that sets the perfect ambiance for your drinks reception and first moments as newlyweds.',
+      'Sophisticated live music for your drinks reception in Paphos or Ayia Napa. Sets the tone, warms the room, and gives your guests a moment they\'ll talk about for years.',
     video: '/videos/cocktail.mp4',
     poster: '/images/posters/cocktail.jpg',
     icon: 'cocktail',
   },
   {
-    id: 'sunset',
-    title: 'Sunset Performance',
-    description:
-      'As the Mediterranean sun dips below the horizon, let the sax carry your guests into the golden hour with pure emotion.',
-    video: '/videos/sunset.mp4',
-    poster: '/images/posters/sunset.jpg',
-    icon: 'sunset',
-  },
-  {
     id: 'beach',
-    title: 'Beach Weddings',
+    title: 'Beach & Outdoor Weddings',
     description:
-      'From the shores of Ayia Napa to the cliffs of Paphos — live saxophone with the sound of the sea creates pure magic.',
+      'From Ayia Napa beach clubs to clifftop terraces in Paphos — live saxophone transforms every outdoor Cyprus wedding into a cinematic, unforgettable experience.',
     video: '/videos/beach.mp4',
     poster: '/images/posters/beach.jpg',
     icon: 'beach',
   },
   {
     id: 'djsax',
-    title: 'DJ + Sax Sets',
+    title: 'DJ + Sax',
     description:
-      'The ultimate combination. Victor performs live over DJ sets, blending contemporary tracks with soulful saxophone energy.',
+      'Victor\'s most in-demand package. Live saxophone layered over DJ sets — perfect for evening receptions, villa parties, and beach clubs across Cyprus.',
     video: '/videos/djsax.mp4',
     poster: '/images/posters/djsax.jpg',
     icon: 'dj',
-  },
-  {
-    id: 'yacht',
-    title: 'Yacht & Marina Events',
-    description:
-      'Exclusive performances on superyachts and private marinas across Cyprus. The definition of luxury entertainment.',
-    video: '/videos/yacht.mp4',
-    poster: '/images/posters/yacht.jpg',
-    icon: 'yacht',
-  },
-  {
-    id: 'hen',
-    title: 'Hen Parties',
-    description:
-      'Make your hen party in Ayia Napa or Paphos unforgettable. Victor performs at pool parties, villas, and beach clubs.',
-    video: '/videos/hen.mp4',
-    poster: '/images/posters/hen.jpg',
-    icon: 'hen',
-  },
-  {
-    id: 'private',
-    title: 'Private Events',
-    description:
-      'Anniversaries, milestone birthdays, corporate events, and intimate gatherings — any occasion elevated by live saxophone.',
-    video: '/videos/private.mp4',
-    poster: '/images/posters/private.jpg',
-    icon: 'private',
   },
 ]
 

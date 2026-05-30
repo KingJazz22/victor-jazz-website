@@ -62,7 +62,7 @@ export default function ExperienceSection() {
           />
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           {SERVICES.map((service) => (
             <GlassCard key={service.id} as="article" className="group h-full flex flex-col">
               <div className="text-[#c9a96e] mb-2.5">{icons[service.icon]}</div>
