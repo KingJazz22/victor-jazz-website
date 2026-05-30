@@ -4,7 +4,7 @@ export const SITE_CONFIG = {
   tagline: 'Live Saxophone for Your Dream Cyprus Wedding',
   description:
     'Award-winning wedding saxophonist based in Cyprus. Live saxophone for ceremonies, cocktail hours & beach parties across Paphos and Ayia Napa.',
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://victor-jazz-website-production.up.railway.app',
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.victorjazz.com',
   whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '353838980169',
   get whatsappUrl() {
     return `https://wa.me/${this.whatsapp}?text=Hi%20Victor!%20I%20found%20you%20online%20and%20I'm%20interested%20in%20saxophone%20for%20my%20wedding%20in%20Cyprus.`
