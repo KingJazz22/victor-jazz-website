@@ -19,7 +19,7 @@ export default function VideoGallerySection() {
         <AnimatedSection>
           <SectionHeading
             title="The Gallery"
-            subtitle="Live performances — tap or hover to play"
+            subtitle="Live performances — tap to play"
           />
         </AnimatedSection>
 

@@ -44,15 +44,11 @@ export default function VideoCard({ src, poster, title, isActive, onActivate }: 
 
   const handleClick = () => {
     if (!videoRef.current) return
-    if (isPlaying) {
-      videoRef.current.pause()
-      setIsPlaying(false)
-    } else {
-      onActivate()
-      videoRef.current.muted = isMuted
-      videoRef.current.play().catch(() => {})
-      setIsPlaying(true)
-    }
+    onActivate()
+    videoRef.current.muted = isMuted
+    videoRef.current.currentTime = 0
+    videoRef.current.play().catch(() => {})
+    setIsPlaying(true)
   }
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -94,7 +90,6 @@ export default function VideoCard({ src, poster, title, isActive, onActivate }: 
           ref={videoRef}
           src={src}
           playsInline
-          loop
           preload="none"
           onEnded={() => setIsPlaying(false)}
           className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${isPlaying ? 'opacity-100' : 'opacity-0'}`}
