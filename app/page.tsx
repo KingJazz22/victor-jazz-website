@@ -19,8 +19,8 @@ export default function HomePage() {
       <HeroSection />
       <TrustSection />
       <VideoGallerySection />
-      <PhotoShowcaseSection />
       <VideoReviewsSection />
+      <PhotoShowcaseSection />
       <ExperienceSection />
       <PricingSection />
       <DestinationsSection />

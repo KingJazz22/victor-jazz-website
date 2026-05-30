@@ -5,8 +5,8 @@ import { SITE_CONFIG } from '@/lib/constants'
 
 const navLinks = [
   { label: 'Videos', href: '#gallery' },
-  { label: 'Photos', href: '#photos' },
   { label: 'Reviews', href: '#reviews' },
+  { label: 'Photos', href: '#photos' },
   { label: 'Services', href: '#experience' },
   { label: 'Destinations', href: '#destinations' },
   { label: 'FAQ', href: '#faq' },
