@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import SectionHeading from '@/components/ui/SectionHeading'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 import { PHOTO_GALLERY } from '@/lib/constants'
@@ -21,10 +22,12 @@ export default function PhotoShowcaseSection() {
           {PHOTO_GALLERY.map((photo) => (
             <div key={photo.src} className="break-inside-avoid mb-3">
               <div className="overflow-hidden rounded-lg bg-[#141414] group">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src={photo.src}
                   alt={photo.alt}
+                  width={0}
+                  height={0}
+                  sizes="(max-width: 768px) 50vw, 33vw"
                   loading="lazy"
                   className="w-full h-auto block transition-transform duration-700 group-hover:scale-105"
                 />
