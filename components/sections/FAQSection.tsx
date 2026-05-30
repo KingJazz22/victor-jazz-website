@@ -11,7 +11,7 @@ export default function FAQSection() {
   return (
     <section
       id="faq"
-      className="py-20 md:py-32 px-5 bg-[#080808]"
+      className="py-10 md:py-14 px-5 bg-[#080808]"
       aria-label="Frequently asked questions about hiring a wedding saxophonist"
     >
       <div className="max-w-3xl mx-auto">
@@ -22,15 +22,15 @@ export default function FAQSection() {
           />
         </AnimatedSection>
 
-        <div className="space-y-2">
+        <div className="space-y-1.5">
           {FAQS.map((faq, i) => (
             <div
               key={i}
-              className="border border-[#c9a96e]/15 rounded-xl overflow-hidden bg-[#0a0a0a]"
+              className="border border-[#c9a96e]/15 rounded-lg overflow-hidden bg-[#0a0a0a]"
             >
               <button
                 onClick={() => setOpen(open === i ? null : i)}
-                className="w-full flex items-center justify-between px-6 py-5 text-left gap-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a96e] focus-visible:ring-inset"
+                className="w-full flex items-center justify-between px-5 py-3.5 text-left gap-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a96e] focus-visible:ring-inset"
                 aria-expanded={open === i}
               >
                 <span className="text-[#f5f0e8] text-sm md:text-base font-light leading-snug">
@@ -60,7 +60,7 @@ export default function FAQSection() {
                 }`}
               >
                 <div className="overflow-hidden">
-                  <p className="px-6 pb-5 pt-1 text-[#9e9e9e] text-sm leading-relaxed border-t border-[#c9a96e]/10">
+                  <p className="px-5 pb-4 pt-1 text-[#9e9e9e] text-sm leading-relaxed border-t border-[#c9a96e]/10">
                     {faq.a}
                   </p>
                 </div>
@@ -69,7 +69,7 @@ export default function FAQSection() {
           ))}
         </div>
 
-        <AnimatedSection className="mt-10 text-center">
+        <AnimatedSection className="mt-6 text-center">
           <p className="text-[#9e9e9e] text-sm mb-5">
             Still have a question not answered here?
           </p>

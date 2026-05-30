@@ -7,7 +7,7 @@ export default function DestinationsSection() {
   return (
     <section
       id="destinations"
-      className="py-20 md:py-32 px-5 bg-[#0a0a0a]"
+      className="py-10 md:py-14 px-5 bg-[#0a0a0a]"
       aria-label="Destination wedding locations"
     >
       <div className="max-w-7xl mx-auto">
@@ -18,7 +18,7 @@ export default function DestinationsSection() {
           />
         </AnimatedSection>
 
-        <AnimatedSection className="max-w-3xl mx-auto text-center mb-14">
+        <AnimatedSection className="max-w-3xl mx-auto text-center mb-8">
           <p className="text-[#9e9e9e] text-sm md:text-base leading-relaxed">
             Victor is based in Paphos, Cyprus, and is available for destination weddings across
             the Mediterranean and beyond. From the clifftop terraces of{' '}
@@ -32,7 +32,7 @@ export default function DestinationsSection() {
 
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3">
           {DESTINATIONS.map((dest) => (
-            <article key={dest.id} className="relative aspect-[3/4] overflow-hidden rounded-xl group cursor-pointer">
+            <article key={dest.id} className="relative aspect-[2/3] overflow-hidden rounded-xl group cursor-pointer">
               <Image
                 src={dest.image}
                 alt={dest.alt}
@@ -53,7 +53,7 @@ export default function DestinationsSection() {
           ))}
         </div>
 
-        <AnimatedSection className="mt-12 text-center">
+        <AnimatedSection className="mt-6 text-center">
           <p className="text-[#9e9e9e] text-sm mb-6">
             Planning a wedding somewhere not listed? Victor travels internationally —
             <a href="#contact" className="text-[#c9a96e] hover:text-[#e8c97a] transition-colors ml-1">

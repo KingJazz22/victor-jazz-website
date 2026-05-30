@@ -51,7 +51,7 @@ export default function ExperienceSection() {
   return (
     <section
       id="experience"
-      className="py-20 md:py-32 px-5 bg-[#080808]"
+      className="py-10 md:py-14 px-5 bg-[#080808]"
       aria-label="Wedding saxophone experiences"
     >
       <div className="max-w-7xl mx-auto">
@@ -65,16 +65,16 @@ export default function ExperienceSection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {SERVICES.map((service) => (
             <GlassCard key={service.id} as="article" className="group h-full flex flex-col">
-              <div className="text-[#c9a96e] mb-4">{icons[service.icon]}</div>
-              <h3 className="font-serif text-lg md:text-xl text-[#f5f0e8] mb-3 tracking-wide leading-snug">
+              <div className="text-[#c9a96e] mb-2.5">{icons[service.icon]}</div>
+              <h3 className="font-serif text-base md:text-lg text-[#f5f0e8] mb-1.5 tracking-wide leading-snug">
                 {service.title}
               </h3>
-              <p className="text-[#b8b8b8] text-sm leading-relaxed flex-1">
+              <p className="text-[#b8b8b8] text-xs leading-relaxed flex-1">
                 {service.description}
               </p>
               <a
                 href="#contact"
-                className="mt-5 text-xs text-[#c9a96e] uppercase tracking-[0.2em] hover:text-[#e8c97a] transition-colors"
+                className="mt-3 text-xs text-[#c9a96e] uppercase tracking-[0.2em] hover:text-[#e8c97a] transition-colors"
                 aria-label={`Enquire about ${service.title}`}
               >
                 Enquire →
@@ -83,7 +83,7 @@ export default function ExperienceSection() {
           ))}
         </div>
 
-        <AnimatedSection className="mt-12 text-center">
+        <AnimatedSection className="mt-8 text-center">
           <a
             href="#contact"
             className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-[#c9a96e] text-[#080808] text-sm font-semibold uppercase tracking-[0.15em] hover:bg-[#e8c97a] transition-all duration-300"
