@@ -162,28 +162,28 @@ export const TESTIMONIALS = [
   {
     id: 1,
     name: 'Sarah & James',
-    venue: 'Secret Valley, Paphos',
+    venue: 'Liopetro, Paphos',
     origin: 'London, UK',
     quote:
-      "Victor made our ceremony the most emotional moment of our lives. When he played as I walked down the aisle, I was in absolute tears — the most beautiful sound I've ever heard. Every single guest was moved.",
+      "Victor started playing as I walked down the aisle at Liopetro and there wasn't a dry eye in the venue. The most beautiful moment of our wedding day.",
     stars: 5,
   },
   {
     id: 2,
     name: 'Emma & Tom',
-    venue: 'Coral Beach Resort, Paphos',
+    venue: 'Coral Residences, Paphos',
     origin: 'Dublin, Ireland',
     quote:
-      "We booked Victor for our cocktail hour and he completely transformed the atmosphere. Our guests are still talking about it six months later. Worth every single penny — truly world class.",
+      "Victor's cocktail hour set at Coral Residences was the highlight of our Cyprus wedding. Six months on, our guests still bring it up.",
     stars: 5,
   },
   {
     id: 3,
     name: 'Charlotte & Alex',
-    venue: 'Coral Beach Resort, Paphos',
+    venue: 'Elea Golf Club, Paphos',
     origin: 'Manchester, UK',
     quote:
-      "From the first email to the final note, Victor was an absolute pleasure. His performance during sunset was ethereal. We had no idea a saxophone could create so much emotion. A total dream.",
+      "We planned our destination wedding in Paphos from Manchester — booking Victor was the best decision we made. His sunset set at Elea was breathtaking.",
     stars: 5,
   },
   {
@@ -192,16 +192,16 @@ export const TESTIMONIALS = [
     venue: 'Nissi Beach Resort, Ayia Napa',
     origin: 'Paris, France',
     quote:
-      "Victor performed at our beach wedding and it was beyond our wildest expectations. The combination of the sea, the sunset and his saxophone brought everyone to tears. We are so grateful.",
+      "A beach wedding in Ayia Napa with Victor on saxophone — every single person cried. Nothing compares to live saxophone by the sea at sunset.",
     stars: 5,
   },
   {
     id: 5,
     name: 'Olivia & Ryan',
-    venue: 'Private Villa, Paphos',
+    venue: 'Katma Alassos, Paphos',
     origin: 'Edinburgh, Scotland',
     quote:
-      "We had Victor for both the ceremony and the DJ set in the evening and the contrast was incredible — emotional during the ceremony, then electric on the dancefloor. Our guests went absolutely wild.",
+      "Victor played the ceremony then switched to DJ + Sax for the evening. Two completely different moods — both utterly unforgettable. Our guests went wild.",
     stars: 5,
   },
   {
@@ -210,7 +210,7 @@ export const TESTIMONIALS = [
     venue: 'Aphrodite Hills, Paphos',
     origin: 'Milan, Italy',
     quote:
-      "A truly extraordinary performer. Victor played during our drinks reception overlooking the valley and it created a magical atmosphere that none of our guests will ever forget. Simply stunning.",
+      "Aphrodite Hills was already stunning. Victor's saxophone during our drinks reception made it genuinely magical — our guests were completely speechless.",
     stars: 5,
   },
 ]
