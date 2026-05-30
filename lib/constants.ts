@@ -153,10 +153,10 @@ export const TESTIMONIALS = [
   {
     id: 4,
     name: 'Isabelle & Marc',
-    venue: 'Nissi Beach Resort, Ayia Napa',
-    origin: 'Paris, France',
+    venue: 'Parklane Hotel, Limassol',
+    origin: 'Liverpool, UK',
     quote:
-      "A beach wedding in Ayia Napa with Victor on saxophone — every single person cried. Nothing compares to live saxophone by the sea at sunset.",
+      "Our ceremony at Parklane in Limassol with Victor on saxophone — every single person cried. Nothing compares to live saxophone by the sea at sunset.",
     stars: 5,
   },
   {
@@ -172,7 +172,7 @@ export const TESTIMONIALS = [
     id: 6,
     name: 'Natasha & Luca',
     venue: 'Aphrodite Hills, Paphos',
-    origin: 'Milan, Italy',
+    origin: 'Wales, UK',
     quote:
       "Aphrodite Hills was already stunning. Victor's saxophone during our drinks reception made it genuinely magical — our guests were completely speechless.",
     stars: 5,
@@ -257,7 +257,7 @@ export const VIDEO_REVIEWS = [
 export const FAQS = [
   {
     q: 'How much does it cost to hire a wedding saxophonist in Cyprus?',
-    a: 'Packages start from €350 for a ceremony-only performance, with full-day options from €900. Pricing varies by number of sets, duration, travel requirements, and whether you would like a DJ + Sax combination. Every enquiry receives a personalised quote within 24 hours — get in touch with your date and Victor will come back to you with tailored options.',
+    a: 'Every wedding is different, so Victor provides a personalised quote based on your date, location, and what you have in mind. Get in touch with your details and he will come back to you within 24 hours.',
   },
   {
     q: 'How far in advance should I book?',
@@ -269,7 +269,7 @@ export const FAQS = [
   },
   {
     q: 'Do you travel for destination weddings outside Cyprus?',
-    a: 'Yes. Victor is based in Paphos and performs regularly at destination weddings across Europe and beyond — including Santorini, Mykonos, the Amalfi Coast, the Côte d\'Azur, Dubai, and more. All travel and accommodation is arranged transparently and included in the quote.',
+    a: 'Yes. Victor is based in Cyprus and performs regularly at destination weddings across Europe and beyond — including Santorini, Mykonos, the Amalfi Coast, the Côte d\'Azur, Dubai, and more. All travel and accommodation is arranged transparently and included in the quote.',
   },
   {
     q: 'What genres and songs can you play?',
@@ -277,7 +277,7 @@ export const FAQS = [
   },
   {
     q: 'Can you perform with a DJ?',
-    a: 'Yes — and the DJ + Sax combination is one of the most popular packages. Victor performs live saxophone over DJ sets, layering soulful improvisation over contemporary tracks to create an atmosphere that neither a pure DJ nor purely live music alone can match. Ideal for evening receptions, villa parties, and beach clubs.',
+    a: 'Yes — and the DJ + Sax combination is one of the most requested setups. Victor performs live saxophone over DJ sets, layering soulful improvisation over contemporary tracks to create an atmosphere that neither a pure DJ nor purely live music alone can match. Ideal for evening receptions, villa parties, and beach clubs.',
   },
   {
     q: 'What equipment do you bring?',
