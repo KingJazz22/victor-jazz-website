@@ -2,12 +2,12 @@
 User-agent: *
 Allow: /
 
-# *
+# Protect API routes
 User-agent: *
 Disallow: /api/
 
 # Host
-Host: https://yourdomain.com
+Host: https://www.victorjazz.com
 
 # Sitemaps
-Sitemap: https://yourdomain.com/sitemap.xml
+Sitemap: https://www.victorjazz.com/sitemap.xml
