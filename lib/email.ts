@@ -14,7 +14,7 @@ export async function sendContactEmail(data: ContactFormData) {
     from: 'Victor Jazz Inquiries <noreply@victorjazz.com>',
     to,
     replyTo: data.email,
-    subject: `New Wedding Inquiry: ${data.name}${data.partnerName ? ` & ${data.partnerName}` : ''} — ${data.weddingDate}`,
+    subject: `New Wedding Inquiry: ${data.name} — ${data.weddingDate}`,
     html: buildEmailHtml(data),
   })
 }
@@ -42,13 +42,11 @@ function buildEmailHtml(data: ContactFormData): string {
         <tr>
           <td style="padding:40px;">
             <table width="100%" cellpadding="0" cellspacing="0">
-              ${row('Bride\'s Name', data.name)}
-              ${data.partnerName ? row('Partner\'s Name', data.partnerName) : ''}
+              ${row('Name', data.name)}
               ${row('Wedding Date', data.weddingDate)}
               ${row('Venue / Location', data.venue)}
               ${row('Email', `<a href="mailto:${data.email}" style="color:#c9a96e;">${data.email}</a>`)}
               ${data.whatsapp ? row('WhatsApp', data.whatsapp) : ''}
-              ${row('How They Found Us', data.source)}
               ${row('Message', `<span style="white-space:pre-line;">${data.message}</span>`)}
             </table>
             ${whatsappLink}

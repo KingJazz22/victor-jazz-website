@@ -2,7 +2,6 @@ import { z } from 'zod'
 
 export const contactSchema = z.object({
   name: z.string().min(2, 'Please enter your name'),
-  partnerName: z.string().optional(),
   email: z.string().email('Please enter a valid email address'),
   whatsapp: z.string().optional(),
   weddingDate: z
@@ -16,12 +15,9 @@ export const contactSchema = z.object({
       { message: 'Wedding date must be in the future' }
     ),
   venue: z.string().min(3, 'Please enter your venue or location'),
-  source: z.enum(['instagram', 'google', 'blog', 'friend', 'other'], {
-    errorMap: () => ({ message: 'Please select how you found us' }),
-  }),
   message: z
     .string()
-    .min(20, 'Please tell me a bit more about your special day (min 20 characters)'),
+    .min(10, 'Please tell me a bit more about your special day (min 10 characters)'),
 })
 
 export type ContactFormData = z.infer<typeof contactSchema>

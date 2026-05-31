@@ -61,6 +61,7 @@ export default function ContactForm() {
 
   return (
     <form
+      id="contact-form"
       onSubmit={handleSubmit(onSubmit)}
       className="glass rounded-2xl p-6 md:p-8 space-y-5"
       noValidate
@@ -85,17 +86,20 @@ export default function ContactForm() {
         </div>
 
         <div>
-          <label htmlFor="partnerName" className={labelClass}>
-            Partner&apos;s Name
+          <label htmlFor="email" className={labelClass}>
+            Email *
           </label>
           <input
-            id="partnerName"
-            type="text"
-            placeholder="James (optional)"
-            autoComplete="off"
-            className={inputClass}
-            {...register('partnerName')}
+            id="email"
+            type="email"
+            placeholder="emma@example.com"
+            autoComplete="email"
+            className={cn(inputClass, errors.email && 'border-red-500/60')}
+            {...register('email')}
           />
+          {errors.email && (
+            <p className="mt-1.5 text-red-400 text-xs" role="alert">{errors.email.message}</p>
+          )}
         </div>
       </div>
 
@@ -132,59 +136,18 @@ export default function ContactForm() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-        <div>
-          <label htmlFor="email" className={labelClass}>
-            Email *
-          </label>
-          <input
-            id="email"
-            type="email"
-            placeholder="emma@example.com"
-            autoComplete="email"
-            className={cn(inputClass, errors.email && 'border-red-500/60')}
-            {...register('email')}
-          />
-          {errors.email && (
-            <p className="mt-1.5 text-red-400 text-xs" role="alert">{errors.email.message}</p>
-          )}
-        </div>
-
-        <div>
-          <label htmlFor="whatsapp" className={labelClass}>
-            WhatsApp Number
-          </label>
-          <input
-            id="whatsapp"
-            type="tel"
-            placeholder="+44 7700 900000"
-            autoComplete="tel"
-            className={inputClass}
-            {...register('whatsapp')}
-          />
-        </div>
-      </div>
-
       <div>
-        <label htmlFor="source" className={labelClass}>
-          How Did You Find Me? *
+        <label htmlFor="whatsapp" className={labelClass}>
+          WhatsApp Number
         </label>
-        <select
-          id="source"
-          className={cn(inputClass, errors.source && 'border-red-500/60')}
-          defaultValue=""
-          {...register('source')}
-        >
-          <option value="" disabled>Please select…</option>
-          <option value="instagram">Instagram</option>
-          <option value="google">Google Search</option>
-          <option value="blog">Wedding Blog</option>
-          <option value="friend">Friend / Recommendation</option>
-          <option value="other">Other</option>
-        </select>
-        {errors.source && (
-          <p className="mt-1.5 text-red-400 text-xs" role="alert">{errors.source.message}</p>
-        )}
+        <input
+          id="whatsapp"
+          type="tel"
+          placeholder="+44 7700 900000"
+          autoComplete="tel"
+          className={inputClass}
+          {...register('whatsapp')}
+        />
       </div>
 
       <div>

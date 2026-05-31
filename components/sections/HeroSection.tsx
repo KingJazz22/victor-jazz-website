@@ -60,7 +60,7 @@ export default function HeroSection() {
         {/* CTAs — on mobile the sticky bar handles WhatsApp + Check Availability */}
         <div className="flex flex-col sm:flex-row items-center gap-3 w-full max-w-sm sm:max-w-none sm:w-auto">
           <a
-            href="#contact"
+            href="#contact-form"
             className="hidden lg:inline-flex items-center justify-center px-7 py-3.5 rounded-full bg-[#c9a96e] text-[#080808] text-sm font-semibold uppercase tracking-[0.15em] hover:bg-[#e8c97a] transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a96e]"
             aria-label="Check availability for your wedding date"
           >

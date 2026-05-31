@@ -39,7 +39,7 @@ export default function StickyMobile() {
           WhatsApp
         </a>
         <a
-          href="#contact"
+          href="#contact-form"
           className="flex-1 flex items-center justify-center gap-2 py-4 border-l border-[#c9a96e]/20 text-[#c9a96e] text-sm uppercase tracking-[0.1em] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a96e]/60 focus-visible:ring-inset"
           aria-label="Check availability — go to contact form"
         >

@@ -20,6 +20,8 @@ html {
   scroll-behavior: smooth;
   color-scheme: dark;
   -webkit-tap-highlight-color: transparent;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -28,6 +30,8 @@ body {
   font-family: var(--font-inter), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 /* Hero video overlay */
@@ -66,7 +70,8 @@ body {
 }
 
 /* Anchor offset so fixed header (~72px) doesn't obscure targeted sections */
-section[id] {
+section[id],
+#contact-form {
   scroll-margin-top: 72px;
 }
 
