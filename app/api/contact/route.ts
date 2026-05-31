@@ -48,10 +48,8 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ success: true }, { status: 200 })
   } catch (err) {
-    console.error('[contact route]', err)
-    return NextResponse.json(
-      { error: 'Something went wrong. Please try again or contact via WhatsApp.' },
-      { status: 500 }
-    )
+    const msg = err instanceof Error ? err.message : String(err)
+    console.error('[contact route]', msg)
+    return NextResponse.json({ error: msg }, { status: 500 })
   }
 }
