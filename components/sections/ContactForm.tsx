@@ -52,7 +52,7 @@ export default function ContactForm() {
           Thank You, Beautiful!
         </h3>
         <p className="text-[#9e9e9e] text-sm leading-relaxed">
-          Your enquiry has been received. Victor will personally reply within 24 hours to discuss
+          Your enquiry has been received. I will personally reply within 24 hours to discuss
           your dream day. In the meantime, follow along on Instagram for inspiration.
         </p>
       </div>

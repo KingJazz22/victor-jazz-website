@@ -10,13 +10,15 @@ export async function sendContactEmail(data: ContactFormData) {
 
   const resend = new Resend(apiKey)
 
-  return resend.emails.send({
+  const { error } = await resend.emails.send({
     from: 'Victor Jazz Inquiries <noreply@victorjazz.com>',
     to,
     replyTo: data.email,
     subject: `New Wedding Inquiry: ${data.name} — ${data.weddingDate}`,
     html: buildEmailHtml(data),
   })
+
+  if (error) throw new Error(`Resend error: ${error.message}`)
 }
 
 function buildEmailHtml(data: ContactFormData): string {

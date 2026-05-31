@@ -104,7 +104,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="bg-[#080808] text-[#f5f0e8] font-sans antialiased">
         <Header />
-        <main className="pb-14 lg:pb-0">{children}</main>
+        <main className="pb-14 lg:pb-0 overflow-x-hidden">{children}</main>
         <Footer />
         <StickyMobile />
       </body>
