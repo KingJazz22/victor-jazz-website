@@ -11,7 +11,7 @@ export async function sendContactEmail(data: ContactFormData) {
   const resend = new Resend(apiKey)
 
   const { error } = await resend.emails.send({
-    from: 'Victor Jazz Inquiries <noreply@victorjazz.com>',
+    from: 'Victor Jazz Inquiries <onboarding@resend.dev>',
     to,
     replyTo: data.email,
     subject: `New Wedding Inquiry: ${data.name} — ${data.weddingDate}`,

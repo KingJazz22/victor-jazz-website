@@ -1,8 +1,10 @@
 'use client'
 
 import { useState } from 'react'
-import { useForm } from 'react-hook-form'
+import { useForm, Controller } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
+import PhoneInput from 'react-phone-number-input'
+import 'react-phone-number-input/style.css'
 import { contactSchema, type ContactFormData } from '@/lib/validations'
 import { cn } from '@/lib/utils'
 
@@ -19,6 +21,7 @@ export default function ContactForm() {
     register,
     handleSubmit,
     reset,
+    control,
     formState: { errors },
   } = useForm<ContactFormData>({ resolver: zodResolver(contactSchema) })
 
@@ -140,13 +143,20 @@ export default function ContactForm() {
         <label htmlFor="whatsapp" className={labelClass}>
           WhatsApp Number
         </label>
-        <input
-          id="whatsapp"
-          type="tel"
-          placeholder="+44 7700 900000"
-          autoComplete="tel"
-          className={inputClass}
-          {...register('whatsapp')}
+        <Controller
+          name="whatsapp"
+          control={control}
+          render={({ field: { onChange, value } }) => (
+            <PhoneInput
+              id="whatsapp"
+              international
+              defaultCountry="GB"
+              value={value ?? ''}
+              onChange={onChange}
+              placeholder="+44 7700 900000"
+              className="phone-field"
+            />
+          )}
         />
       </div>
 
