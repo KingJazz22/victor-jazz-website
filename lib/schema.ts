@@ -60,12 +60,19 @@ function generateLocalBusinessSchema() {
     },
     areaServed: [
       { '@type': 'City', name: 'Paphos' },
+      { '@type': 'City', name: 'Limassol' },
+      { '@type': 'City', name: 'Nicosia' },
       { '@type': 'City', name: 'Ayia Napa' },
       { '@type': 'Country', name: 'Cyprus' },
       { '@type': 'Country', name: 'Greece' },
       { '@type': 'Country', name: 'Italy' },
       { '@type': 'Country', name: 'France' },
       { '@type': 'Country', name: 'United Arab Emirates' },
+      { '@type': 'Country', name: 'Maldives' },
+      { '@type': 'Country', name: 'Egypt' },
+      { '@type': 'Country', name: 'Seychelles' },
+      { '@type': 'Country', name: 'Barbados' },
+      { '@type': 'Country', name: 'Thailand' },
     ],
   }
 }
