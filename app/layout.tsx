@@ -1,11 +1,13 @@
 import type { Metadata } from 'next'
 import { Cormorant_Garamond, Inter } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import StickyMobile from '@/components/layout/StickyMobile'
 import { SITE_CONFIG } from '@/lib/constants'
 import { generateSchemaGraph } from '@/lib/schema'
+import { GADS_ID } from '@/lib/gtag'
 
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
@@ -62,10 +64,10 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/images/og-image.jpg',
+        url: '/images/photos/panoramic-dark.jpg',
         width: 1200,
         height: 630,
-        alt: 'Victor Jazz — Wedding Saxophonist Cyprus',
+        alt: 'Victor Jazz — Wedding Saxophonist performing at a beach wedding sunset in Cyprus',
       },
     ],
   },
@@ -73,7 +75,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Wedding Saxophonist Cyprus | Victor Jazz',
     description: SITE_CONFIG.description,
-    images: ['/images/og-image.jpg'],
+    images: ['/images/photos/panoramic-dark.jpg'],
   },
   alternates: {
     canonical: SITE_CONFIG.url,
@@ -96,7 +98,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${cormorant.variable} ${inter.variable}`}>
       <head>
-        <link rel="preload" href="/images/hero-poster.jpg" as="image" fetchPriority="high" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
@@ -107,6 +109,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main className="pb-14 lg:pb-0 overflow-x-hidden">{children}</main>
         <Footer />
         <StickyMobile />
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GADS_ID}`}
+          strategy="lazyOnload"
+        />
+        <Script id="gtag-init" strategy="lazyOnload">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GADS_ID}');
+          `}
+        </Script>
       </body>
     </html>
   )
