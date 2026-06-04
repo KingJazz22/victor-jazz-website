@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/images/photos/panoramic-dark.jpg',
+        url: '/images/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Victor Jazz — Wedding Saxophonist performing at a beach wedding sunset in Cyprus',
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Wedding Saxophonist Cyprus | Victor Jazz',
     description: SITE_CONFIG.description,
-    images: ['/images/photos/panoramic-dark.jpg'],
+    images: ['/images/og-image.jpg'],
   },
   alternates: {
     canonical: SITE_CONFIG.url,
