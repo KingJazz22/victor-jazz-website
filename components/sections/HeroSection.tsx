@@ -1,7 +1,21 @@
+'use client'
+
 import Image from 'next/image'
+import { useEffect, useRef } from 'react'
 import { SITE_CONFIG } from '@/lib/constants'
 
 export default function HeroSection() {
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+    // Defer video load until after page is interactive so hero image wins LCP uncontested
+    video.src = '/videos/hero.mp4'
+    video.load()
+    video.play().catch(() => {})
+  }, [])
+
   return (
     <section
       id="hero"
@@ -18,14 +32,13 @@ export default function HeroSection() {
         className="object-cover object-[center_30%]"
       />
 
-      {/* Hero video — autoplay muted loop */}
+      {/* Hero video — src + play deferred via useEffect so hero image wins LCP */}
       <video
-        src="/videos/hero.mp4"
-        autoPlay
+        ref={videoRef}
         muted
         loop
         playsInline
-        preload="metadata"
+        preload="none"
         className="absolute inset-0 w-full h-full object-cover object-[center_30%]"
         aria-hidden="true"
       />
