@@ -1,7 +1,6 @@
 'use client'
 
-import { motion, useInView, useReducedMotion } from 'framer-motion'
-import { useRef } from 'react'
+import { useRef, useEffect, useState } from 'react'
 
 type Props = {
   children: React.ReactNode
@@ -16,29 +15,52 @@ export default function AnimatedSection({
   direction = 'up',
   className,
 }: Props) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: '-80px' })
-  const prefersReducedMotion = useReducedMotion()
+  const ref = useRef<HTMLDivElement>(null)
+  const [visible, setVisible] = useState(false)
 
-  const hidden = {
-    opacity: 0,
-    y: direction === 'up' ? 32 : direction === 'down' ? -32 : 0,
-    x: direction === 'left' ? 32 : direction === 'right' ? -32 : 0,
-  }
+  useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setVisible(true)
+      return
+    }
+    const el = ref.current
+    if (!el) return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true)
+          observer.disconnect()
+        }
+      },
+      { rootMargin: '-80px' }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
+
+  const transform = visible
+    ? 'translate(0,0)'
+    : direction === 'up'
+    ? 'translateY(32px)'
+    : direction === 'down'
+    ? 'translateY(-32px)'
+    : direction === 'left'
+    ? 'translateX(32px)'
+    : direction === 'right'
+    ? 'translateX(-32px)'
+    : 'none'
 
   return (
-    <motion.div
+    <div
       ref={ref}
-      initial={hidden}
-      animate={isInView ? { opacity: 1, y: 0, x: 0 } : hidden}
-      transition={
-        prefersReducedMotion
-          ? { duration: 0 }
-          : { duration: 0.7, delay, ease: [0.25, 0.1, 0.25, 1] }
-      }
       className={className}
+      style={{
+        opacity: visible ? 1 : 0,
+        transform,
+        transition: `opacity 0.7s ${delay}s cubic-bezier(0.25,0.1,0.25,1), transform 0.7s ${delay}s cubic-bezier(0.25,0.1,0.25,1)`,
+      }}
     >
       {children}
-    </motion.div>
+    </div>
   )
 }

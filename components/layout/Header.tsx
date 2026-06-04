@@ -1,9 +1,10 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { usePathname } from 'next/navigation'
 import { SITE_CONFIG } from '@/lib/constants'
 
-const navLinks = [
+const homeNavLinks = [
   { label: 'Videos', href: '#gallery' },
   { label: 'Reviews', href: '#reviews' },
   { label: 'Photos', href: '#photos' },
@@ -12,9 +13,20 @@ const navLinks = [
   { label: 'FAQ', href: '#faq' },
 ]
 
+const resortNavLinks = [
+  { label: 'Watch', href: '#videos' },
+  { label: 'Formats', href: '#formats' },
+  { label: 'Availability', href: '#availability' },
+  { label: 'Destinations', href: '#destinations' },
+  { label: 'Contact', href: '#contact' },
+]
+
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const pathname = usePathname()
+  const isResorts = pathname === '/resorts'
+  const navLinks = isResorts ? resortNavLinks : homeNavLinks
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60)
@@ -58,7 +70,7 @@ export default function Header() {
             href="#contact"
             className="ml-4 px-6 py-2.5 rounded-full border border-[#c9a96e]/60 text-[#c9a96e] text-xs uppercase tracking-[0.2em] hover:bg-[#c9a96e] hover:text-[#080808] transition-all duration-300"
           >
-            Book Now
+            {isResorts ? 'Request Availability' : 'Book Now'}
           </a>
         </nav>
 

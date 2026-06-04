@@ -25,8 +25,8 @@ export default function Footer() {
               Victor Jazz
             </p>
             <p className="text-[#9e9e9e] text-sm leading-relaxed">
-              Professional wedding saxophonist based in Paphos, Cyprus. Available for destination
-              weddings across Cyprus, Greece, Italy, France, Dubai, and beyond.
+              Professional wedding saxophonist based in Cyprus, performing island-wide — Paphos,
+              Limassol, Ayia Napa, Nicosia and beyond. Available for destination weddings worldwide.
             </p>
             <div className="mt-5 flex gap-4">
               <a
@@ -78,8 +78,8 @@ export default function Footer() {
               Liopetro &middot; Secret Valley &middot; Columbia Beach &middot; Annabelle Hotel
             </p>
             <p className="mt-4 text-[#9e9e9e] text-sm leading-relaxed">
-              <strong className="text-[#f5f0e8]/70">Based in Paphos, Cyprus.</strong> Performing
-              across Ayia Napa and internationally.
+              <strong className="text-[#f5f0e8]/70">Based in Cyprus — available island-wide.</strong>{' '}
+              Paphos · Limassol · Ayia Napa · Nicosia · Internationally.
             </p>
           </div>
         </div>
@@ -87,17 +87,18 @@ export default function Footer() {
         {/* SEO copy */}
         <div className="border-t border-[#c9a96e]/10 pt-8">
           <p className="text-[#6b6b6b] text-xs leading-relaxed text-center">
-            Victor Jazz is a luxury wedding saxophonist based in Paphos, Cyprus, specialising in
-            live saxophone for ceremonies, cocktail hours, beach weddings, sunset sets, DJ+sax
-            performances, yacht events, and hen parties across Cyprus — including Paphos and Ayia Napa —
-            as well as destination weddings in Greece, Italy, France, and Dubai.
+            Victor Jazz is a luxury wedding saxophonist based in Cyprus, available island-wide —
+            Paphos, Limassol, Ayia Napa, Nicosia and beyond — specialising in live saxophone for
+            ceremonies, cocktail hours, beach weddings, sunset sets, DJ+sax performances, yacht
+            events, and hen parties across Cyprus, as well as destination weddings in Greece,
+            Italy, France, and Dubai.
             Popular ceremony pieces performed live on saxophone include Canon in D, A Thousand Years,
             Can&apos;t Help Falling in Love, All of Me, Perfect, Thinking Out Loud, La Vie en Rose,
             Make You Feel My Love, Somewhere Over the Rainbow, and more — each arranged and performed
             personally for your wedding.
           </p>
           <p className="mt-6 text-center text-[#6b6b6b] text-xs">
-            © {new Date().getFullYear()} Victor Jazz. All rights reserved. Paphos, Cyprus.
+            © {new Date().getFullYear()} Victor Jazz. All rights reserved. Cyprus — available island-wide.
           </p>
         </div>
       </div>

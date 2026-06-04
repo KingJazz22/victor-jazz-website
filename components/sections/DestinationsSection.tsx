@@ -20,13 +20,16 @@ export default function DestinationsSection() {
 
         <AnimatedSection className="max-w-3xl mx-auto text-center mb-8">
           <p className="text-[#9e9e9e] text-sm md:text-base leading-relaxed">
-            Victor is based in Paphos, Cyprus, and is available for destination weddings across
-            the Mediterranean and beyond. From the clifftop terraces of{' '}
-            <span className="text-[#f5f0e8]">Paphos</span> and the glamorous beach clubs of{' '}
-            <span className="text-[#f5f0e8]">Ayia Napa</span>, to the whitewashed villas of{' '}
-            <span className="text-[#f5f0e8]">Santorini</span>, the Amalfi cliffs, and the
-            ultra-luxury venues of <span className="text-[#f5f0e8]">Dubai</span> — every setting
-            becomes more magical with live saxophone.
+            Victor is based in Cyprus and performs island-wide —{' '}
+            <span className="text-[#f5f0e8]">Paphos</span>,{' '}
+            <span className="text-[#f5f0e8]">Limassol</span>,{' '}
+            <span className="text-[#f5f0e8]">Ayia Napa</span>,{' '}
+            <span className="text-[#f5f0e8]">Nicosia</span> and everywhere in between. He is also
+            available for destination weddings across the Mediterranean and beyond: the whitewashed
+            villas of <span className="text-[#f5f0e8]">Santorini</span>, the Amalfi cliffs, and
+            the ultra-luxury venues of{' '}
+            <span className="text-[#f5f0e8]">Dubai</span> — every setting becomes more magical
+            with live saxophone.
           </p>
         </AnimatedSection>
 

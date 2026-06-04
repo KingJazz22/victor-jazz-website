@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { SITE_CONFIG } from '@/lib/constants'
 
 export default function HeroSection() {
@@ -7,15 +8,14 @@ export default function HeroSection() {
       className="relative h-screen min-h-[600px] w-full overflow-hidden"
       aria-label="Hero — Victor Jazz, Wedding Saxophonist Cyprus"
     >
-      {/* LCP poster image — shown until video loads */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
+      {/* LCP poster image — priority causes Next.js to add a server-side preload */}
+      <Image
         src="/images/hero-poster.jpg"
         alt="Victor Jazz performing live saxophone at a luxury wedding in Cyprus"
-        className="absolute inset-0 w-full h-full object-cover object-[center_30%]"
-        fetchPriority="high"
-        loading="eager"
-        decoding="sync"
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover object-[center_30%]"
       />
 
       {/* Hero video — autoplay muted loop */}
@@ -54,7 +54,7 @@ export default function HeroSection() {
 
         <p className="text-shadow-sm text-[#f5f0e8]/90 text-sm md:text-base font-light max-w-xl leading-relaxed mb-8 sm:mb-10 tracking-wide">
           The most sought-after live saxophone experience for UK &amp; Irish couples planning their
-          Cyprus wedding — from clifftop terraces in Paphos to beach clubs in Ayia Napa.
+          Cyprus wedding — available island-wide across Paphos, Limassol, Ayia Napa, Nicosia and beyond.
         </p>
 
         {/* CTAs — on mobile the sticky bar handles WhatsApp + Check Availability */}
@@ -105,8 +105,8 @@ export default function HeroSection() {
       </div>
 
       <h2 className="sr-only">
-        Victor Jazz — Professional wedding saxophonist available for weddings in Cyprus including
-        Paphos, Ayia Napa, and destination weddings worldwide
+        Victor Jazz — Professional wedding saxophonist available island-wide across Cyprus:
+        Paphos, Limassol, Nicosia, Ayia Napa and beyond. Destination weddings worldwide.
       </h2>
     </section>
   )

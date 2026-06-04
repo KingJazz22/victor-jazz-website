@@ -3,7 +3,7 @@ export const SITE_CONFIG = {
   fullName: 'Victor Jazz | Wedding Saxophonist Cyprus',
   tagline: 'Live Saxophone for Your Dream Cyprus Wedding',
   description:
-    'Award-winning wedding saxophonist based in Cyprus. Live saxophone for ceremonies, cocktail hours & beach parties across Paphos and Ayia Napa.',
+    'Award-winning wedding saxophonist available across Cyprus — Paphos, Limassol, Nicosia, Ayia Napa and beyond. Live saxophone for ceremonies, cocktail hours & beach parties island-wide.',
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.victorjazz.com',
   whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '353838980169',
   get whatsappUrl() {
@@ -38,7 +38,7 @@ export const SERVICES = [
     id: 'cocktail',
     title: 'Cocktail Hour & Reception',
     description:
-      'Sophisticated live music for your drinks reception in Paphos or Ayia Napa. Sets the tone, warms the room, and gives your guests a moment they\'ll talk about for years.',
+      'Sophisticated live music for your drinks reception anywhere in Cyprus — Paphos, Limassol, Ayia Napa and beyond. Sets the tone, warms the room, and gives your guests a moment they\'ll talk about for years.',
     video: '/videos/cocktail.mp4',
     poster: '/images/posters/cocktail.jpg',
     icon: 'cocktail',
@@ -265,7 +265,7 @@ export const FAQS = [
   },
   {
     q: 'Can you perform at outdoor beach or clifftop ceremonies?',
-    a: 'Absolutely — and outdoor settings are where the saxophone truly comes alive. Whether it\'s a clifftop terrace in Paphos, a sandy beach ceremony in Ayia Napa, or a garden at a private villa, the open air amplifies everything beautifully. Victor brings a professional wireless PA system and handles all sound setup.',
+    a: 'Absolutely — and outdoor settings are where the saxophone truly comes alive. Whether it\'s a clifftop terrace in Paphos, a sandy beach ceremony in Ayia Napa, a beachfront venue in Limassol, or a garden at a private villa anywhere in Cyprus, the open air amplifies everything beautifully. Victor brings a professional wireless PA system and handles all sound setup.',
   },
   {
     q: 'Do you travel for destination weddings outside Cyprus?',
@@ -285,7 +285,7 @@ export const FAQS = [
   },
   {
     q: 'Are you available for hen parties and private events?',
-    a: 'Yes. Victor performs at hen parties, pool parties, villa events, yacht charters, corporate functions, and milestone celebrations across Cyprus — particularly in Ayia Napa and Paphos. Get in touch with your event details for a tailored quote.',
+    a: 'Yes. Victor performs at hen parties, pool parties, villa events, yacht charters, corporate functions, and milestone celebrations across Cyprus — Paphos, Limassol, Ayia Napa, Nicosia and beyond. Get in touch with your event details for a tailored quote.',
   },
 ]
 
