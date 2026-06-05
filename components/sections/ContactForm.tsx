@@ -24,6 +24,8 @@ const DIAL_CODES = [
   { code: '+351', flag: '🇵🇹', label: 'Portugal' },
   { code: '+30',  flag: '🇬🇷', label: 'Greece' },
   { code: '+357', flag: '🇨🇾', label: 'Cyprus' },
+  { code: '+48',  flag: '🇵🇱', label: 'Poland' },
+  { code: '+90',  flag: '🇹🇷', label: 'Turkey' },
   { code: '+1',   flag: '🇺🇸', label: 'USA / Canada' },
   { code: '+61',  flag: '🇦🇺', label: 'Australia' },
   { code: '+971', flag: '🇦🇪', label: 'UAE' },
