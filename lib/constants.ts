@@ -19,7 +19,7 @@ export const SITE_CONFIG = {
 }
 
 export const STATS = [
-  { value: 350, suffix: '+', label: 'Weddings in Cyprus, UK, Ireland, Italy & Greece' },
+  { value: 350, suffix: '+', label: 'Weddings in Cyprus, United Kingdom, Ireland, Italy & Greece' },
   { value: 40, suffix: '+', label: 'Luxury Venues' },
   { value: 5, suffix: '★', label: 'Star Rating' },
 ]

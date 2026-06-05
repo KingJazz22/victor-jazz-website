@@ -66,8 +66,8 @@ export default function HeroSection() {
         </h1>
 
         <p className="text-shadow-sm text-[#f5f0e8]/90 text-sm md:text-base font-light max-w-xl leading-relaxed mb-8 sm:mb-10 tracking-wide">
-          The most sought-after live saxophone experience for UK &amp; Irish couples planning their
-          Cyprus wedding — available island-wide across Paphos, Limassol, Ayia Napa, Nicosia and beyond.
+          The most sought-after live saxophone experience for international couples planning their
+          Cyprus wedding — available in Cyprus and worldwide.
         </p>
 
         {/* CTAs — on mobile the sticky bar handles WhatsApp + Check Availability */}

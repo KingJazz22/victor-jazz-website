@@ -7,6 +7,28 @@ import { contactSchema, type ContactFormData } from '@/lib/validations'
 import { cn } from '@/lib/utils'
 import { gtagConversion, CONVERSION_LABELS } from '@/lib/gtag'
 
+const DIAL_CODES = [
+  { code: '+44',  flag: '🇬🇧', label: 'UK' },
+  { code: '+353', flag: '🇮🇪', label: 'Ireland' },
+  { code: '+49',  flag: '🇩🇪', label: 'Germany' },
+  { code: '+33',  flag: '🇫🇷', label: 'France' },
+  { code: '+34',  flag: '🇪🇸', label: 'Spain' },
+  { code: '+39',  flag: '🇮🇹', label: 'Italy' },
+  { code: '+31',  flag: '🇳🇱', label: 'Netherlands' },
+  { code: '+32',  flag: '🇧🇪', label: 'Belgium' },
+  { code: '+41',  flag: '🇨🇭', label: 'Switzerland' },
+  { code: '+43',  flag: '🇦🇹', label: 'Austria' },
+  { code: '+46',  flag: '🇸🇪', label: 'Sweden' },
+  { code: '+47',  flag: '🇳🇴', label: 'Norway' },
+  { code: '+45',  flag: '🇩🇰', label: 'Denmark' },
+  { code: '+351', flag: '🇵🇹', label: 'Portugal' },
+  { code: '+30',  flag: '🇬🇷', label: 'Greece' },
+  { code: '+357', flag: '🇨🇾', label: 'Cyprus' },
+  { code: '+1',   flag: '🇺🇸', label: 'USA / Canada' },
+  { code: '+61',  flag: '🇦🇺', label: 'Australia' },
+  { code: '+971', flag: '🇦🇪', label: 'UAE' },
+]
+
 const inputClass =
   'w-full bg-white/[0.04] border border-[#c9a96e]/20 rounded-lg px-4 py-3.5 text-[#f5f0e8] text-sm placeholder-[#6b6b6b] transition-colors duration-200 focus:border-[#c9a96e] focus:outline-none focus:ring-1 focus:ring-[#c9a96e]/30 [&>option]:bg-[#1a1a1a] [&>option]:text-[#f5f0e8]'
 
@@ -15,6 +37,7 @@ const labelClass = 'block text-[#b8b8b8] text-xs uppercase tracking-[0.15em] mb-
 export default function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [errorMsg, setErrorMsg] = useState('')
+  const [dialCode, setDialCode] = useState('+44')
 
   const {
     register,
@@ -25,11 +48,16 @@ export default function ContactForm() {
 
   const onSubmit = async (data: ContactFormData) => {
     setStatus('loading')
+    const localNumber = (data.whatsapp ?? '').trim().replace(/^0/, '')
+    const payload = {
+      ...data,
+      whatsapp: localNumber ? `${dialCode}${localNumber}` : '',
+    }
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+        body: JSON.stringify(payload),
       })
       const json = await res.json()
       if (!res.ok) throw new Error(json.error || 'Something went wrong')
@@ -140,16 +168,35 @@ export default function ContactForm() {
 
       <div>
         <label htmlFor="whatsapp" className={labelClass}>
-          WhatsApp Number
+          WhatsApp Number{' '}
+          <span className="text-[#6b6b6b] normal-case tracking-normal font-normal">(optional)</span>
         </label>
-        <input
-          id="whatsapp"
-          type="tel"
-          placeholder="+44 7700 900000"
-          autoComplete="tel"
-          className={inputClass}
-          {...register('whatsapp')}
-        />
+        <div className="flex rounded-lg overflow-hidden border border-[#c9a96e]/20 focus-within:border-[#c9a96e] focus-within:ring-1 focus-within:ring-[#c9a96e]/30 transition-colors duration-200">
+          <select
+            value={dialCode}
+            onChange={(e) => setDialCode(e.target.value)}
+            aria-label="Country dial code"
+            className="shrink-0 bg-white/[0.06] border-r border-[#c9a96e]/20 px-2 py-3.5 text-[#f5f0e8] text-sm focus:outline-none cursor-pointer appearance-none [&>option]:bg-[#1a1a1a] [&>option]:text-[#f5f0e8]"
+          >
+            {DIAL_CODES.map(({ code, flag, label }) => (
+              <option key={code} value={code}>
+                {flag} {code} {label}
+              </option>
+            ))}
+          </select>
+          <input
+            id="whatsapp"
+            type="tel"
+            inputMode="tel"
+            placeholder="7700 900 000"
+            autoComplete="tel-local"
+            className="flex-1 min-w-0 bg-white/[0.04] px-4 py-3.5 text-[#f5f0e8] text-sm placeholder-[#6b6b6b] focus:outline-none"
+            {...register('whatsapp')}
+          />
+        </div>
+        <p className="mt-1.5 text-[#6b6b6b] text-xs">
+          Select your country, then enter your local number — no leading zero needed
+        </p>
       </div>
 
       <div>

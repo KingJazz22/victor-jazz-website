@@ -67,9 +67,9 @@ export default function ContactSection() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-[#f5f0e8] text-sm font-medium">150+ weddings performed</p>
+                    <p className="text-[#f5f0e8] text-sm font-medium">Trusted by couples from the UK, Ireland and Europe</p>
                     <p className="text-[#9e9e9e] text-xs mt-0.5">
-                      Trusted by couples from the UK, Ireland and Europe
+                      +350 international couples
                     </p>
                   </div>
                 </div>
