@@ -87,7 +87,6 @@ export default function ExperienceSection() {
           <a
             href="#contact"
             className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-[#c9a96e] text-[#080808] text-sm font-semibold uppercase tracking-[0.15em] hover:bg-[#e8c97a] transition-all duration-300"
-            aria-label="Enquire for your wedding date"
           >
             Enquire for Your Date
           </a>

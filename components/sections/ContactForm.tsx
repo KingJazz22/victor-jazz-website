@@ -227,7 +227,6 @@ export default function ContactForm() {
         type="submit"
         disabled={status === 'loading'}
         className="w-full py-4 rounded-full bg-[#c9a96e] text-[#080808] font-semibold text-sm uppercase tracking-[0.15em] hover:bg-[#e8c97a] transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a96e] focus-visible:ring-offset-2 focus-visible:ring-offset-[#080808]"
-        aria-label="Send wedding enquiry to Victor Jazz"
       >
         {status === 'loading' ? (
           <span className="flex items-center justify-center gap-2">

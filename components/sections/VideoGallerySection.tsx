@@ -40,7 +40,6 @@ export default function VideoGallerySection() {
           <a
             href="#contact"
             className="inline-flex items-center justify-center px-8 py-4 rounded-full border border-[#c9a96e]/60 text-[#c9a96e] text-sm uppercase tracking-[0.15em] hover:bg-[#c9a96e] hover:text-[#080808] transition-all duration-300"
-            aria-label="Book your wedding saxophone experience"
           >
             Book Your Wedding Sax Experience
           </a>

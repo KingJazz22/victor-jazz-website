@@ -59,7 +59,7 @@ export default function DestinationsSection() {
         <AnimatedSection className="mt-6 text-center">
           <p className="text-[#9e9e9e] text-sm mb-6">
             Planning a wedding somewhere not listed? Victor travels internationally —
-            <a href="#contact" className="text-[#c9a96e] hover:text-[#e8c97a] transition-colors ml-1">
+            <a href="#contact" className="text-[#c9a96e] hover:text-[#e8c97a] transition-colors ml-1 underline underline-offset-2">
               get in touch to discuss your destination.
             </a>
           </p>
