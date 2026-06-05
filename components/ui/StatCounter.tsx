@@ -39,7 +39,7 @@ export default function StatCounter({ value, suffix, label }: Props) {
   }, [isInView, value])
 
   return (
-    <div ref={ref} className="text-center px-4 py-6" aria-label={`${value}${suffix} — ${label}`}>
+    <div ref={ref} className="text-center px-4 py-6" role="img" aria-label={`${value}${suffix} — ${label}`}>
       <div className="font-serif font-light text-5xl md:text-6xl text-[#c9a96e] leading-none" aria-hidden="true">
         {count}
         <span className="text-3xl md:text-4xl">{suffix}</span>

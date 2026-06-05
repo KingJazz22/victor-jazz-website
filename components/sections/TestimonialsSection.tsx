@@ -98,7 +98,7 @@ export default function TestimonialsSection() {
               <button
                 key={i}
                 onClick={() => goTo(i)}
-                className={`w-1.5 h-1.5 rounded-full transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a96e] ${
+                className={`w-1.5 h-1.5 rounded-full transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a96e] p-3 box-content ${
                   i === active ? 'bg-[#c9a96e] w-5' : 'bg-[#c9a96e]/30'
                 }`}
                 role="tab"
