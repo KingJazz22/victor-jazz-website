@@ -54,6 +54,13 @@ const config: NextConfig = {
         { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
       ],
     },
+    // HTML pages: always revalidate so Cloudflare never serves stale content after a deploy
+    {
+      source: '/((?!_next/static|_next/image|images|videos|fonts|icons|favicon).*)',
+      headers: [
+        { key: 'Cache-Control', value: 'public, max-age=0, must-revalidate' },
+      ],
+    },
     {
       source: '/videos/(.*)',
       headers: [
