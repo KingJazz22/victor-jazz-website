@@ -2,7 +2,7 @@
 User-agent: *
 Allow: /
 
-# Protect API routes
+# *
 User-agent: *
 Disallow: /api/
 
