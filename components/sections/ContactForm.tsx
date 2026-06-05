@@ -1,15 +1,9 @@
 'use client'
 
 import { useState } from 'react'
-import { useForm, Controller } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import dynamic from 'next/dynamic'
 import { contactSchema, type ContactFormData } from '@/lib/validations'
-
-const PhoneInput = dynamic(() => import('react-phone-number-input'), {
-  ssr: false,
-  loading: () => <input type="tel" className="w-full bg-white/[0.04] border border-[#c9a96e]/20 rounded-lg px-4 py-3.5 text-[#f5f0e8] text-sm placeholder-[#6b6b6b]" placeholder="Your phone number" />,
-})
 import { cn } from '@/lib/utils'
 import { gtagConversion, CONVERSION_LABELS } from '@/lib/gtag'
 
@@ -26,7 +20,6 @@ export default function ContactForm() {
     register,
     handleSubmit,
     reset,
-    control,
     formState: { errors },
   } = useForm<ContactFormData>({ resolver: zodResolver(contactSchema) })
 
@@ -149,20 +142,13 @@ export default function ContactForm() {
         <label htmlFor="whatsapp" className={labelClass}>
           WhatsApp Number
         </label>
-        <Controller
-          name="whatsapp"
-          control={control}
-          render={({ field: { onChange, value } }) => (
-            <PhoneInput
-              id="whatsapp"
-              international
-              defaultCountry="GB"
-              value={value ?? ''}
-              onChange={onChange}
-              placeholder="+44 7700 900000"
-              className="phone-field"
-            />
-          )}
+        <input
+          id="whatsapp"
+          type="tel"
+          placeholder="+44 7700 900000"
+          autoComplete="tel"
+          className={inputClass}
+          {...register('whatsapp')}
         />
       </div>
 
