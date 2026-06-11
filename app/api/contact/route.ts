@@ -31,20 +31,22 @@ export async function POST(req: NextRequest) {
       )
     }
 
-    let body: unknown
+    let body: Record<string, unknown>
     try {
       body = await req.json()
     } catch {
       return NextResponse.json({ error: 'Invalid request body' }, { status: 400 })
     }
 
-    const result = contactSchema.safeParse(body)
+    // Strip whatsapp before validation so phone format never blocks submission
+    const { whatsapp, ...bodyWithoutPhone } = body
+    const result = contactSchema.safeParse(bodyWithoutPhone)
     if (!result.success) {
       const messages = result.error.issues.map((i) => i.message).join(', ')
       return NextResponse.json({ error: messages }, { status: 422 })
     }
 
-    await sendContactEmail(result.data)
+    await sendContactEmail({ ...result.data, whatsapp: typeof whatsapp === 'string' ? whatsapp : undefined })
 
     return NextResponse.json({ success: true }, { status: 200 })
   } catch (err) {

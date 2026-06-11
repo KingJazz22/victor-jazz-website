@@ -1,0 +1,10 @@
+node_modules
+.next
+.env.local
+.env
+*.log
+.git
+*.mp4
+*.mov
+*.avi
+public/videos
