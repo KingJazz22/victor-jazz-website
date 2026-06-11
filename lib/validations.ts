@@ -3,13 +3,7 @@ import { z } from 'zod'
 export const contactSchema = z.object({
   name: z.string().min(2, 'Please enter your name'),
   email: z.string().email('Please enter a valid email address'),
-  whatsapp: z
-    .string()
-    .optional()
-    .refine(
-      (val) => !val || /^[\d\s\-().]{5,}$/.test(val.trim()),
-      { message: 'Please enter a valid phone number' }
-    ),
+  whatsapp: z.string().optional(),
   weddingDate: z
     .string()
     .min(1, 'Please select your wedding date')

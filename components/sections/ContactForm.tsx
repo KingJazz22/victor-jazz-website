@@ -196,9 +196,13 @@ export default function ContactForm() {
             {...register('whatsapp')}
           />
         </div>
-        <p className="mt-1.5 text-[#6b6b6b] text-xs">
-          Select your country, then enter your local number — no leading zero needed
-        </p>
+        {errors.whatsapp ? (
+          <p className="mt-1.5 text-red-400 text-xs" role="alert">{errors.whatsapp.message}</p>
+        ) : (
+          <p className="mt-1.5 text-[#6b6b6b] text-xs">
+            Select your country, then enter your local number — no leading zero needed
+          </p>
+        )}
       </div>
 
       <div>
