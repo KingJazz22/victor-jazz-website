@@ -8,6 +8,7 @@ import StickyMobile from '@/components/layout/StickyMobile'
 import { SITE_CONFIG } from '@/lib/constants'
 import { generateSchemaGraph } from '@/lib/schema'
 import { GADS_ID } from '@/lib/gtag'
+import GtagLoader from '@/components/GtagLoader'
 
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
@@ -114,11 +115,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main className="pb-14 lg:pb-0 overflow-x-hidden">{children}</main>
         <Footer />
         <StickyMobile />
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${GADS_ID}`}
-          strategy="lazyOnload"
-        />
-        <Script id="gtag-init" strategy="lazyOnload">
+        {/* Stub loads immediately (near-zero cost) so gtag() queues conversions into
+            dataLayer even before the real script arrives — see GtagLoader for why the
+            150KB gtag/js payload itself is deferred to first interaction. */}
+        <Script id="gtag-init" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -126,6 +126,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             gtag('config', '${GADS_ID}');
           `}
         </Script>
+        <GtagLoader />
       </body>
     </html>
   )

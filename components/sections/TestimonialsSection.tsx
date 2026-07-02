@@ -46,13 +46,13 @@ export default function TestimonialsSection() {
     <section
       id="testimonials"
       className="py-20 md:py-32 px-5 bg-[#0a0a0a]"
-      aria-label="Testimonials from brides"
+      aria-label="Testimonials from couples"
     >
       <div className="max-w-7xl mx-auto">
         <AnimatedSection>
           <SectionHeading
             title="Stories From the Aisle"
-            subtitle="Real brides, real moments"
+            subtitle="Real couples, real moments"
           />
         </AnimatedSection>
 

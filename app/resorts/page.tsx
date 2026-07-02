@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import { SITE_CONFIG } from '@/lib/constants'
-import ResortContactForm from '@/components/sections/ResortContactForm'
+import ResortContactForm from '@/components/sections/ResortContactFormLoader'
 import ResortVideos from '@/components/sections/ResortVideos'
 
 export const metadata: Metadata = {
