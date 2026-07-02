@@ -15,7 +15,9 @@ const config: NextConfig = {
   compress: true,
   poweredByHeader: false,
   experimental: {
-    optimizeCss: true,
+    // optimizeCss uses critters to inline critical CSS, but critters does not support
+    // Next.js 15 App Router's data-precedence stylesheet loading — disable until fixed upstream.
+    // optimizeCss: true,
   },
   webpack(config, { isServer }) {
     if (!isServer) {
@@ -59,6 +61,13 @@ const config: NextConfig = {
       source: '/((?!_next/static|_next/image|images|videos|fonts|icons|favicon).*)',
       headers: [
         { key: 'Cache-Control', value: 'public, max-age=0, must-revalidate' },
+      ],
+    },
+    // Content-hashed Next.js assets — safe to cache forever at edge and browser
+    {
+      source: '/_next/static/(.*)',
+      headers: [
+        { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
       ],
     },
     {

@@ -7,7 +7,10 @@
     "build": "next build",
     "start": "next start -p 3000",
     "postbuild": "next-sitemap",
-    "lint": "next lint"
+    "lint": "next lint",
+    "ads:auth": "node scripts/ads-auth.mjs",
+    "ads:report": "node scripts/ads-report.mjs",
+    "ads:report:json": "node scripts/ads-report.mjs --json"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
@@ -29,6 +32,7 @@
   ],
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.7",
+    "google-ads-api": "^24.1.0",
     "@types/node": "^22.15.21",
     "@types/react": "^19.1.5",
     "@types/react-dom": "^19.1.3",

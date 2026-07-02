@@ -98,7 +98,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${cormorant.variable} ${inter.variable}`}>
       <head>
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        {/* crossOrigin is required so the preconnected TCP socket can be reused for CORS requests */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        {/* Google Ads conversion pixel fires requests to doubleclick.net */}
+        <link rel="preconnect" href="https://googleads.g.doubleclick.net" crossOrigin="" />
+        <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}

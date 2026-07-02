@@ -1,7 +1,11 @@
+'use client'
+import dynamic from 'next/dynamic'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 import SectionHeading from '@/components/ui/SectionHeading'
-import ContactForm from './ContactForm'
 import { SITE_CONFIG } from '@/lib/constants'
+
+// Deferred — react-hook-form + zod are large and only needed when the form is in view
+const ContactForm = dynamic(() => import('./ContactForm'), { ssr: false })
 
 export default function ContactSection() {
   return (
