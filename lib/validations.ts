@@ -14,10 +14,8 @@ export const contactSchema = z.object({
       },
       { message: 'Wedding date must be in the future' }
     ),
-  venue: z.string().min(3, 'Please enter your venue or location'),
-  message: z
-    .string()
-    .min(10, 'Please tell me a bit more about your special day (min 10 characters)'),
+  venue: z.string().optional(),
+  message: z.string().optional(),
 })
 
 export type ContactFormData = z.infer<typeof contactSchema>

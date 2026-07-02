@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 }
 
-const RESORT_WHATSAPP = `https://wa.me/${SITE_CONFIG.whatsapp}?text=Hi%20Victor!%20I%20found%20your%20resort%20page%20and%20I%27m%20interested%20in%20live%20saxophone%20for%20our%20hotel%20or%20resort.`
+const RESORT_WHATSAPP = `https://wa.me/${SITE_CONFIG.whatsapp}?text=Hi%20Victor!%20I%20found%20your%20resort%20page%20and%20I%27d%20love%20to%20book%20live%20saxophone%20for%20our%20hotel%20or%20resort.`
 
 const PERFORMANCE_FORMATS = [
   { title: 'Restaurant & Lounge', desc: 'Ambient dinner sets that elevate the dining atmosphere and keep guests relaxed and engaged all evening.' },

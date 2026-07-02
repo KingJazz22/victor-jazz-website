@@ -2,8 +2,8 @@ import { SITE_CONFIG } from '@/lib/constants'
 
 const navLinks = [
   { label: 'Gallery', href: '#gallery' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Experiences', href: '#pricing' },
+  { label: 'Services', href: '#experience' },
+  { label: 'Packages', href: '#pricing' },
   { label: 'Destinations', href: '#destinations' },
   { label: 'FAQ', href: '#faq' },
   { label: 'Blog', href: '/blog' },

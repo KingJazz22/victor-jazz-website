@@ -26,8 +26,8 @@ export default function DestinationsSection() {
             <span className="text-[#f5f0e8]">Ayia Napa</span>,{' '}
             <span className="text-[#f5f0e8]">Nicosia</span> and everywhere in between. He is also
             available for destination weddings across the Mediterranean and beyond: the whitewashed
-            villas of <span className="text-[#f5f0e8]">Santorini</span>, the Amalfi cliffs, and
-            the ultra-luxury venues of{' '}
+            villas of <span className="text-[#f5f0e8]">Santorini</span>, the clifftop terraces of the
+            Amalfi Coast, and the ultra-luxury venues of{' '}
             <span className="text-[#f5f0e8]">Dubai</span> — every setting becomes more magical
             with live saxophone.
           </p>

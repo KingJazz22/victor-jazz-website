@@ -46,10 +46,10 @@ function buildEmailHtml(data: ContactFormData): string {
             <table width="100%" cellpadding="0" cellspacing="0">
               ${row('Name', data.name)}
               ${row('Wedding Date', data.weddingDate)}
-              ${row('Venue / Location', data.venue)}
+              ${row('Venue / Location', data.venue || 'Not decided yet')}
               ${row('Email', `<a href="mailto:${data.email}" style="color:#c9a96e;">${data.email}</a>`)}
               ${data.whatsapp ? row('WhatsApp', data.whatsapp) : ''}
-              ${row('Message', `<span style="white-space:pre-line;">${data.message}</span>`)}
+              ${row('Message', `<span style="white-space:pre-line;">${data.message || 'No additional message'}</span>`)}
             </table>
             ${whatsappLink}
           </td>

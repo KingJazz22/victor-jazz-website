@@ -1,3 +1,31 @@
+// iso: ISO 3166-1 alpha-2 country code(s), used to auto-select the dial code from the
+// visitor's location (see middleware.ts, which reads it from the CDN's geo header).
+export const DIAL_CODES = [
+  { code: '+44',  flag: '🇬🇧', label: 'UK', iso: ['GB'] },
+  { code: '+353', flag: '🇮🇪', label: 'Ireland', iso: ['IE'] },
+  { code: '+49',  flag: '🇩🇪', label: 'Germany', iso: ['DE'] },
+  { code: '+33',  flag: '🇫🇷', label: 'France', iso: ['FR'] },
+  { code: '+34',  flag: '🇪🇸', label: 'Spain', iso: ['ES'] },
+  { code: '+39',  flag: '🇮🇹', label: 'Italy', iso: ['IT'] },
+  { code: '+31',  flag: '🇳🇱', label: 'Netherlands', iso: ['NL'] },
+  { code: '+32',  flag: '🇧🇪', label: 'Belgium', iso: ['BE'] },
+  { code: '+41',  flag: '🇨🇭', label: 'Switzerland', iso: ['CH'] },
+  { code: '+43',  flag: '🇦🇹', label: 'Austria', iso: ['AT'] },
+  { code: '+46',  flag: '🇸🇪', label: 'Sweden', iso: ['SE'] },
+  { code: '+47',  flag: '🇳🇴', label: 'Norway', iso: ['NO'] },
+  { code: '+45',  flag: '🇩🇰', label: 'Denmark', iso: ['DK'] },
+  { code: '+351', flag: '🇵🇹', label: 'Portugal', iso: ['PT'] },
+  { code: '+30',  flag: '🇬🇷', label: 'Greece', iso: ['GR'] },
+  { code: '+357', flag: '🇨🇾', label: 'Cyprus', iso: ['CY'] },
+  { code: '+48',  flag: '🇵🇱', label: 'Poland', iso: ['PL'] },
+  { code: '+90',  flag: '🇹🇷', label: 'Turkey', iso: ['TR'] },
+  { code: '+1',   flag: '🇺🇸', label: 'USA / Canada', iso: ['US', 'CA'] },
+  { code: '+61',  flag: '🇦🇺', label: 'Australia', iso: ['AU'] },
+  { code: '+971', flag: '🇦🇪', label: 'UAE', iso: ['AE'] },
+] as const
+
+export const DEFAULT_DIAL_CODE = '+44'
+
 export const SITE_CONFIG = {
   name: 'Victor Jazz',
   fullName: 'Victor Jazz | Wedding Saxophonist Cyprus',
@@ -7,7 +35,7 @@ export const SITE_CONFIG = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.victorjazz.com',
   whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '353838980169',
   get whatsappUrl() {
-    return `https://wa.me/${this.whatsapp}?text=Hi%20Victor!%20I%20found%20you%20online%20and%20I'm%20interested%20in%20saxophone%20for%20my%20wedding%20in%20Cyprus.`
+    return `https://wa.me/${this.whatsapp}?text=Hi%20Victor!%20I%20found%20your%20website%20and%20I'd%20love%20to%20book%20live%20sax%20for%20my%20wedding%20in%20Cyprus.`
   },
   instagram: process.env.NEXT_PUBLIC_INSTAGRAM_HANDLE ?? 'victorjazzsaxophone',
   get instagramUrl() {
@@ -29,7 +57,7 @@ export const SERVICES = [
     id: 'ceremony',
     title: 'Wedding Ceremony',
     description:
-      'Live saxophone as you walk down the aisle — the most searched and most emotional moment of any Cyprus wedding. Processional, signing & recessional covered.',
+      'Live saxophone as you walk down the aisle — the most searched and most emotional moment of any Cyprus wedding. Covers your processional, register signing, and recessional.',
     video: '/videos/ceremony.mp4',
     poster: '/images/posters/ceremony.jpg',
     icon: 'ceremony',
@@ -273,7 +301,7 @@ export const FAQS = [
   },
   {
     q: 'What genres and songs can you play?',
-    a: 'Victor\'s repertoire spans pop, jazz, soul, R&B, classical, and contemporary hits — from Ed Sheeran and John Legend to jazz standards and classical ceremony pieces. Every setlist is custom-built for your day. You can request specific songs for the aisle walk, signing, or first dance, and Victor learns new pieces ahead of your wedding at no extra charge.',
+    a: 'Victor\'s repertoire spans pop, jazz, soul, R&B, classical, and contemporary hits — from Ed Sheeran and John Legend to jazz standards and classical ceremony pieces. Every setlist is custom-built for your day. You can request specific songs for the aisle walk, register signing, or first dance, and Victor learns new pieces ahead of your wedding at no extra charge.',
   },
   {
     q: 'Can you perform with a DJ?',
@@ -293,7 +321,7 @@ export const SETLIST = [
   {
     id: 'ceremony',
     label: 'Ceremony',
-    description: 'Elegant, emotional pieces for your processional, signing & recessional',
+    description: 'Elegant, emotional pieces for your processional, register signing & recessional',
     songs: [
       { title: 'Canon in D', artist: 'Pachelbel' },
       { title: 'A Thousand Years', artist: 'Christina Perri' },
@@ -359,7 +387,7 @@ export const PACKAGES = [
     duration: 'Up to 45 min',
     featured: false,
     includes: [
-      'Processional, signing & recessional',
+      'Processional, register signing & recessional',
       '2 personalised song requests',
       'Pre-wedding consultation',
       'Professional wireless PA system',

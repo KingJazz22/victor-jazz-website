@@ -35,7 +35,7 @@ export const BLOG_POSTS: BlogPost[] = [
       },
       {
         type: 'p',
-        text: 'Whether you are getting married on a clifftop terrace in Paphos, a sandy beach in Ayia Napa, or inside one of Cyprus\'s grand venue ballrooms, the saxophone adapts beautifully. It carries across open air without losing intimacy. It can be whisper-soft for a signing moment, or soaring and powerful for a recessional. Most importantly, it is live — so it breathes with the moment, responding to the pace of the procession, the length of the signing, the energy in the room.',
+        text: 'Whether you are getting married on a clifftop terrace in Paphos, a sandy beach in Ayia Napa, or inside one of Cyprus\'s grand venue ballrooms, the saxophone adapts beautifully. It carries across open air without losing intimacy. It can be whisper-soft for the register-signing moment, or soaring and powerful for a recessional. Most importantly, it is live — so it breathes with the moment, responding to the pace of the procession, the length of the signing, the energy in the room.',
       },
       {
         type: 'h2',
@@ -76,11 +76,11 @@ export const BLOG_POSTS: BlogPost[] = [
       },
       {
         type: 'h3',
-        text: 'The Signing',
+        text: 'The Register Signing',
       },
       {
         type: 'p',
-        text: 'While the legal signing takes place, softer background music fills the moment beautifully. This is a wonderful opportunity for a second meaningful song — perhaps something that was playing on your first date, or a piece that holds private meaning between you.',
+        text: 'While you and your partner sign the register, softer background music fills the moment beautifully. This is a wonderful opportunity for a second meaningful song — perhaps something that was playing on your first date, or a piece that holds private meaning between you.',
       },
       {
         type: 'h3',

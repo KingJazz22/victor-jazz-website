@@ -6,30 +6,18 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { contactSchema, type ContactFormData } from '@/lib/validations'
 import { cn } from '@/lib/utils'
 import { gtagConversion, CONVERSION_LABELS } from '@/lib/gtag'
+import { DIAL_CODES, DEFAULT_DIAL_CODE } from '@/lib/constants'
 
-const DIAL_CODES = [
-  { code: '+44',  flag: '🇬🇧', label: 'UK' },
-  { code: '+353', flag: '🇮🇪', label: 'Ireland' },
-  { code: '+49',  flag: '🇩🇪', label: 'Germany' },
-  { code: '+33',  flag: '🇫🇷', label: 'France' },
-  { code: '+34',  flag: '🇪🇸', label: 'Spain' },
-  { code: '+39',  flag: '🇮🇹', label: 'Italy' },
-  { code: '+31',  flag: '🇳🇱', label: 'Netherlands' },
-  { code: '+32',  flag: '🇧🇪', label: 'Belgium' },
-  { code: '+41',  flag: '🇨🇭', label: 'Switzerland' },
-  { code: '+43',  flag: '🇦🇹', label: 'Austria' },
-  { code: '+46',  flag: '🇸🇪', label: 'Sweden' },
-  { code: '+47',  flag: '🇳🇴', label: 'Norway' },
-  { code: '+45',  flag: '🇩🇰', label: 'Denmark' },
-  { code: '+351', flag: '🇵🇹', label: 'Portugal' },
-  { code: '+30',  flag: '🇬🇷', label: 'Greece' },
-  { code: '+357', flag: '🇨🇾', label: 'Cyprus' },
-  { code: '+48',  flag: '🇵🇱', label: 'Poland' },
-  { code: '+90',  flag: '🇹🇷', label: 'Turkey' },
-  { code: '+1',   flag: '🇺🇸', label: 'USA / Canada' },
-  { code: '+61',  flag: '🇦🇺', label: 'Australia' },
-  { code: '+971', flag: '🇦🇪', label: 'UAE' },
-]
+// Middleware reads the visitor's country from the CDN's geo header and stores it in this
+// cookie, so the dial code can default to their country without any client-side lookup.
+function detectDialCode(): string {
+  if (typeof document === 'undefined') return DEFAULT_DIAL_CODE
+  const match = document.cookie.match(/(?:^|;\s*)vj_country=([A-Z]{2})/)
+  const iso = match?.[1]
+  if (!iso) return DEFAULT_DIAL_CODE
+  const found = DIAL_CODES.find((d) => (d.iso as readonly string[]).includes(iso))
+  return found?.code ?? DEFAULT_DIAL_CODE
+}
 
 const inputClass =
   'w-full bg-white/[0.04] border border-[#c9a96e]/20 rounded-lg px-4 py-3.5 text-[#f5f0e8] text-sm placeholder-[#6b6b6b] transition-colors duration-200 focus:border-[#c9a96e] focus:outline-none focus:ring-1 focus:ring-[#c9a96e]/30 [&>option]:bg-[#1a1a1a] [&>option]:text-[#f5f0e8]'
@@ -39,7 +27,7 @@ const labelClass = 'block text-[#b8b8b8] text-xs uppercase tracking-[0.15em] mb-
 export default function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [errorMsg, setErrorMsg] = useState('')
-  const [dialCode, setDialCode] = useState('+44')
+  const [dialCode, setDialCode] = useState(detectDialCode)
 
   const {
     register,
@@ -153,12 +141,13 @@ export default function ContactForm() {
 
         <div>
           <label htmlFor="venue" className={labelClass}>
-            Venue / Location *
+            Venue / Location{' '}
+            <span className="text-[#6b6b6b] normal-case tracking-normal font-normal">(optional)</span>
           </label>
           <input
             id="venue"
             type="text"
-            placeholder="e.g. Aphrodite Hills, Paphos"
+            placeholder="e.g. Aphrodite Hills, Paphos — or leave blank if not decided yet"
             className={cn(inputClass, errors.venue && 'border-red-500/60')}
             {...register('venue')}
           />
@@ -207,12 +196,13 @@ export default function ContactForm() {
 
       <div>
         <label htmlFor="message" className={labelClass}>
-          Tell Me About Your Day *
+          Tell Victor About Your Day{' '}
+          <span className="text-[#6b6b6b] normal-case tracking-normal font-normal">(optional)</span>
         </label>
         <textarea
           id="message"
           rows={4}
-          placeholder="Tell me a little about your wedding — the venue, atmosphere, music you love, and how you imagine the saxophone fitting in to your day…"
+          placeholder="Anything you'd like Victor to know — atmosphere, music you love, or how you imagine the saxophone fitting into your day…"
           className={cn(inputClass, 'resize-none', errors.message && 'border-red-500/60')}
           {...register('message')}
         />

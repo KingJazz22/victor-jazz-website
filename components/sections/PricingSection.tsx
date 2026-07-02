@@ -9,7 +9,7 @@ const EXPERIENCES = [
     description:
       'Live saxophone as you walk down the aisle. From your processional entrance to the joyful recessional — an unforgettable soundtrack for your most important moment. Church ceremonies, clifftop vows, and beach weddings across Cyprus.',
     highlights: [
-      'Processional, signing & recessional',
+      'Processional, register signing & recessional',
       'Bespoke song requests for the aisle',
       'Pre-wedding music consultation',
       'Professional PA system',

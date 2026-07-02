@@ -48,7 +48,7 @@ export default function ResortContactForm() {
             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="font-serif text-2xl text-[#f5f0e8] font-light mb-3">Inquiry Received</h3>
+        <h3 className="font-serif text-2xl text-[#f5f0e8] font-light mb-3">Enquiry Received</h3>
         <p className="text-[#9e9e9e] text-sm leading-relaxed">
           Thank you for reaching out. Victor will personally reply within 24 hours with availability and a tailored proposal.
         </p>
@@ -61,7 +61,7 @@ export default function ResortContactForm() {
       onSubmit={handleSubmit(onSubmit)}
       className="glass rounded-2xl p-6 md:p-8 space-y-5"
       noValidate
-      aria-label="Resort and hotel booking inquiry form"
+      aria-label="Resort and hotel booking enquiry form"
     >
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
@@ -168,7 +168,7 @@ export default function ResortContactForm() {
         type="submit"
         disabled={status === 'loading'}
         className="w-full py-4 rounded-full bg-[#c9a96e] text-[#080808] font-semibold text-sm uppercase tracking-[0.15em] hover:bg-[#e8c97a] transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a96e] focus-visible:ring-offset-2 focus-visible:ring-offset-[#080808]"
-        aria-label="Submit resort booking inquiry"
+        aria-label="Submit resort booking enquiry"
       >
         {status === 'loading' ? (
           <span className="flex items-center justify-center gap-2">
