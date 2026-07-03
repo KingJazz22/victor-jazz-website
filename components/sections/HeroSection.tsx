@@ -16,6 +16,11 @@ export default function HeroSection() {
     const conn = (navigator as any).connection
     if (conn && (conn.saveData || /2g/.test(conn.effectiveType ?? ''))) return
 
+    // React/SSR doesn't reliably reflect the JSX `muted` prop as the DOM property on
+    // first paint, and mobile browsers require the property (not just the attribute)
+    // to be true at play() time to allow autoplay — so set it explicitly here.
+    video.muted = true
+
     // Defer video load until after page is interactive so hero image wins LCP uncontested
     video.src = '/videos/hero.mp4'
     video.load()
