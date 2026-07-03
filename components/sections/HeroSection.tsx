@@ -11,12 +11,10 @@ export default function HeroSection() {
     const video = videoRef.current
     if (!video) return
 
-    // Skip the 1.4MB autoplay video on small screens and slow/metered connections —
-    // it was the single largest resource on the page and tanked mobile LCP/TBT for
-    // visitors who get the same experience from the static poster image anyway.
+    // Skip autoplay on slow/metered connections — same experience from the
+    // static poster image without the extra download.
     const conn = (navigator as any).connection
     if (conn && (conn.saveData || /2g/.test(conn.effectiveType ?? ''))) return
-    if (!window.matchMedia('(min-width: 768px)').matches) return
 
     // Defer video load until after page is interactive so hero image wins LCP uncontested
     video.src = '/videos/hero.mp4'
