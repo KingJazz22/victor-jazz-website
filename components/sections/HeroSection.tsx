@@ -21,10 +21,31 @@ export default function HeroSection() {
     // to be true at play() time to allow autoplay — so set it explicitly here.
     video.muted = true
 
+    const tryPlay = () => video.play().catch(() => {})
+
+    // Some mobile browsers (notably in-app webviews like Instagram/Facebook) reject
+    // programmatic play() even when muted, and only allow it once there's been some
+    // user interaction with the page. Retry on the video's own readiness event and on
+    // the first touch/click anywhere so playback still kicks in for those browsers.
+    video.addEventListener('canplay', tryPlay, { once: true })
+    const onFirstInteraction = () => {
+      tryPlay()
+      window.removeEventListener('touchstart', onFirstInteraction)
+      window.removeEventListener('click', onFirstInteraction)
+    }
+    window.addEventListener('touchstart', onFirstInteraction, { once: true, passive: true })
+    window.addEventListener('click', onFirstInteraction, { once: true })
+
     // Defer video load until after page is interactive so hero image wins LCP uncontested
     video.src = '/videos/hero.mp4'
     video.load()
-    video.play().catch(() => {})
+    tryPlay()
+
+    return () => {
+      video.removeEventListener('canplay', tryPlay)
+      window.removeEventListener('touchstart', onFirstInteraction)
+      window.removeEventListener('click', onFirstInteraction)
+    }
   }, [])
 
   return (
