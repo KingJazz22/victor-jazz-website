@@ -34,4 +34,11 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-.vercel
+# ad-hoc test/analysis artifacts (screenshots, lighthouse runs, ad exports)
+/ADS/
+/lighthouse*.json
+/*-before.png
+/*-filled.png
+/*-result.png
+/*-success.png
+/ads*.png
