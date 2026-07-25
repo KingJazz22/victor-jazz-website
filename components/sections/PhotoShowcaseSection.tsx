@@ -7,7 +7,7 @@ export default function PhotoShowcaseSection() {
   return (
     <section
       id="photos"
-      className="pt-10 md:pt-12 pb-10 md:pb-14 px-5 bg-[#0a0a0a]"
+      className="pt-10 md:pt-12 pb-10 md:pb-14 px-5 bg-[#0a0a0a] [content-visibility:auto] [contain-intrinsic-size:auto_700px]"
       aria-label="Victor Jazz — photos and portraits"
     >
       <div className="max-w-7xl mx-auto">

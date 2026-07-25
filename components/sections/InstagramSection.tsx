@@ -56,7 +56,7 @@ export default function InstagramSection() {
   return (
     <section
       id="instagram"
-      className="py-20 md:py-28 px-5 bg-[#0a0a0a]"
+      className="py-20 md:py-28 px-5 bg-[#0a0a0a] [content-visibility:auto] [contain-intrinsic-size:auto_700px]"
       aria-label="Follow Victor Jazz on Instagram"
     >
       <div className="max-w-7xl mx-auto">

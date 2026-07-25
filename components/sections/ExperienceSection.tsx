@@ -51,7 +51,7 @@ export default function ExperienceSection() {
   return (
     <section
       id="experience"
-      className="py-10 md:py-14 px-5 bg-[#080808]"
+      className="py-10 md:py-14 px-5 bg-[#080808] [content-visibility:auto] [contain-intrinsic-size:auto_700px]"
       aria-label="Wedding saxophone experiences"
     >
       <div className="max-w-7xl mx-auto">

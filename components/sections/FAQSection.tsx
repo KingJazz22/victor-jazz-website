@@ -11,7 +11,7 @@ export default function FAQSection() {
   return (
     <section
       id="faq"
-      className="py-10 md:py-14 px-5 bg-[#080808]"
+      className="py-10 md:py-14 px-5 bg-[#080808] [content-visibility:auto] [contain-intrinsic-size:auto_700px]"
       aria-label="Frequently asked questions about hiring a wedding saxophonist"
     >
       <div className="max-w-3xl mx-auto">

@@ -7,7 +7,7 @@ export default function DestinationsSection() {
   return (
     <section
       id="destinations"
-      className="py-10 md:py-14 px-5 bg-[#0a0a0a]"
+      className="py-10 md:py-14 px-5 bg-[#0a0a0a] [content-visibility:auto] [contain-intrinsic-size:auto_700px]"
       aria-label="Destination wedding locations"
     >
       <div className="max-w-7xl mx-auto">

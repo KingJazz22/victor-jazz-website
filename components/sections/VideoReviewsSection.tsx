@@ -142,7 +142,7 @@ export default function VideoReviewsSection() {
   return (
     <section
       id="reviews"
-      className="pt-10 md:pt-12 pb-20 md:pb-32 px-5 bg-[#080808]"
+      className="pt-10 md:pt-12 pb-20 md:pb-32 px-5 bg-[#080808] [content-visibility:auto] [contain-intrinsic-size:auto_700px]"
       aria-label="Couple video reviews"
     >
       <div className="max-w-7xl mx-auto">

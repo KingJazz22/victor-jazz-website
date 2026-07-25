@@ -50,7 +50,7 @@ export default function PricingSection() {
   return (
     <section
       id="pricing"
-      className="py-20 md:py-32 px-5 bg-[#080808]"
+      className="py-20 md:py-32 px-5 bg-[#080808] [content-visibility:auto] [contain-intrinsic-size:auto_700px]"
       aria-label="Wedding saxophone experiences — ceremony, cocktail hour, and full day"
     >
       <div className="max-w-5xl mx-auto">

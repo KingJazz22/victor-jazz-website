@@ -12,7 +12,7 @@ export default function VideoGallerySection() {
   return (
     <section
       id="gallery"
-      className="pt-8 md:pt-12 pb-10 md:pb-12 px-5 bg-[#080808]"
+      className="pt-8 md:pt-12 pb-10 md:pb-12 px-5 bg-[#080808] [content-visibility:auto] [contain-intrinsic-size:auto_700px]"
       aria-label="Video gallery — Victor Jazz performances"
     >
       <div className="max-w-7xl mx-auto">
