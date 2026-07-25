@@ -1,4 +1,5 @@
 import { SITE_CONFIG } from '@/lib/constants'
+import WhatsAppLink from '@/components/ui/WhatsAppLink'
 
 const navLinks = [
   { label: 'Gallery', href: '#gallery' },
@@ -38,15 +39,12 @@ export default function Footer() {
               >
                 <InstagramIcon />
               </a>
-              <a
-                href={SITE_CONFIG.whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+              <WhatsAppLink
                 className="text-[#9e9e9e] hover:text-[#25D366] transition-colors"
                 aria-label="Contact Victor Jazz on WhatsApp"
               >
                 <WhatsAppIcon />
-              </a>
+              </WhatsAppLink>
             </div>
           </div>
 

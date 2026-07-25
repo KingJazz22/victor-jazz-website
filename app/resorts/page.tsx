@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { SITE_CONFIG } from '@/lib/constants'
 import ResortContactForm from '@/components/sections/ResortContactFormLoader'
 import ResortVideos from '@/components/sections/ResortVideos'
+import WhatsAppLink from '@/components/ui/WhatsAppLink'
 
 export const metadata: Metadata = {
   title: 'Resort & Hotel Saxophonist | Victor Jazz — Luxury Live Music for Hospitality',
@@ -207,15 +208,13 @@ export default function ResortsPage() {
           <div className="mt-8">
             <p className="text-center text-[#6b6b6b] text-xs uppercase tracking-[0.2em] mb-4">Or reach out directly</p>
             <div className="flex flex-col sm:flex-row gap-3">
-              <a
+              <WhatsAppLink
                 href={RESORT_WHATSAPP}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2.5 flex-1 py-3.5 rounded-full bg-[#25D366] text-white font-semibold text-sm uppercase tracking-[0.12em] hover:brightness-110 transition-all duration-300"
               >
                 <WhatsAppIcon />
                 WhatsApp
-              </a>
+              </WhatsAppLink>
               <a
                 href={SITE_CONFIG.instagramUrl}
                 target="_blank"

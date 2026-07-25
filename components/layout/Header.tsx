@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation'
 import { SITE_CONFIG } from '@/lib/constants'
+import { gtagConversion, CONVERSION_LABELS } from '@/lib/gtag'
 
 const homeNavLinks = [
   { label: 'Videos', href: '#gallery' },
@@ -67,10 +68,14 @@ export default function Header() {
             </a>
           ))}
           <a
-            href="#contact"
-            className="ml-4 px-6 py-2.5 rounded-full border border-[#c9a96e]/60 text-[#c9a96e] text-xs uppercase tracking-[0.2em] hover:bg-[#c9a96e] hover:text-[#080808] transition-all duration-300"
+            href={SITE_CONFIG.whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => gtagConversion(CONVERSION_LABELS.whatsapp || undefined)}
+            className="ml-4 flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#25D366] text-white text-xs uppercase tracking-[0.2em] font-semibold hover:brightness-110 transition-all duration-300"
           >
-            {isResorts ? 'Request Availability' : 'Book Now'}
+            <WhatsAppIcon />
+            WhatsApp
           </a>
         </nav>
 
@@ -118,7 +123,10 @@ export default function Header() {
             href={SITE_CONFIG.whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={handleNavClick}
+            onClick={() => {
+              handleNavClick()
+              gtagConversion(CONVERSION_LABELS.whatsapp || undefined)
+            }}
             className="mt-2 flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#25D366] text-white text-sm font-semibold uppercase tracking-[0.1em] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2 focus-visible:ring-offset-[#080808]"
           >
             <WhatsAppIcon />
