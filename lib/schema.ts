@@ -1,4 +1,4 @@
-import { SITE_CONFIG, SERVICES, FAQS } from './constants'
+import { SITE_CONFIG, SERVICES, FAQS, TESTIMONIALS } from './constants'
 
 export function generateSchemaGraph() {
   return {
@@ -6,6 +6,7 @@ export function generateSchemaGraph() {
     '@graph': [
       generateLocalBusinessSchema(),
       generateMusicGroupSchema(),
+      generatePersonSchema(),
       generateFAQSchema(),
     ],
   }
@@ -43,6 +44,16 @@ function generateLocalBusinessSchema() {
       bestRating: '5',
       worstRating: '1',
     },
+    review: TESTIMONIALS.map((t) => ({
+      '@type': 'Review',
+      author: { '@type': 'Person', name: t.name },
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: t.stars,
+        bestRating: 5,
+      },
+      reviewBody: t.quote,
+    })),
     sameAs: [SITE_CONFIG.instagramUrl],
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
@@ -90,12 +101,22 @@ function generateMusicGroupSchema() {
       '@type': 'Place',
       name: 'Cyprus',
     },
-    member: {
-      '@type': 'Person',
-      name: 'Victor Jazz',
-      jobTitle: 'Professional Wedding Saxophonist',
-      worksFor: { '@id': `${SITE_CONFIG.url}/#business` },
-    },
+    member: { '@id': `${SITE_CONFIG.url}/#victor` },
+    sameAs: [SITE_CONFIG.instagramUrl],
+  }
+}
+
+function generatePersonSchema() {
+  return {
+    '@type': 'Person',
+    '@id': `${SITE_CONFIG.url}/#victor`,
+    name: 'Victor Jazz',
+    jobTitle: 'Professional Wedding Saxophonist',
+    description: SITE_CONFIG.description,
+    image: `${SITE_CONFIG.url}/images/og-image.jpg`,
+    url: SITE_CONFIG.url,
+    worksFor: { '@id': `${SITE_CONFIG.url}/#business` },
+    memberOf: { '@id': `${SITE_CONFIG.url}/#performer` },
     sameAs: [SITE_CONFIG.instagramUrl],
   }
 }
