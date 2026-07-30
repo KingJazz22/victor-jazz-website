@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     'luxury resort entertainment', 'Maldives saxophonist', 'Dubai saxophonist',
     'Egypt resort entertainment', 'Caribbean saxophonist', 'hotel live music',
     'resort residency saxophone', 'hospitality entertainment', 'winter residency musician',
+    'corporate event saxophonist', 'international saxophonist',
   ],
   openGraph: {
     title: 'Resort & Hotel Saxophonist | Victor Jazz',

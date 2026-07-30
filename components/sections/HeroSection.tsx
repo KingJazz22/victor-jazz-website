@@ -152,8 +152,9 @@ export default function HeroSection() {
       </div>
 
       <h2 className="sr-only">
-        Victor Jazz — Professional wedding saxophonist available island-wide across Cyprus:
-        Paphos, Limassol, Nicosia, Ayia Napa and beyond. Destination weddings worldwide.
+        Victor Jazz — International live saxophonist available island-wide across Cyprus:
+        Paphos, Limassol, Nicosia, Ayia Napa and beyond. Book a saxophonist for destination
+        weddings, corporate events and private events worldwide.
       </h2>
     </section>
   )

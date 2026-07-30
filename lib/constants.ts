@@ -312,8 +312,8 @@ export const FAQS = [
     a: 'Victor arrives with professional-grade wireless microphones, a full PA system sized for your venue (suitable for up to 300+ guests), and all necessary backline. You simply need a power socket and a performance area. Victor liaises directly with your venue coordinator ahead of the day to ensure a seamless setup.',
   },
   {
-    q: 'Are you available for hen parties and private events?',
-    a: 'Yes. Victor performs at hen parties, pool parties, villa events, yacht charters, corporate functions, and milestone celebrations across Cyprus — Paphos, Limassol, Ayia Napa, Nicosia and beyond. Get in touch with your event details for a tailored quote.',
+    q: 'Are you available for corporate events, hen parties and private events?',
+    a: 'Yes. Victor performs as a live saxophonist for corporate events, hen parties, pool parties, villa events, yacht charters, and milestone celebrations across Cyprus — Paphos, Limassol, Ayia Napa, Nicosia and beyond. Get in touch with your event details for a tailored quote.',
   },
 ]
 
