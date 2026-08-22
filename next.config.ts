@@ -18,6 +18,10 @@ const config: NextConfig = {
     // optimizeCss uses critters to inline critical CSS, but critters does not support
     // Next.js 15 App Router's data-precedence stylesheet loading — disable until fixed upstream.
     // optimizeCss: true,
+    // Our whole CSS bundle is ~11KB (Tailwind, already purged), so inlining it as <style>
+    // instead of a render-blocking <link> removes 2 network round trips from the critical
+    // path — same effect as critical-CSS extraction without needing critters/Beasties.
+    inlineCss: true,
   },
   webpack(config, { isServer }) {
     if (!isServer) {
