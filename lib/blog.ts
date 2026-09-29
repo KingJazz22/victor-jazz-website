@@ -17,6 +17,133 @@ export type BlogPost = {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: 'surprise-wedding-gift-saxophonist-cyprus',
+    title: 'The Best Wedding Gift in Cyprus: Surprise the Couple with a Live Saxophonist',
+    description:
+      'Looking for an unforgettable wedding present? Brothers, sisters, best men, bridesmaids, parents and guests book Victor Jazz as a surprise live saxophone performance for the couple in Cyprus — a memorable experience gift they will never forget.',
+    date: '2026-09-29',
+    readTime: '5 min read',
+    category: 'Gifts & Surprises',
+    body: [
+      {
+        type: 'p',
+        text: 'Every couple receives kitchenware, vouchers and envelopes. Very few receive a moment. A surprise live saxophone performance on their wedding day is one of the most unforgettable, remarkable and personal wedding gifts you can give — and more and more brothers, sisters, best men, maids of honour, bridesmaids, parents and close friends are booking Victor Jazz in Cyprus as their wedding present to the couple.',
+      },
+      {
+        type: 'h2',
+        text: 'Why a Surprise Saxophonist Is the Best Wedding Present',
+      },
+      {
+        type: 'p',
+        text: 'Couples often say they do not need more things. What they remember for the rest of their lives is how their wedding day felt. A live saxophonist is an experience gift — a non-material, intangible present that turns into a memory, a video they will watch again and again, and a story their guests will tell for years. It is a gift of emotion rather than objects, and that is exactly why it is so memorable.',
+      },
+      {
+        type: 'ul',
+        items: [
+          'Unforgettable — the moment the saxophone starts, and the couple realises it is for them, is one they never forget',
+          'Personal — you can choose the song that means the most to them: their first-date song, their first dance, or a favourite from childhood',
+          'Shared — the whole wedding party enjoys the gift, not just the couple',
+          'Lasting — it lives on in the wedding photos, the wedding film and every guest\'s phone',
+          'Stress-free for the couple — they do nothing; you and Victor handle everything',
+        ],
+      },
+      {
+        type: 'h2',
+        text: 'Who Books a Surprise Saxophonist as a Wedding Gift?',
+      },
+      {
+        type: 'ul',
+        items: [
+          'Brothers and sisters of the bride or groom who want to give something bigger than a present on the gift table',
+          'Brothers-in-law and sisters-in-law welcoming a new member into the family with a grand gesture',
+          'The best man or maid of honour, as a surprise to follow the wedding speeches',
+          'Bridesmaids and groomsmen chipping in together for a group wedding gift',
+          'Parents and grandparents who want to give the couple a romantic, emotional moment',
+          'Friends and guests travelling to Cyprus for a destination wedding who want a gift that suits the setting',
+          'The bride surprising the groom — or the groom surprising the bride',
+        ],
+      },
+      {
+        type: 'h2',
+        text: 'Surprise Ideas That Work Beautifully in Cyprus',
+      },
+      {
+        type: 'h3',
+        text: 'The Sunset Surprise',
+      },
+      {
+        type: 'p',
+        text: 'Cyprus sunsets are famous. Picture the couple stepping out for their golden-hour photos on a clifftop terrace in Paphos or a beach in Ayia Napa — and hearing live saxophone play their song as the sun goes down. It is one of the most romantic surprises possible, and it looks incredible on camera.',
+      },
+      {
+        type: 'h3',
+        text: 'The Grand Entrance',
+      },
+      {
+        type: 'p',
+        text: 'As the newlyweds walk into their reception, Victor appears playing live, leading them in through their guests. The room lifts instantly, and the couple know straight away that somebody who loves them arranged it.',
+      },
+      {
+        type: 'h3',
+        text: 'The First Dance Upgrade',
+      },
+      {
+        type: 'p',
+        text: 'The couple expect their first dance song through the speakers. Halfway through, a live saxophone joins in — or takes over completely. It is a small change that creates a remarkable, emotional moment.',
+      },
+      {
+        type: 'h3',
+        text: 'After the Speeches',
+      },
+      {
+        type: 'p',
+        text: 'The best man or a sibling finishes their speech with: "We have one more gift for you." Victor begins to play. It is the perfect way to end a wedding speech and move straight into the party.',
+      },
+      {
+        type: 'h3',
+        text: 'The DJ + Sax Party Surprise',
+      },
+      {
+        type: 'p',
+        text: 'For couples who love to dance, a surprise DJ + Sax set turns the evening reception into a luxury beach-club party. Victor plays live saxophone over the DJ\'s tracks, walks through the crowd and gets everyone on the dance floor.',
+      },
+      {
+        type: 'h2',
+        text: 'How to Organise the Surprise Without the Couple Finding Out',
+      },
+      {
+        type: 'ul',
+        items: [
+          'Message Victor on WhatsApp or through the contact form and mention that it is a surprise gift — all communication stays with you, never the couple',
+          'Share the wedding date, venue and the moment you want the surprise to happen',
+          'Tell Victor the couple\'s special songs if you know them — a quiet word with a close friend usually helps',
+          'Let the wedding planner or venue coordinator know, so the timing and setup fit smoothly into the day',
+          'Victor arrives discreetly, sets up out of sight, and appears at exactly the right moment',
+        ],
+      },
+      {
+        type: 'highlight',
+        text: 'Tip: Wedding dates in Cyprus between May and October book up early. If you are planning a surprise wedding gift, get in touch as soon as you know the date — you can confirm the details closer to the day.',
+      },
+      {
+        type: 'h2',
+        text: 'Splitting the Gift Between Family and Friends',
+      },
+      {
+        type: 'p',
+        text: 'A surprise saxophone performance is a popular group wedding gift. Siblings, bridesmaids or a group of friends often share the cost, so everyone contributes to one remarkable present rather than several small ones. Victor offers packages from a short surprise set up to a full evening performance, and will give you a personalised quote based on the date, venue and length of the performance.',
+      },
+      {
+        type: 'h2',
+        text: 'Give the Couple a Memory, Not Just a Present',
+      },
+      {
+        type: 'p',
+        text: 'Victor Jazz has performed at over 350 weddings across Paphos, Limassol, Ayia Napa, Nicosia and destination weddings abroad. He knows how to time a surprise, read a room and turn a few minutes of music into the moment everyone remembers. If you are looking for the best wedding gift for a couple getting married in Cyprus — something unforgettable, meaningful and truly one of a kind — send Victor a message and start planning the surprise.',
+      },
+    ],
+  },
+  {
     slug: 'wedding-ceremony-music-cyprus',
     title: 'What Music Should You Choose for Your Cyprus Wedding Ceremony?',
     description:

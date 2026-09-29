@@ -312,6 +312,14 @@ export const FAQS = [
     a: 'Victor arrives with professional-grade wireless microphones, a full PA system sized for your venue (suitable for up to 300+ guests), and all necessary backline. You simply need a power socket and a performance area. Victor liaises directly with your venue coordinator ahead of the day to ensure a seamless setup.',
   },
   {
+    q: 'Can I book you as a surprise wedding gift for a couple?',
+    a: 'Yes — and it is one of the most memorable wedding presents you can give. Brothers, sisters, in-laws, best men, bridesmaids, parents and guests regularly book Victor as a surprise for the couple: a live saxophone performance at sunset, during the grand entrance, after the speeches, or over the first dance. Just mention it is a surprise when you get in touch, and all communication stays with you so the couple never finds out.',
+  },
+  {
+    q: 'What is a good unique wedding gift for a couple getting married in Cyprus?',
+    a: 'An experience gift. Instead of another physical present, give the couple an unforgettable moment — a surprise live saxophone performance of their favourite song. It becomes part of their wedding film, their photos and their memories forever. It also works well as a group gift shared between siblings, bridesmaids or friends.',
+  },
+  {
     q: 'Are you available for corporate events, hen parties and private events?',
     a: 'Yes. Victor performs as a live saxophonist for corporate events, hen parties, pool parties, villa events, yacht charters, and milestone celebrations across Cyprus — Paphos, Limassol, Ayia Napa, Nicosia and beyond. Get in touch with your event details for a tailored quote.',
   },
