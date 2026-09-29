@@ -74,7 +74,7 @@ export default function ResortVideos() {
           >
             <div id={`rv-${i}`} className="absolute inset-0 w-full h-full" />
           </div>
-          <p className="text-[#6b6b6b] text-[10px] text-center uppercase tracking-[0.15em]">
+          <p className="text-[#8a8a8a] text-[10px] text-center uppercase tracking-[0.15em]">
             {label}
           </p>
         </div>

@@ -125,7 +125,7 @@ export default function PricingSection() {
         </div>
 
         <AnimatedSection className="mt-10 text-center">
-          <p className="text-[#6b6b6b] text-xs leading-relaxed max-w-xl mx-auto">
+          <p className="text-[#8a8a8a] text-xs leading-relaxed max-w-xl mx-auto">
             Every performance is bespoke — final details are agreed personally with Victor.
             Destination weddings in Greece, Italy, France, Dubai, and beyond are very welcome.
           </p>

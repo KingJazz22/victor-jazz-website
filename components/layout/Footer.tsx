@@ -84,7 +84,7 @@ export default function Footer() {
 
         {/* SEO copy */}
         <div className="border-t border-[#c9a96e]/10 pt-8">
-          <p className="text-[#6b6b6b] text-xs leading-relaxed text-center">
+          <p className="text-[#8a8a8a] text-xs leading-relaxed text-center">
             Victor Jazz is a luxury wedding saxophonist based in Cyprus, available island-wide —
             Paphos, Limassol, Ayia Napa, Nicosia and beyond — specialising in live saxophone for
             ceremonies, cocktail hours, beach weddings, sunset sets, DJ+sax performances, yacht
@@ -95,7 +95,7 @@ export default function Footer() {
             Make You Feel My Love, Somewhere Over the Rainbow, and more — each arranged and performed
             personally for your wedding.
           </p>
-          <p className="mt-6 text-center text-[#6b6b6b] text-xs">
+          <p className="mt-6 text-center text-[#8a8a8a] text-xs">
             © {new Date().getFullYear()} Victor Jazz. All rights reserved. Cyprus — available island-wide.
           </p>
         </div>

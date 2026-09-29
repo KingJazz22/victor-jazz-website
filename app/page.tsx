@@ -1,6 +1,7 @@
 import dynamic from 'next/dynamic'
 import HeroSection from '@/components/sections/HeroSection'
 import TrustSection from '@/components/sections/TrustSection'
+import HydrateOnVisible from '@/components/ui/HydrateOnVisible'
 
 const VideoGallerySection  = dynamic(() => import('@/components/sections/VideoGallerySection'))
 const PhotoShowcaseSection = dynamic(() => import('@/components/sections/PhotoShowcaseSection'))
@@ -18,16 +19,16 @@ export default function HomePage() {
     <>
       <HeroSection />
       <TrustSection />
-      <VideoGallerySection />
-      <VideoReviewsSection />
-      <PhotoShowcaseSection />
-      <ExperienceSection />
-      <PricingSection />
-      <DestinationsSection />
-      <TestimonialsSection />
-      <FAQSection />
-      <InstagramSection />
-      <ContactSection />
+      <HydrateOnVisible id="gallery"><VideoGallerySection /></HydrateOnVisible>
+      <HydrateOnVisible id="reviews"><VideoReviewsSection /></HydrateOnVisible>
+      <HydrateOnVisible id="photos"><PhotoShowcaseSection /></HydrateOnVisible>
+      <HydrateOnVisible id="experience"><ExperienceSection /></HydrateOnVisible>
+      <HydrateOnVisible id="pricing"><PricingSection /></HydrateOnVisible>
+      <HydrateOnVisible id="destinations"><DestinationsSection /></HydrateOnVisible>
+      <HydrateOnVisible id="testimonials"><TestimonialsSection /></HydrateOnVisible>
+      <HydrateOnVisible id="faq"><FAQSection /></HydrateOnVisible>
+      <HydrateOnVisible id="instagram"><InstagramSection /></HydrateOnVisible>
+      <HydrateOnVisible id="contact"><ContactSection /></HydrateOnVisible>
     </>
   )
 }

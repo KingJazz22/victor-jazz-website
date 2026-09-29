@@ -33,7 +33,7 @@ export default function StickyMobile() {
           href={SITE_CONFIG.whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-1 flex items-center justify-center gap-2 py-4 bg-[#25D366] text-white text-sm font-semibold uppercase tracking-[0.1em] active:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2 focus-visible:ring-offset-[#080808]"
+          className="flex-1 flex items-center justify-center gap-2 py-4 bg-[#1a7f42] text-white text-sm font-semibold uppercase tracking-[0.1em] active:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2 focus-visible:ring-offset-[#080808]"
           aria-label="Contact Victor Jazz on WhatsApp"
           onClick={() => gtagConversion(CONVERSION_LABELS.whatsapp || undefined)}
         >

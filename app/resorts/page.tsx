@@ -119,7 +119,7 @@ export default function ResortsPage() {
           </div>
           <ResortVideos />
           <p className="text-center mt-6">
-            <a href={SITE_CONFIG.instagramUrl} target="_blank" rel="noopener noreferrer" className="text-[#6b6b6b] text-xs hover:text-[#c9a96e] transition-colors uppercase tracking-[0.15em]">
+            <a href={SITE_CONFIG.instagramUrl} target="_blank" rel="noopener noreferrer" className="text-[#8a8a8a] text-xs hover:text-[#c9a96e] transition-colors uppercase tracking-[0.15em]">
               More on Instagram @victorjazzsaxophone &rarr;
             </a>
           </p>
@@ -207,11 +207,11 @@ export default function ResortsPage() {
           <ResortContactForm />
 
           <div className="mt-8">
-            <p className="text-center text-[#6b6b6b] text-xs uppercase tracking-[0.2em] mb-4">Or reach out directly</p>
+            <p className="text-center text-[#8a8a8a] text-xs uppercase tracking-[0.2em] mb-4">Or reach out directly</p>
             <div className="flex flex-col sm:flex-row gap-3">
               <WhatsAppLink
                 href={RESORT_WHATSAPP}
-                className="flex items-center justify-center gap-2.5 flex-1 py-3.5 rounded-full bg-[#25D366] text-white font-semibold text-sm uppercase tracking-[0.12em] hover:brightness-110 transition-all duration-300"
+                className="flex items-center justify-center gap-2.5 flex-1 py-3.5 rounded-full bg-[#1a7f42] text-white font-semibold text-sm uppercase tracking-[0.12em] hover:brightness-110 transition-all duration-300"
               >
                 <WhatsAppIcon />
                 WhatsApp

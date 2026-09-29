@@ -56,30 +56,16 @@ export default function TestimonialsSection() {
           />
         </AnimatedSection>
 
-        {/* Desktop grid: show 3 */}
-        <div className="hidden md:grid md:grid-cols-3 gap-4">
-          {TESTIMONIALS.map((t) => (
-            <AnimatedSection key={t.id} delay={t.id * 0.08}>
-              <TestimonialCard
-                name={t.name}
-                venue={t.venue}
-                origin={t.origin}
-                quote={t.quote}
-                stars={t.stars}
-              />
-            </AnimatedSection>
-          ))}
-        </div>
-
-        {/* Mobile: carousel */}
-        <div className="md:hidden" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
-          <div className="overflow-hidden">
+        {/* One set of cards: 3-column grid on desktop, swipeable carousel on mobile.
+            (Rendering them twice for each layout doubled this section's DOM and hydration cost.) */}
+        <AnimatedSection>
+          <div className="max-md:overflow-hidden" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
             <div
-              className="flex transition-transform duration-500 ease-in-out"
-              style={{ transform: `translateX(-${active * 100}%)` }}
+              className="flex md:grid md:grid-cols-3 md:gap-4 max-md:translate-x-(--slide) max-md:transition-transform max-md:duration-500 max-md:ease-in-out"
+              style={{ '--slide': `-${active * 100}%` } as React.CSSProperties}
             >
               {TESTIMONIALS.map((t) => (
-                <div key={t.id} className="min-w-full px-1">
+                <div key={t.id} className="min-w-full px-1 md:min-w-0 md:px-0">
                   <TestimonialCard
                     name={t.name}
                     venue={t.venue}
@@ -91,7 +77,9 @@ export default function TestimonialsSection() {
               ))}
             </div>
           </div>
+        </AnimatedSection>
 
+        <div className="md:hidden">
           {/* Dots */}
           <div className="flex justify-center gap-2 mt-6" role="tablist" aria-label="Testimonial navigation">
             {TESTIMONIALS.map((_, i) => (

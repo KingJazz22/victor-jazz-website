@@ -72,7 +72,7 @@ export default function Header() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => gtagConversion(CONVERSION_LABELS.whatsapp || undefined)}
-            className="ml-4 flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#25D366] text-white text-xs uppercase tracking-[0.2em] font-semibold hover:brightness-110 transition-all duration-300"
+            className="ml-4 flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#1a7f42] text-white text-xs uppercase tracking-[0.2em] font-semibold hover:brightness-110 transition-all duration-300"
           >
             <WhatsAppIcon />
             WhatsApp
@@ -127,7 +127,7 @@ export default function Header() {
               handleNavClick()
               gtagConversion(CONVERSION_LABELS.whatsapp || undefined)
             }}
-            className="mt-2 flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#25D366] text-white text-sm font-semibold uppercase tracking-[0.1em] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2 focus-visible:ring-offset-[#080808]"
+            className="mt-2 flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#1a7f42] text-white text-sm font-semibold uppercase tracking-[0.1em] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2 focus-visible:ring-offset-[#080808]"
           >
             <WhatsAppIcon />
             WhatsApp Me

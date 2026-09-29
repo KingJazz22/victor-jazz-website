@@ -89,7 +89,7 @@ export default function ContactSection() {
                   href={SITE_CONFIG.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-[#25D366] text-white text-sm font-semibold hover:bg-[#20bd5a] transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0a0a]"
+                  className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-[#1a7f42] text-white text-sm font-semibold hover:bg-[#156b37] transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0a0a]"
                   onClick={() => gtagConversion(CONVERSION_LABELS.whatsapp || undefined)}
                 >
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">

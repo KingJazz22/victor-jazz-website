@@ -19,7 +19,7 @@ const variantClasses: Record<Variant, string> = {
   ghost:
     'border border-[#c9a96e]/60 text-[#f5f0e8] hover:border-[#c9a96e] hover:bg-[#c9a96e]/10',
   whatsapp:
-    'bg-[#25D366] text-white hover:bg-[#20bd5a] font-semibold',
+    'bg-[#1a7f42] text-white hover:bg-[#156b37] font-semibold',
 }
 
 const base =

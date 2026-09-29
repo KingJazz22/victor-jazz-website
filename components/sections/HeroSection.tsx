@@ -109,7 +109,7 @@ export default function HeroSection() {
             href={SITE_CONFIG.whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden lg:inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[#25D366] text-white text-sm font-semibold uppercase tracking-[0.15em] hover:bg-[#20bd5a] transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366]"
+            className="hidden lg:inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[#1a7f42] text-white text-sm font-semibold uppercase tracking-[0.15em] hover:bg-[#156b37] transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366]"
             aria-label="Contact Victor Jazz on WhatsApp"
             onClick={() => gtagConversion(CONVERSION_LABELS.whatsapp || undefined)}
           >

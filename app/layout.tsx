@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Cormorant_Garamond, Inter } from 'next/font/google'
+import localFont from 'next/font/local'
 import Script from 'next/script'
 import './globals.css'
 import Header from '@/components/layout/Header'
@@ -10,17 +10,23 @@ import { generateSchemaGraph } from '@/lib/schema'
 import { GADS_ID } from '@/lib/gtag'
 import GtagLoader from '@/components/GtagLoader'
 
-const cormorant = Cormorant_Garamond({
-  subsets: ['latin'],
-  weight: ['300', '400', '600'],
-  style: ['normal', 'italic'],
+// Self-hosted Latin-only variable fonts (from Google Fonts, OFL). next/font/google emitted
+// 58 @font-face rules — every weight × every unicode subset — and matching text against
+// that many faces was the single biggest chunk of desktop Style & Layout time. One variable
+// file per style covers all the weights the site uses.
+const cormorant = localFont({
+  src: [
+    { path: './fonts/cormorant-garamond-latin.woff2', weight: '300 700', style: 'normal' },
+    { path: './fonts/cormorant-garamond-italic-latin.woff2', weight: '300 700', style: 'italic' },
+  ],
   variable: '--font-cormorant',
   display: 'swap',
+  adjustFontFallback: 'Times New Roman',
 })
 
-const inter = Inter({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600'],
+const inter = localFont({
+  src: './fonts/inter-latin.woff2',
+  weight: '100 900',
   variable: '--font-inter',
   display: 'swap',
 })

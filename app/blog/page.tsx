@@ -68,9 +68,9 @@ export default function BlogPage() {
                 >
                   {post.category}
                 </span>
-                <span className="text-[#6b6b6b] text-xs">{formatDate(post.date)}</span>
-                <span className="text-[#6b6b6b] text-xs">&middot;</span>
-                <span className="text-[#6b6b6b] text-xs">{post.readTime}</span>
+                <span className="text-[#8a8a8a] text-xs">{formatDate(post.date)}</span>
+                <span className="text-[#8a8a8a] text-xs">&middot;</span>
+                <span className="text-[#8a8a8a] text-xs">{post.readTime}</span>
               </div>
 
               <h2 className="font-serif font-light text-xl md:text-2xl text-[#f5f0e8] leading-snug mb-3 group-hover:text-[#c9a96e] transition-colors duration-300">

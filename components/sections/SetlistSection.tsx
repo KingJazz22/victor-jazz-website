@@ -65,7 +65,7 @@ export default function SetlistSection() {
               </span>
               <div className="min-w-0 flex-1">
                 <p className="text-[#f5f0e8] text-sm font-light truncate">{song.title}</p>
-                <p className="text-[#6b6b6b] text-xs mt-0.5 truncate">{song.artist}</p>
+                <p className="text-[#8a8a8a] text-xs mt-0.5 truncate">{song.artist}</p>
               </div>
             </div>
           ))}

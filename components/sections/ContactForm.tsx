@@ -142,7 +142,7 @@ export default function ContactForm() {
         <div>
           <label htmlFor="venue" className={labelClass}>
             Venue / Location{' '}
-            <span className="text-[#6b6b6b] normal-case tracking-normal font-normal">(optional)</span>
+            <span className="text-[#8a8a8a] normal-case tracking-normal font-normal">(optional)</span>
           </label>
           <input
             id="venue"
@@ -160,7 +160,7 @@ export default function ContactForm() {
       <div>
         <label htmlFor="whatsapp" className={labelClass}>
           WhatsApp Number{' '}
-          <span className="text-[#6b6b6b] normal-case tracking-normal font-normal">(optional)</span>
+          <span className="text-[#8a8a8a] normal-case tracking-normal font-normal">(optional)</span>
         </label>
         <div className="flex rounded-lg overflow-hidden border border-[#c9a96e]/20 focus-within:border-[#c9a96e] focus-within:ring-1 focus-within:ring-[#c9a96e]/30 transition-colors duration-200">
           <select
@@ -188,7 +188,7 @@ export default function ContactForm() {
         {errors.whatsapp ? (
           <p className="mt-1.5 text-red-400 text-xs" role="alert">{errors.whatsapp.message}</p>
         ) : (
-          <p className="mt-1.5 text-[#6b6b6b] text-xs">
+          <p className="mt-1.5 text-[#8a8a8a] text-xs">
             Select your country, then enter your local number — no leading zero needed
           </p>
         )}
@@ -197,7 +197,7 @@ export default function ContactForm() {
       <div>
         <label htmlFor="message" className={labelClass}>
           Tell Victor About Your Day{' '}
-          <span className="text-[#6b6b6b] normal-case tracking-normal font-normal">(optional)</span>
+          <span className="text-[#8a8a8a] normal-case tracking-normal font-normal">(optional)</span>
         </label>
         <textarea
           id="message"
