@@ -9,6 +9,8 @@ import { SITE_CONFIG } from '@/lib/constants'
 import { generateSchemaGraph } from '@/lib/schema'
 import { GADS_ID } from '@/lib/gtag'
 import GtagLoader from '@/components/GtagLoader'
+import CookieBanner from '@/components/CookieBanner'
+import { CONSENT_REGIONS, CONSENT_STORAGE_KEY } from '@/lib/consent'
 
 // Self-hosted Latin-only variable fonts (from Google Fonts, OFL). next/font/google emitted
 // 58 @font-face rules — every weight × every unicode subset — and matching text against
@@ -141,16 +143,34 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <StickyMobile />
         {/* Stub loads immediately (near-zero cost) so gtag() queues conversions into
             dataLayer even before the real script arrives — see GtagLoader for why the
-            150KB gtag/js payload itself is deferred to first interaction. */}
+            150KB gtag/js payload itself is deferred to first interaction.
+            Consent Mode v2 defaults must be queued before 'config' (see lib/consent.ts). */}
         <Script id="gtag-init" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
+            gtag('consent', 'default', {
+              ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied',
+              region: ${JSON.stringify(CONSENT_REGIONS)},
+              wait_for_update: 500
+            });
+            gtag('consent', 'default', {
+              ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted', analytics_storage: 'granted'
+            });
+            try {
+              var c = localStorage.getItem('${CONSENT_STORAGE_KEY}');
+              if (c === 'granted' || c === 'denied') {
+                gtag('consent', 'update', { ad_storage: c, ad_user_data: c, ad_personalization: c, analytics_storage: c });
+              }
+            } catch (e) {}
+            gtag('set', 'url_passthrough', true);
+            gtag('set', 'ads_data_redaction', true);
             gtag('js', new Date());
             gtag('config', '${GADS_ID}');
           `}
         </Script>
         <GtagLoader />
+        <CookieBanner />
       </body>
     </html>
   )

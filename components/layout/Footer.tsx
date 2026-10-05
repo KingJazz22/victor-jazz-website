@@ -72,7 +72,7 @@ export default function Footer() {
             </p>
             <p className="text-[#9e9e9e] text-sm leading-relaxed">
               Aphrodite Hills &middot; Elysium Resort &middot; Coral Residences &middot; Elea Golf
-              Club &middot; Korineum Golf Club &middot; Minths Resort &middot; Katma Alassos &middot;
+              Club &middot; Korineum Golf Club &middot; Minthis Resort &middot; Ktima Alassos &middot;
               Liopetro &middot; Secret Valley &middot; Columbia Beach &middot; Annabelle Hotel
             </p>
             <p className="mt-4 text-[#9e9e9e] text-sm leading-relaxed">

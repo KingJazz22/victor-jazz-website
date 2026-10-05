@@ -290,7 +290,7 @@ export const BLOG_POSTS: BlogPost[] = [
           'Elysium Hotel, Paphos — elegant beachfront property with a grand ballroom',
           'Coral Residences — boutique luxury with an intimate coastal atmosphere',
           'Liopetro Wedding Venue — rustic stone and olive groves, perennially popular',
-          'Katma Alassos — dramatic outdoor terraces with sweeping valley views',
+          'Ktima Alassos — dramatic outdoor terraces with sweeping valley views',
           'Elea Golf Club — refined estate surroundings with manicured grounds',
           'Cap St Georges — ultra-luxury resort with private beach access',
         ],
@@ -467,7 +467,7 @@ export const BLOG_POSTS: BlogPost[] = [
       },
       {
         type: 'h3',
-        text: 'Katma Alassos',
+        text: 'Ktima Alassos',
       },
       {
         type: 'p',
