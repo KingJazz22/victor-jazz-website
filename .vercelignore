@@ -1,0 +1,9 @@
+# Local-only files that must never be uploaded by `vercel deploy`
+/.env*
+!/.env.example
+/ADS
+/google_ads_strategy
+/instagram-dl
+/lighthouse-*.json
+/*.png
+/SIte.py
