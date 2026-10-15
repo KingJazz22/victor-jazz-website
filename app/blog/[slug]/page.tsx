@@ -25,6 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: `${SITE_CONFIG.url}/blog/${post.slug}`,
       type: 'article',
       publishedTime: post.date,
+      images: [{ url: SITE_CONFIG.ogImage, width: 1200, height: 630, alt: SITE_CONFIG.ogImageAlt }],
     },
   }
 }
@@ -97,15 +98,19 @@ export default async function BlogPostPage({ params }: Props) {
     headline: post.title,
     description: post.description,
     datePublished: post.date,
+    image: `${SITE_CONFIG.url}${SITE_CONFIG.ogImage}`,
     author: {
       '@type': 'Person',
+      '@id': `${SITE_CONFIG.url}/#victor`,
       name: 'Victor Jazz',
       url: SITE_CONFIG.url,
+      image: `${SITE_CONFIG.url}${SITE_CONFIG.portrait}`,
     },
     publisher: {
       '@type': 'Organization',
       name: SITE_CONFIG.fullName,
       url: SITE_CONFIG.url,
+      logo: `${SITE_CONFIG.url}/apple-touch-icon.png`,
     },
     mainEntityOfPage: `${SITE_CONFIG.url}/blog/${post.slug}`,
   }

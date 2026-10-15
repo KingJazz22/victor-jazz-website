@@ -12,6 +12,21 @@ export function generateSchemaGraph() {
   }
 }
 
+function portraitImage() {
+  return {
+    '@type': 'ImageObject',
+    '@id': `${SITE_CONFIG.url}/#portrait`,
+    url: `${SITE_CONFIG.url}${SITE_CONFIG.portrait}`,
+    contentUrl: `${SITE_CONFIG.url}${SITE_CONFIG.portrait}`,
+    width: 1080,
+    height: 1440,
+    caption: 'Victor Jazz, wedding saxophonist in Paphos, Cyprus',
+    creditText: 'Victor Jazz',
+    creator: { '@id': `${SITE_CONFIG.url}/#victor` },
+    copyrightNotice: '© Victor Jazz',
+  }
+}
+
 function generateLocalBusinessSchema() {
   return {
     '@type': 'LocalBusiness',
@@ -21,8 +36,8 @@ function generateLocalBusinessSchema() {
     url: SITE_CONFIG.url,
     telephone: `+${SITE_CONFIG.whatsapp}`,
     email: SITE_CONFIG.email,
-    image: `${SITE_CONFIG.url}/images/og-image.jpg`,
-    logo: `${SITE_CONFIG.url}/images/logo.svg`,
+    image: portraitImage(),
+    logo: `${SITE_CONFIG.url}/apple-touch-icon.png`,
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Paphos',
@@ -95,7 +110,7 @@ function generateMusicGroupSchema() {
     name: SITE_CONFIG.name,
     description: SITE_CONFIG.description,
     url: SITE_CONFIG.url,
-    image: `${SITE_CONFIG.url}/images/og-image.jpg`,
+    image: { '@id': `${SITE_CONFIG.url}/#portrait` },
     genre: ['Jazz', 'Pop', 'Soul', 'Classical'],
     foundingLocation: {
       '@type': 'Place',
@@ -113,7 +128,7 @@ function generatePersonSchema() {
     name: 'Victor Jazz',
     jobTitle: 'Professional Wedding Saxophonist',
     description: SITE_CONFIG.description,
-    image: `${SITE_CONFIG.url}/images/og-image.jpg`,
+    image: { '@id': `${SITE_CONFIG.url}/#portrait` },
     url: SITE_CONFIG.url,
     knowsAbout: [
       'Wedding Saxophone Performance',

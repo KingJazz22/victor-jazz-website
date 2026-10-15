@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     description: 'Professional saxophonist for luxury resorts and hotels worldwide. Available Nov–Mar for residencies.',
     url: `${SITE_CONFIG.url}/resorts`,
     siteName: SITE_CONFIG.name,
-    images: [{ url: '/images/og-image.jpg', width: 1200, height: 630, alt: 'Victor Jazz — Resort Saxophonist' }],
+    images: [{ url: SITE_CONFIG.ogImage, width: 1200, height: 630, alt: SITE_CONFIG.ogImageAlt }],
     type: 'website',
   },
   alternates: { canonical: `${SITE_CONFIG.url}/resorts` },

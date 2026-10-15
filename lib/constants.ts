@@ -44,6 +44,11 @@ export const SITE_CONFIG = {
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? 'hello@victorjazz.com',
   location: 'Paphos, Cyprus',
   priceRange: '€€€',
+  // One official photo used everywhere (link previews, schema, Google, directories) so
+  // search engines and AI assistants consistently tie this face to the Victor Jazz name.
+  portrait: '/images/victor-jazz-wedding-saxophonist-cyprus.jpg',
+  ogImage: '/images/victor-jazz-wedding-saxophonist-cyprus-og.jpg',
+  ogImageAlt: 'Victor Jazz, wedding saxophonist in Paphos, Cyprus, holding his saxophone',
 }
 
 export const STATS = [
@@ -98,7 +103,7 @@ export const DESTINATIONS = [
     subtitle: 'Cyprus',
     description: 'Clifftop venues & UNESCO heritage',
     image: '/images/venues/paphos.jpg',
-    alt: 'Wedding saxophonist performing in Paphos Cyprus at a clifftop venue',
+    alt: "Aphrodite's Rock and the Paphos coastline at sunset, Cyprus",
   },
   {
     id: 'ayia-napa',
@@ -106,7 +111,7 @@ export const DESTINATIONS = [
     subtitle: 'Cyprus',
     description: 'Beach clubs & glamorous resorts',
     image: '/images/venues/ayia-napa.jpg',
-    alt: 'Saxophone player at a luxury beach wedding in Ayia Napa Cyprus',
+    alt: 'Rocky Cyprus coastline with turquoise sea',
   },
 {
     id: 'santorini',
@@ -114,7 +119,7 @@ export const DESTINATIONS = [
     subtitle: 'Greece',
     description: 'Caldera views & candlelit terraces',
     image: '/images/venues/santorini.jpg',
-    alt: 'Destination wedding saxophonist in Santorini Greece',
+    alt: 'Blue-domed church above the caldera in Santorini, Greece',
   },
   {
     id: 'amalfi',
@@ -122,7 +127,7 @@ export const DESTINATIONS = [
     subtitle: 'Italy',
     description: 'Clifftop terraces & Italian glamour',
     image: '/images/venues/amalfi.jpg',
-    alt: 'Luxury wedding saxophone on the Amalfi Coast Italy',
+    alt: 'Clifftop road and sea on the Amalfi Coast, Italy',
   },
   {
     id: 'dubai',
@@ -130,7 +135,7 @@ export const DESTINATIONS = [
     subtitle: 'UAE',
     description: 'Ultra-luxury venues & desert magic',
     image: '/images/venues/dubai.jpg',
-    alt: 'Luxury wedding saxophonist performing in Dubai',
+    alt: 'Dubai Marina skyline at dusk, UAE',
   },
   {
     id: 'paris',
@@ -138,7 +143,7 @@ export const DESTINATIONS = [
     subtitle: 'France',
     description: 'Château weddings & Parisian elegance',
     image: '/images/venues/paris.jpg',
-    alt: 'Destination wedding saxophonist in Paris France',
+    alt: 'Luxembourg Palace and gardens in Paris, France',
   },
 {
     id: 'mykonos',
@@ -146,7 +151,7 @@ export const DESTINATIONS = [
     subtitle: 'Greece',
     description: 'Whitewashed villas & sunset terraces',
     image: '/images/venues/mykonos.jpg',
-    alt: 'Saxophone at a destination wedding in Mykonos Greece',
+    alt: 'Seafront tables in Little Venice, Mykonos, Greece',
   },
 ]
 

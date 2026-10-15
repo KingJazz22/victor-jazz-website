@@ -14,6 +14,7 @@ export const metadata: Metadata = {
       'Advice and inspiration for couples planning a wedding in Cyprus — ceremony music, venue guides, entertainment tips.',
     url: `${SITE_CONFIG.url}/blog`,
     type: 'website',
+    images: [{ url: SITE_CONFIG.ogImage, width: 1200, height: 630, alt: SITE_CONFIG.ogImageAlt }],
   },
 }
 

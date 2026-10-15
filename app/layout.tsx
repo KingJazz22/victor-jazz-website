@@ -91,10 +91,10 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://raw.githubusercontent.com/KingJazz22/victor-jazz-website/main/public/images/og-image-v2.jpg',
+        url: SITE_CONFIG.ogImage,
         width: 1200,
         height: 630,
-        alt: 'Victor Jazz — Wedding Saxophonist performing at a beach wedding sunset in Cyprus',
+        alt: SITE_CONFIG.ogImageAlt,
       },
     ],
   },
@@ -102,7 +102,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Wedding Saxophonist Cyprus & Paphos | Victor Jazz',
     description: SITE_CONFIG.description,
-    images: ['https://raw.githubusercontent.com/KingJazz22/victor-jazz-website/main/public/images/og-image-v2.jpg'],
+    images: [SITE_CONFIG.ogImage],
   },
   alternates: {
     canonical: SITE_CONFIG.url,
