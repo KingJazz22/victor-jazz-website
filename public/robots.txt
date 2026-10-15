@@ -1,13 +1,5 @@
-# *
 User-agent: *
 Allow: /
-
-# *
-User-agent: *
 Disallow: /api/
 
-# Host
-Host: https://www.victorjazz.com
-
-# Sitemaps
 Sitemap: https://www.victorjazz.com/sitemap.xml

@@ -6,9 +6,9 @@ import ResortVideos from '@/components/sections/ResortVideos'
 import WhatsAppLink from '@/components/ui/WhatsAppLink'
 
 export const metadata: Metadata = {
-  title: 'Resort & Hotel Saxophonist | Victor Jazz — Luxury Live Music for Hospitality',
+  title: 'Resort & Hotel Saxophonist for Luxury Venues',
   description:
-    'Professional saxophonist for luxury resorts, hotels and venues worldwide. Available November–March for residencies. Maldives, Dubai, Egypt, Caribbean and beyond. Accommodation-inclusive contracts welcome.',
+    'Saxophonist for luxury resorts and hotels worldwide. Winter residencies November–March: Maldives, Dubai, Egypt, the Caribbean. Accommodation contracts welcome.',
   keywords: [
     'resort saxophonist', 'hotel saxophonist', 'live saxophone hotel',
     'luxury resort entertainment', 'Maldives saxophonist', 'Dubai saxophonist',

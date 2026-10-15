@@ -4,7 +4,7 @@ import { getAllPosts } from '@/lib/blog'
 import { SITE_CONFIG } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: 'Wedding Music & Planning Blog | Victor Jazz',
+  title: 'Cyprus Wedding Music & Planning Blog',
   description:
     'Advice, inspiration, and guides for couples planning a wedding in Cyprus — from choosing the perfect ceremony music to planning your destination wedding from the UK.',
   alternates: { canonical: `${SITE_CONFIG.url}/blog` },

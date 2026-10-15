@@ -31,7 +31,7 @@ export const SITE_CONFIG = {
   fullName: 'Victor Jazz | Wedding Saxophonist Cyprus',
   tagline: 'Live Saxophone for Your Dream Cyprus Wedding',
   description:
-    'Award-winning wedding saxophonist available across Cyprus — Paphos, Limassol, Nicosia, Ayia Napa and beyond. Live saxophone for ceremonies, cocktail hours & beach parties island-wide.',
+    'Wedding saxophonist in Paphos & across Cyprus. Live sax for ceremonies, cocktail hours and DJ + sax receptions at top venues. 350+ weddings, 5-star rated.',
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.victorjazz.com',
   whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '353838980169',
   get whatsappUrl() {
