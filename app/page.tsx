@@ -2,6 +2,7 @@ import dynamic from 'next/dynamic'
 import HeroSection from '@/components/sections/HeroSection'
 import TrustSection from '@/components/sections/TrustSection'
 import HydrateOnVisible from '@/components/ui/HydrateOnVisible'
+import { generateFAQSchema } from '@/lib/schema'
 
 const VideoGallerySection  = dynamic(() => import('@/components/sections/VideoGallerySection'))
 const PhotoShowcaseSection = dynamic(() => import('@/components/sections/PhotoShowcaseSection'))
@@ -17,6 +18,10 @@ const ContactSection       = dynamic(() => import('@/components/sections/Contact
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema()) }}
+      />
       <HeroSection />
       <TrustSection />
       <HydrateOnVisible id="gallery"><VideoGallerySection /></HydrateOnVisible>

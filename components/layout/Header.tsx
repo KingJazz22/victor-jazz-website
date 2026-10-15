@@ -5,13 +5,14 @@ import { usePathname } from 'next/navigation'
 import { SITE_CONFIG } from '@/lib/constants'
 import { gtagConversion, CONVERSION_LABELS } from '@/lib/gtag'
 
+// Root-relative so the links also work from /blog pages, which don't have these sections.
 const homeNavLinks = [
-  { label: 'Videos', href: '#gallery' },
-  { label: 'Reviews', href: '#reviews' },
-  { label: 'Photos', href: '#photos' },
-  { label: 'Services', href: '#experience' },
-  { label: 'Destinations', href: '#destinations' },
-  { label: 'FAQ', href: '#faq' },
+  { label: 'Videos', href: '/#gallery' },
+  { label: 'Reviews', href: '/#reviews' },
+  { label: 'Photos', href: '/#photos' },
+  { label: 'Services', href: '/#experience' },
+  { label: 'Destinations', href: '/#destinations' },
+  { label: 'FAQ', href: '/#faq' },
 ]
 
 const resortNavLinks = [

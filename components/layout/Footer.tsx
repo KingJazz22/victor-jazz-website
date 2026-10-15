@@ -1,14 +1,15 @@
 import { SITE_CONFIG } from '@/lib/constants'
 import WhatsAppLink from '@/components/ui/WhatsAppLink'
 
+// Root-relative so the links also work from /blog and /resorts, which lack these sections.
 const navLinks = [
-  { label: 'Gallery', href: '#gallery' },
-  { label: 'Services', href: '#experience' },
-  { label: 'Packages', href: '#pricing' },
-  { label: 'Destinations', href: '#destinations' },
-  { label: 'FAQ', href: '#faq' },
+  { label: 'Gallery', href: '/#gallery' },
+  { label: 'Services', href: '/#experience' },
+  { label: 'Packages', href: '/#pricing' },
+  { label: 'Destinations', href: '/#destinations' },
+  { label: 'FAQ', href: '/#faq' },
   { label: 'Blog', href: '/blog' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Contact', href: '/#contact' },
 ]
 
 export default function Footer() {

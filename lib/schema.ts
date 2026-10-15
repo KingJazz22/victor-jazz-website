@@ -7,7 +7,6 @@ export function generateSchemaGraph() {
       generateLocalBusinessSchema(),
       generateMusicGroupSchema(),
       generatePersonSchema(),
-      generateFAQSchema(),
     ],
   }
 }
@@ -144,8 +143,10 @@ function generatePersonSchema() {
   }
 }
 
-function generateFAQSchema() {
+// Homepage only: Google requires FAQ markup to match questions visible on the same page.
+export function generateFAQSchema() {
   return {
+    '@context': 'https://schema.org',
     '@type': 'FAQPage',
     '@id': `${SITE_CONFIG.url}/#faq`,
     mainEntity: FAQS.map((faq) => ({
