@@ -6,7 +6,7 @@ import { SITE_CONFIG } from '@/lib/constants'
 export const metadata: Metadata = {
   title: 'Cyprus Wedding Music & Planning Blog',
   description:
-    'Advice, inspiration, and guides for couples planning a wedding in Cyprus — from choosing the perfect ceremony music to planning your destination wedding from the UK.',
+    'Guides for couples planning a wedding in Cyprus, from choosing ceremony music to planning a destination wedding from the UK or Ireland.',
   alternates: { canonical: `${SITE_CONFIG.url}/blog` },
   openGraph: {
     title: 'Wedding Music & Planning Blog | Victor Jazz',

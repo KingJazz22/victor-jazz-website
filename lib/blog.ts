@@ -8,6 +8,8 @@ export type ContentBlock =
 export type BlogPost = {
   slug: string
   title: string
+  /** Shorter title for the <title> tag (Bing flags titles over 70 chars incl. " | Victor Jazz"). */
+  seoTitle: string
   description: string
   date: string
   readTime: string
@@ -19,8 +21,9 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: 'surprise-wedding-gift-saxophonist-cyprus',
     title: 'The Best Wedding Gift in Cyprus: Surprise the Couple with a Live Saxophonist',
+    seoTitle: 'Surprise Wedding Gift: Live Sax in Cyprus',
     description:
-      'Looking for an unforgettable wedding present? Brothers, sisters, best men, bridesmaids, parents and guests book Victor Jazz as a surprise live saxophone performance for the couple in Cyprus — a memorable experience gift they will never forget.',
+      'Surprise the couple with live saxophone in Cyprus. Why siblings, best men, bridesmaids and parents book Victor Jazz as an unforgettable wedding gift.',
     date: '2026-09-29',
     readTime: '5 min read',
     category: 'Gifts & Surprises',
@@ -146,8 +149,9 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: 'wedding-ceremony-music-cyprus',
     title: 'What Music Should You Choose for Your Cyprus Wedding Ceremony?',
+    seoTitle: 'Cyprus Wedding Ceremony Music Guide',
     description:
-      'From classical processionals to contemporary ballads — a guide to choosing the perfect live saxophone music for your Cyprus wedding ceremony, written by Victor Jazz.',
+      'Choosing live saxophone music for your Cyprus wedding ceremony: processional, signing and recessional ideas, from classical to modern, by Victor Jazz.',
     date: '2025-02-10',
     readTime: '5 min read',
     category: 'Planning',
@@ -242,8 +246,9 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: 'destination-wedding-cyprus-guide',
     title: 'Planning Your Destination Wedding in Cyprus: A Complete Guide for UK & Irish Couples',
+    seoTitle: 'Destination Wedding in Cyprus: UK & Irish Guide',
     description:
-      'Everything UK and Irish couples need to know about planning a destination wedding in Cyprus — venues, timing, entertainment, and how to hire the best live music for your day.',
+      'What UK and Irish couples need to know to plan a destination wedding in Cyprus: venues, timing, entertainment and booking live music for the day.',
     date: '2025-03-05',
     readTime: '7 min read',
     category: 'Destination Weddings',
@@ -342,8 +347,9 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: 'dj-vs-live-saxophone-cyprus-wedding',
     title: 'DJ vs Live Saxophone: Which Is Right for Your Cyprus Wedding Reception?',
+    seoTitle: 'DJ vs Live Saxophone for a Cyprus Wedding',
     description:
-      'Trying to decide between a DJ and live saxophone for your Cyprus wedding? This guide breaks down the differences, explains the DJ + Sax combination, and helps you choose what\'s right for your day.',
+      'DJ or live saxophone for your Cyprus wedding reception? The differences, the DJ + Sax combination, and how to choose what\'s right for your day.',
     date: '2025-04-12',
     readTime: '6 min read',
     category: 'Entertainment',
@@ -435,8 +441,9 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: 'best-wedding-venues-cyprus-saxophone',
     title: 'The Best Wedding Venues in Cyprus for Live Saxophone Entertainment',
+    seoTitle: 'Best Cyprus Wedding Venues for Live Saxophone',
     description:
-      'A guide to the finest wedding venues across Paphos and Ayia Napa, and why live saxophone makes each one extraordinary. Written by Victor Jazz, Cyprus-based wedding saxophonist.',
+      'The finest wedding venues in Paphos and Ayia Napa, and how live saxophone suits each one. A guide by Victor Jazz, Cyprus wedding saxophonist.',
     date: '2025-05-01',
     readTime: '6 min read',
     category: 'Venues',

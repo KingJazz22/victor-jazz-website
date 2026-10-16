@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = getPost(slug)
   if (!post) return {}
   return {
-    title: post.title,
+    title: post.seoTitle,
     description: post.description,
     alternates: { canonical: `${SITE_CONFIG.url}/blog/${post.slug}` },
     openGraph: {

@@ -8,7 +8,7 @@ import WhatsAppLink from '@/components/ui/WhatsAppLink'
 export const metadata: Metadata = {
   title: 'Resort & Hotel Saxophonist for Luxury Venues',
   description:
-    'Saxophonist for luxury resorts and hotels worldwide. Winter residencies November–March: Maldives, Dubai, Egypt, the Caribbean. Accommodation contracts welcome.',
+    'Saxophonist for luxury resorts and hotels worldwide. Winter residencies November–March: Maldives, Dubai, Egypt, Caribbean. Accommodation contracts welcome.',
   keywords: [
     'resort saxophonist', 'hotel saxophonist', 'live saxophone hotel',
     'luxury resort entertainment', 'Maldives saxophonist', 'Dubai saxophonist',
