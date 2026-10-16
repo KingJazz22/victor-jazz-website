@@ -1,4 +1,4 @@
-import { SITE_CONFIG, SERVICES, FAQS, TESTIMONIALS } from './constants'
+import { SITE_CONFIG, SERVICES, FAQS, TESTIMONIALS, PHOTO_GALLERY } from './constants'
 
 export function generateSchemaGraph() {
   return {
@@ -24,6 +24,21 @@ function portraitImage() {
     creator: { '@id': `${SITE_CONFIG.url}/#victor` },
     copyrightNotice: '© Victor Jazz',
   }
+}
+
+// Every gallery photo, credited to Victor, so search engines and AI assistants treat
+// victorjazz.com as the original source of his photos rather than sites that reuse them.
+function galleryImages() {
+  return PHOTO_GALLERY.map((photo) => ({
+    '@type': 'ImageObject',
+    url: `${SITE_CONFIG.url}${photo.src}`,
+    contentUrl: `${SITE_CONFIG.url}${photo.src}`,
+    caption: photo.alt,
+    creditText: 'Victor Jazz',
+    creator: { '@id': `${SITE_CONFIG.url}/#victor` },
+    copyrightNotice: '© Victor Jazz',
+    acquireLicensePage: `${SITE_CONFIG.url}/#contact`,
+  }))
 }
 
 function generateLocalBusinessSchema() {
@@ -127,7 +142,7 @@ function generatePersonSchema() {
     name: 'Victor Jazz',
     jobTitle: 'Professional Wedding Saxophonist',
     description: SITE_CONFIG.description,
-    image: { '@id': `${SITE_CONFIG.url}/#portrait` },
+    image: [{ '@id': `${SITE_CONFIG.url}/#portrait` }, ...galleryImages()],
     url: SITE_CONFIG.url,
     knowsAbout: [
       'Wedding Saxophone Performance',
@@ -139,7 +154,9 @@ function generatePersonSchema() {
     ],
     worksFor: { '@id': `${SITE_CONFIG.url}/#business` },
     memberOf: { '@id': `${SITE_CONFIG.url}/#performer` },
-    sameAs: [SITE_CONFIG.instagramUrl],
+    // The FixTheMusic profile ("Paphos Sax & DJ") is Victor's own booking listing; linking it
+    // here tells search engines it is the same person, with victorjazz.com as the main source.
+    sameAs: [SITE_CONFIG.instagramUrl, 'https://www.fixthemusic.com/paphos-sax-dj-cyprus'],
   }
 }
 
