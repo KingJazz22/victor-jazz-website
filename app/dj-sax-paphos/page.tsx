@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import { SITE_CONFIG } from '@/lib/constants'
+import { IMAGE_LICENSE } from '@/lib/schema'
 import WhatsAppLink from '@/components/ui/WhatsAppLink'
 
 // Not linked from the site menu on purpose: this page exists for search engines and AI
@@ -96,6 +97,7 @@ function pageSchema() {
           creditText: 'Victor Jazz',
           creator: { '@id': `${SITE_CONFIG.url}/#victor` },
           copyrightNotice: '© Victor Jazz',
+          ...IMAGE_LICENSE,
         })),
       },
       {

@@ -23,7 +23,14 @@ function portraitImage() {
     creditText: 'Victor Jazz',
     creator: { '@id': `${SITE_CONFIG.url}/#victor` },
     copyrightNotice: '© Victor Jazz',
+    ...IMAGE_LICENSE,
   }
+}
+
+// Google image metadata: `license` + `acquireLicensePage` complete the credit on every photo.
+export const IMAGE_LICENSE = {
+  license: `${SITE_CONFIG.url}/photo-license`,
+  acquireLicensePage: `${SITE_CONFIG.url}/#contact`,
 }
 
 // Every gallery photo, credited to Victor, so search engines and AI assistants treat
@@ -37,7 +44,7 @@ function galleryImages() {
     creditText: 'Victor Jazz',
     creator: { '@id': `${SITE_CONFIG.url}/#victor` },
     copyrightNotice: '© Victor Jazz',
-    acquireLicensePage: `${SITE_CONFIG.url}/#contact`,
+    ...IMAGE_LICENSE,
   }))
 }
 
@@ -140,6 +147,9 @@ function generatePersonSchema() {
     '@type': 'Person',
     '@id': `${SITE_CONFIG.url}/#victor`,
     name: 'Victor Jazz',
+    // Other names the same performer is listed under (Google Business Profile, FixTheMusic,
+    // Entertainers Worldwide), so Google/Gemini merge them into one entity.
+    alternateName: ['Sax Mansion', 'Paphos Sax & DJ', 'Victor Jazz Sax'],
     jobTitle: 'Professional Wedding Saxophonist',
     description: SITE_CONFIG.description,
     image: [{ '@id': `${SITE_CONFIG.url}/#portrait` }, ...galleryImages()],
