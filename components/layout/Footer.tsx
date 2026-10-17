@@ -76,6 +76,18 @@ export default function Footer() {
               Club &middot; Korineum Golf Club &middot; Minthis Resort &middot; Ktima Alassos &middot;
               Liopetro &middot; Secret Valley &middot; Columbia Beach &middot; Annabelle Hotel
             </p>
+            <ul className="mt-4 space-y-2">
+              <li>
+                <a href="/wedding-saxophonist-paphos" className="text-[#c9a96e]/90 hover:text-[#c9a96e] text-sm transition-colors">
+                  Wedding saxophonist in Paphos &rarr;
+                </a>
+              </li>
+              <li>
+                <a href="/saxophonist-ayia-napa" className="text-[#c9a96e]/90 hover:text-[#c9a96e] text-sm transition-colors">
+                  Saxophonist in Ayia Napa &amp; Protaras &rarr;
+                </a>
+              </li>
+            </ul>
             <p className="mt-4 text-[#9e9e9e] text-sm leading-relaxed">
               <strong className="text-[#f5f0e8]/70">Based in Cyprus — available island-wide.</strong>{' '}
               Paphos · Limassol · Ayia Napa · Nicosia · Internationally.
