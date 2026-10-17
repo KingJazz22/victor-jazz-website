@@ -32,6 +32,8 @@ const DJSAX_WHATSAPP = `https://wa.me/${SITE_CONFIG.whatsapp}?text=Hi%20Victor!%
 
 const PHOTOS = [
   { src: '/images/photos/crowded-club-pic.jpg',               alt: 'Victor Jazz playing DJ + Sax for a crowded wedding party in Paphos, Cyprus' },
+  { src: '/images/photos/victor-jazz-sax-with-bride-wedding-dance.jpg', alt: 'Victor Jazz, Paphos Sax & DJ, playing sax with the bride on the dance floor' },
+  { src: '/images/photos/victor-jazz-dj-sax-wedding-guests.jpg', alt: 'Victor Jazz playing DJ + Sax for wedding guests in Paphos, Cyprus' },
   { src: '/images/photos/photo-with-dj-pizel.jpg',            alt: 'Victor Jazz on saxophone with a DJ at a Cyprus party' },
   { src: '/images/photos/nightclub-playing-for-the-crowd.jpg', alt: 'Victor Jazz live saxophone over a DJ set, Cyprus' },
   { src: '/images/photos/club-zoom-portrait.jpg',             alt: 'Victor Jazz, Paphos sax and DJ performer' },
