@@ -79,7 +79,7 @@ export default function PaphosPage() {
         { href: '/', label: 'Victor Jazz home' },
         { href: '/dj-sax-paphos', label: 'DJ + Sax Paphos' },
         { href: '/saxophonist-ayia-napa', label: 'Saxophonist Ayia Napa' },
-        { href: '/blog/best-wedding-venues-cyprus-saxophone', label: 'Best Cyprus venues' },
+        { href: '/wedding-venues-cyprus', label: 'All Cyprus wedding venues' },
       ]}
     />
   )

@@ -1,5 +1,6 @@
 import { SITE_CONFIG } from '@/lib/constants'
 import WhatsAppLink from '@/components/ui/WhatsAppLink'
+import { VENUES } from '@/lib/venues'
 
 // Root-relative so the links also work from /blog and /resorts, which lack these sections.
 const navLinks = [
@@ -72,11 +73,21 @@ export default function Footer() {
               Wedding Venues
             </p>
             <p className="text-[#9e9e9e] text-sm leading-relaxed">
-              Aphrodite Hills &middot; Elysium Resort &middot; Coral Residences &middot; Elea Golf
-              Club &middot; Korineum Golf Club &middot; Minthis Resort &middot; Ktima Alassos &middot;
-              Liopetro &middot; Secret Valley &middot; Columbia Beach &middot; Annabelle Hotel
+              {VENUES.map((v, i) => (
+                <span key={v.id}>
+                  {i > 0 && ' · '}
+                  <a href={`/wedding-venues-cyprus#${v.id}`} className="hover:text-[#f5f0e8] transition-colors">
+                    {v.name}
+                  </a>
+                </span>
+              ))}
             </p>
             <ul className="mt-4 space-y-2">
+              <li>
+                <a href="/wedding-venues-cyprus" className="text-[#c9a96e]/90 hover:text-[#c9a96e] text-sm transition-colors">
+                  All Cyprus wedding venues &rarr;
+                </a>
+              </li>
               <li>
                 <a href="/wedding-saxophonist-paphos" className="text-[#c9a96e]/90 hover:text-[#c9a96e] text-sm transition-colors">
                   Wedding saxophonist in Paphos &rarr;
