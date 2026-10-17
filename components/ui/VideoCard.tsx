@@ -79,7 +79,7 @@ export default function VideoCard({ src, poster, title, isActive, onActivate }: 
     >
       <Image
         src={poster}
-        alt={title}
+        alt={`Victor Jazz, saxophonist in Cyprus — ${title}`}
         fill
         className={`object-cover transition-opacity duration-300 ${isPlaying ? 'opacity-0' : 'opacity-100'}`}
         sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"

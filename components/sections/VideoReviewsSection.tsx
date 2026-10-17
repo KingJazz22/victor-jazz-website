@@ -79,7 +79,7 @@ function ReviewCard({
     >
       <Image
         src={poster}
-        alt={`Wedding review — ${venue}`}
+        alt={`Couple's review of Victor Jazz, wedding saxophonist — ${venue}`}
         fill
         className={`object-cover transition-opacity duration-300 ${isPlaying ? 'opacity-0' : 'opacity-100'}`}
         sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
