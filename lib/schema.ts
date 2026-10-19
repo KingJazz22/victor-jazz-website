@@ -1,4 +1,4 @@
-import { SITE_CONFIG, SERVICES, FAQS, TESTIMONIALS, PHOTO_GALLERY } from './constants'
+import { SITE_CONFIG, SERVICES, FAQS, TESTIMONIALS, PHOTO_GALLERY, CREDITS } from './constants'
 
 export function generateSchemaGraph() {
   return {
@@ -161,7 +161,15 @@ function generatePersonSchema() {
       'Private Event Saxophone',
       'DJ and Saxophone Duo Performances',
       'Resort and Hotel Entertainment',
+      'First Dance Saxophone',
+      'Father–Daughter Dance',
+      'Mother–Son Dance',
+      'Mother–Daughter Dance',
+      'Cyprus Wedding Packages',
+      'Paphos Wedding Venues',
     ],
+    // Mirrors the credits on the /about page.
+    disambiguatingDescription: `Saxophonist who has played ${CREDITS.festivals.join(' and ')}, opened for ${CREDITS.opened}, and shared the stage with ${CREDITS.playedWith.join(', ')}.`,
     worksFor: { '@id': `${SITE_CONFIG.url}/#business` },
     memberOf: { '@id': `${SITE_CONFIG.url}/#performer` },
     // The FixTheMusic profile ("Paphos Sax & DJ") is Victor's own booking listing; linking it

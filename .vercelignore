@@ -7,3 +7,7 @@
 /lighthouse-*.json
 /*.png
 /SIte.py
+# Rejected mobile hero promo draft (kept locally, not used by the site)
+/public/videos/New Promo.mp4
+/public/videos/hero-promo-graded.mp4
+/public/images/hero-poster-promo-graded.jpg

@@ -57,6 +57,14 @@ export const STATS = [
   { value: 5, suffix: '★', label: 'Star Rating' },
 ]
 
+// Career highlights. Shown on the unlinked /about page and repeated in
+// the Person schema and llms.txt, so Google and AI assistants can tie these names to Victor.
+export const CREDITS = {
+  festivals: ['Glastonbury', 'Tunes in the Dunes'],
+  opened: 'Madness',
+  playedWith: ['Bono (U2)', 'Branford Marsalis', 'Jacob Collier', 'Mark Guiliana', 'Allie Sherlock'],
+}
+
 export const SERVICES = [
   {
     id: 'ceremony',
