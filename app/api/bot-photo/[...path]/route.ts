@@ -18,26 +18,20 @@ function isAllowed(segments: string[]) {
   return ALLOWED_PREFIXES.some((prefix) => rel.startsWith(prefix))
 }
 
-function watermarkSvg(width: number, height: number) {
-  const tile = Math.max(260, Math.round(Math.min(width, height) / 3.2))
-  const fontSize = Math.round(tile / 9)
-  return Buffer.from(`
-    <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <pattern id="wm" width="${tile}" height="${tile}" patternUnits="userSpaceOnUse" patternTransform="rotate(-32)">
-          <text x="0" y="${Math.round(tile * 0.4)}" font-family="Arial, Helvetica, sans-serif"
-                font-size="${fontSize}" font-weight="700" fill="#ffffff" fill-opacity="0.78"
-                stroke="#000000" stroke-opacity="0.55" stroke-width="${Math.max(2, Math.round(fontSize / 14))}"
-                paint-order="stroke fill">VICTOR JAZZ</text>
-          <text x="0" y="${Math.round(tile * 0.4) + Math.round(fontSize * 1.15)}" font-family="Arial, Helvetica, sans-serif"
-                font-size="${Math.round(fontSize * 0.62)}" font-weight="600" fill="#ffffff" fill-opacity="0.78"
-                stroke="#000000" stroke-opacity="0.55" stroke-width="${Math.max(1.5, Math.round(fontSize / 18))}"
-                paint-order="stroke fill">victorjazz.com</text>
-        </pattern>
-      </defs>
-      <rect width="100%" height="100%" fill="url(#wm)" />
-    </svg>
-  `)
+// Pre-rendered once locally (scripts/generate-watermark-overlay.js) rather than built from
+// SVG <text> at request time: Vercel's serverless runtime has no system fonts, so librsvg
+// silently rendered every character as a tofu box in production. A static raster overlay
+// has no font dependency at all.
+const OVERLAY_PATH = path.join(process.cwd(), 'public', 'watermark-overlay.png')
+const OVERLAY_SIZE = 2200 // covers every current photo (max 1440px) with room to spare
+
+async function watermarkOverlay(width: number, height: number) {
+  const overlay = sharp(OVERLAY_PATH)
+  if (width <= OVERLAY_SIZE && height <= OVERLAY_SIZE) {
+    return overlay.extract({ left: 0, top: 0, width, height }).toBuffer()
+  }
+  // Safety net if a future photo exceeds the pre-rendered canvas.
+  return overlay.resize(width, height, { fit: 'fill' }).toBuffer()
 }
 
 export async function GET(
@@ -61,7 +55,7 @@ export async function GET(
     }
 
     const output = await image
-      .composite([{ input: watermarkSvg(width, height), top: 0, left: 0 }])
+      .composite([{ input: await watermarkOverlay(width, height), top: 0, left: 0 }])
       .jpeg({ quality: 84 })
       .toBuffer()
 
