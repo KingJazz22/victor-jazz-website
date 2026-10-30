@@ -1,5 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { weddingRsvpSchema, sendWeddingRsvpEmail } from '@/lib/wedding-rsvp'
+import {
+  weddingRsvpSchema,
+  sendWeddingRsvpEmail,
+  appendWeddingRsvpToSheet,
+} from '@/lib/wedding-rsvp'
 
 const rateLimit = new Map<string, { count: number; resetAt: number }>()
 
@@ -43,7 +47,23 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: messages }, { status: 422 })
     }
 
-    await sendWeddingRsvpEmail(result.data)
+    // Email and spreadsheet are independent copies: the guest's reply counts as saved
+    // as long as at least one of them recorded it.
+    const [email, sheet] = await Promise.allSettled([
+      sendWeddingRsvpEmail(result.data),
+      appendWeddingRsvpToSheet(result.data),
+    ])
+    if (email.status === 'rejected') console.error('[wedding-rsvp route] email', email.reason)
+    if (sheet.status === 'rejected') console.error('[wedding-rsvp route] sheet', sheet.reason)
+
+    const saved =
+      email.status === 'fulfilled' || (sheet.status === 'fulfilled' && sheet.value === true)
+    if (!saved) {
+      return NextResponse.json(
+        { error: 'Something went wrong. Please try again.' },
+        { status: 500 }
+      )
+    }
 
     return NextResponse.json({ success: true }, { status: 200 })
   } catch (err) {

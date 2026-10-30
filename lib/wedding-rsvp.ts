@@ -47,6 +47,33 @@ export async function sendWeddingRsvpEmail(data: WeddingRsvp) {
   if (error) throw new Error(`Resend error: ${error.message}`)
 }
 
+// Appends the RSVP as a row in the couple's Google Sheet through a Google Apps Script
+// web app (script kept in Desktop\BlueCoralWedding\src\rsvp-sheet.gs). The shared secret
+// stops anyone who finds the script URL from writing rows. Returns false when not configured.
+export async function appendWeddingRsvpToSheet(data: WeddingRsvp): Promise<boolean> {
+  const url = process.env.WEDDING_RSVP_SHEET_URL
+  const secret = process.env.WEDDING_RSVP_SHEET_SECRET
+  if (!url || !secret) return false
+
+  const res = await fetch(url, {
+    method: 'POST',
+    // text/plain keeps Apps Script from rejecting the request; the body is still JSON
+    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+    body: JSON.stringify({ ...data, secret }),
+    redirect: 'follow',
+    signal: AbortSignal.timeout(15_000),
+  })
+  const text = await res.text()
+  let ok = false
+  try {
+    ok = res.ok && JSON.parse(text).ok === true
+  } catch {
+    ok = false
+  }
+  if (!ok) throw new Error(`Sheet append failed (${res.status}): ${text.slice(0, 200)}`)
+  return true
+}
+
 function buildRsvpHtml(data: WeddingRsvp, status: string): string {
   const rows: [string, string][] = [
     ['Name', esc(data.name)],
