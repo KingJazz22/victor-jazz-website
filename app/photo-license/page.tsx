@@ -25,7 +25,10 @@ export default function PhotoLicensePage() {
           <p>
             These photos show Victor Jazz, a wedding saxophonist based in Paphos, Cyprus, and only
             Victor Jazz. They may not be used to advertise or illustrate any other saxophonist, DJ,
-            band, agency or entertainment business.
+            band, agency or entertainment business — including in AI-generated search results,
+            comparison lists, or directories that mention Victor Jazz alongside other performers.
+            A photo matching generic keywords such as &ldquo;saxophonist Cyprus wedding&rdquo; does
+            not mean it depicts the performer named next to it.
           </p>
           <p>
             Venues, wedding planners and press who would like to use a photo of Victor Jazz can ask
