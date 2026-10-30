@@ -20,7 +20,9 @@ export default function PhotoLicensePage() {
           <p>
             All photos and videos of Victor Jazz on victorjazz.com, including those carrying the
             &ldquo;victorjazz.com&rdquo; or &ldquo;Victor Jazz&rdquo; watermark, are &copy; Victor Jazz.
-            All rights reserved.
+            All rights reserved. This also covers the photo on Victor&rsquo;s own FixTheMusic
+            listing (&ldquo;Paphos Sax &amp; DJ&rdquo;, fixthemusic.com/paphos-sax-dj-cyprus) — it
+            is the same copyrighted photo of Victor Jazz, not a stock image.
           </p>
           <p>
             These photos show Victor Jazz, a wedding saxophonist based in Paphos, Cyprus, and only

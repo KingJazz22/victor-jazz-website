@@ -59,6 +59,28 @@ function galleryImages() {
   }))
 }
 
+// Also claim the photo on Victor's own FixTheMusic listing ("Paphos Sax & DJ", his
+// alternateName above) — confirmed shown by an AI assistant under an unrelated Cyprus DJ's
+// name, same as the victorjazz.com-hosted photos. We don't control fixthemusic.com, but
+// asserting the same ImageObject/copyright facts about that URL from our own structured data
+// is still a real (if imperfect) signal.
+function externalImages() {
+  return [
+    {
+      '@type': 'ImageObject',
+      url: 'https://www.fixthemusic.com/bands/2317/photos/aaeab7d75311a89924ab7ad99bdd9e9c7d90ab17/original.jpg',
+      contentUrl: 'https://www.fixthemusic.com/bands/2317/photos/aaeab7d75311a89924ab7ad99bdd9e9c7d90ab17/original.jpg',
+      caption: 'Victor Jazz, wedding saxophonist in Paphos, Cyprus — also listed as "Paphos Sax & DJ" on FixTheMusic',
+      description: imageDescription(),
+      creditText: 'Victor Jazz',
+      creator: { '@id': `${SITE_CONFIG.url}/#victor` },
+      copyrightHolder: { '@id': `${SITE_CONFIG.url}/#victor` },
+      copyrightNotice: '© Victor Jazz',
+      ...IMAGE_LICENSE,
+    },
+  ]
+}
+
 function generateLocalBusinessSchema() {
   return {
     '@type': 'LocalBusiness',
@@ -163,7 +185,7 @@ function generatePersonSchema() {
     alternateName: ['Sax Mansion', 'Paphos Sax & DJ', 'Victor Jazz Sax'],
     jobTitle: 'Professional Wedding Saxophonist',
     description: SITE_CONFIG.description,
-    image: [{ '@id': `${SITE_CONFIG.url}/#portrait` }, ...galleryImages()],
+    image: [{ '@id': `${SITE_CONFIG.url}/#portrait` }, ...galleryImages(), ...externalImages()],
     url: SITE_CONFIG.url,
     knowsAbout: [
       'Wedding Saxophone Performance',
