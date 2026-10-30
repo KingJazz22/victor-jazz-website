@@ -1,0 +1,1388 @@
+<!doctype html>
+<html lang="en">
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nela &amp; Victor Wedding</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Parisienne&family=Cormorant:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap">
+<style>
+  :root{
+    --sea-deep:#0A5A73;
+    --sea:#1494AF;
+    --sea-light:#5AC9DA;
+    --bg:#EFF8F7;
+    --sand:#FCF7EA;
+    --ink:#123B47;
+    --ink-dim:#5B7D84;
+    --coral:#E2703F;
+    --coral-soft:rgba(226,112,63,0.13);
+    --gold:#AD8A31;
+    --line:rgba(18,59,71,0.14);
+    --hero-text:#F7FCFB;
+    --hero-text-dim:rgba(247,252,251,0.8);
+  }
+  *{box-sizing:border-box;}
+  [hidden]{display:none !important;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(ellipse 90% 55% at 50% -8%, rgba(90,201,218,0.22), transparent 55%),
+      var(--bg);
+    color:var(--ink);
+    font-family:'Jost',system-ui,-apple-system,'Segoe UI',sans-serif;
+    font-weight:300;
+    line-height:1.7;
+  }
+  h1,h2,h3{text-wrap:balance; margin:0;}
+  a{color:var(--coral);}
+  .page{max-width:100%;overflow-x:hidden;}
+  .container{max-width:760px;margin:0 auto;padding:0 1.5rem;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;padding:5rem 1.5rem 3rem;text-align:center;color:var(--hero-text);
+    background-image:url("/wedding/kyma-garden.jpg");
+    background-size:cover;background-position:center 55%;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;z-index:0;
+    background:linear-gradient(160deg, rgba(9,60,80,0.88) 0%, rgba(20,148,175,0.72) 55%, rgba(90,201,218,0.5) 100%);
+    background-size:140% 140%;
+    animation:heroDrift 20s ease-in-out infinite alternate;
+  }
+  @keyframes heroDrift{0%{background-position:0% 30%;}100%{background-position:100% 70%;}}
+  @media (prefers-reduced-motion: reduce){ .hero::before{animation:none;} }
+  .hero-inner{position:relative;z-index:1;max-width:640px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:1.1rem;}
+  .eyebrow{
+    font-family:'Jost',sans-serif;font-weight:500;font-size:0.72rem;
+    letter-spacing:0.32em;text-transform:uppercase;color:var(--sea);margin:0;
+  }
+  .hero .eyebrow{color:var(--hero-text-dim);}
+  .names{
+    font-family:'Parisienne',cursive;
+    font-size:clamp(3rem,9vw,5.6rem);
+    font-weight:400;color:var(--hero-text);line-height:1.1;margin:0.2rem 0;
+  }
+  .wedding-label{
+    font-family:'Jost',sans-serif;font-weight:500;font-size:0.85rem;
+    letter-spacing:0.55em;padding-left:0.55em;text-transform:uppercase;
+    color:var(--hero-text-dim);margin:-0.5rem 0 0;
+  }
+  .ornament{width:64px;height:20px;color:var(--gold);opacity:0.9;}
+  .invite-line{
+    font-family:'Cormorant',serif;font-style:italic;font-size:clamp(1.15rem,2.4vw,1.45rem);
+    color:var(--hero-text-dim);max-width:30ch;margin:0;
+  }
+  .date-block{display:flex;flex-direction:column;align-items:center;gap:0.15rem;margin-top:0.6rem;}
+  .date-day{font-size:0.75rem;letter-spacing:0.35em;color:var(--sea-light);font-weight:500;}
+  .date-main{
+    font-family:'Cormorant',serif;font-weight:600;font-size:clamp(1.6rem,4vw,2.1rem);
+    letter-spacing:0.06em;color:var(--hero-text);
+  }
+  .venue-line{font-size:0.95rem;letter-spacing:0.04em;color:var(--hero-text-dim);margin:0;}
+  .scroll-cue{
+    margin-top:1.6rem;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;
+    color:var(--hero-text);text-decoration:none;border-bottom:1px solid rgba(247,252,251,0.5);padding-bottom:2px;
+    display:inline-block;animation:bob 2.6s ease-in-out infinite;
+  }
+  @keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(4px);}}
+  @media (prefers-reduced-motion: reduce){ .scroll-cue{animation:none;} }
+  .wave-divider{position:relative;z-index:1;display:block;width:100%;height:auto;color:var(--bg);}
+
+  /* ---------- Language ---------- */
+  .lang-switch{
+    position:absolute;top:1rem;right:1rem;z-index:2;display:flex;gap:0.15rem;padding:0.2rem;
+    background:rgba(9,45,58,0.35);border:1px solid rgba(247,252,251,0.35);border-radius:999px;
+  }
+  .lang-switch button{
+    background:none;border:none;color:var(--hero-text);cursor:pointer;border-radius:999px;
+    font-family:'Jost',sans-serif;font-weight:500;font-size:0.72rem;letter-spacing:0.12em;padding:0.35rem 0.7rem;
+  }
+  .lang-switch button[aria-pressed="true"]{background:var(--hero-text);color:var(--sea-deep);}
+  .lang-switch button:focus-visible,.lang-choice:focus-visible{outline:2px solid var(--coral);outline-offset:2px;}
+  .lang-modal{
+    position:fixed;inset:0;z-index:50;display:flex;align-items:center;justify-content:center;padding:1.5rem;
+    background:rgba(9,45,58,0.62);backdrop-filter:blur(3px);
+  }
+  .lang-modal[hidden]{display:none;}
+  .lang-modal-card{background:var(--sand);border:1px solid var(--line);max-width:380px;width:100%;padding:2rem 1.6rem;text-align:center;}
+  .lang-modal-card h3{font-family:'Cormorant',serif;font-style:italic;font-weight:500;font-size:1.7rem;color:var(--ink);margin:0.3rem 0 0.2rem;}
+  .lang-modal-sub{margin:0 0 1rem;color:var(--ink-dim);font-size:0.9rem;}
+  .lang-choice{
+    display:block;width:100%;margin-top:0.7rem;padding:0.8rem;cursor:pointer;
+    background:#fff;border:1px solid var(--line);color:var(--ink);
+    font-family:'Cormorant',serif;font-size:1.2rem;transition:border-color 0.15s ease,color 0.15s ease;
+  }
+  .lang-choice:hover{border-color:var(--coral);color:var(--coral);}
+
+  /* ---------- Our story ---------- */
+  .story-grid{columns:3 220px;column-gap:0.9rem;margin-top:1.8rem;text-align:left;}
+  .story-grid figure{break-inside:avoid;margin:0 0 0.9rem;background:var(--sand);border:1px solid var(--line);}
+  .story-grid img{width:100%;height:auto;display:block;}
+  .story-grid figcaption{padding:0.45rem 0.7rem;font-family:'Cormorant',serif;font-style:italic;font-size:1rem;color:var(--ink-dim);}
+
+  /* ---------- Galleries ---------- */
+  .wide-panel{max-width:960px;}
+  .carousel{position:relative;margin-top:1.8rem;}
+  .carousel-track{
+    display:flex;gap:1.4rem;overflow-x:auto;scroll-snap-type:x mandatory;
+    padding:0.2rem 6% 1rem;margin:0 -6%;scrollbar-width:none;
+  }
+  .carousel-track::-webkit-scrollbar{display:none;}
+  .carousel-track figure{
+    position:relative;flex:0 0 min(680px,84vw);scroll-snap-align:center;margin:0;
+    background:var(--sand);border:1px solid var(--line);
+  }
+  .carousel-track img{
+    width:100%;height:clamp(280px,46vw,460px);object-fit:cover;display:block;
+  }
+  .carousel-track figcaption{
+    position:absolute;left:0;right:0;bottom:0;padding:1.4rem 1.5rem;text-align:left;
+    background:linear-gradient(to top, rgba(9,45,58,0.78), transparent);
+    font-family:'Cormorant',serif;font-style:italic;font-size:1.35rem;color:var(--hero-text);
+  }
+  .carousel-nav{
+    display:flex;justify-content:center;gap:0.7rem;margin-top:1rem;
+  }
+  .carousel-nav button{
+    width:2.6rem;height:2.6rem;border-radius:50%;border:1px solid var(--line);background:#fff;
+    color:var(--sea-deep);cursor:pointer;display:flex;align-items:center;justify-content:center;
+    transition:background 0.15s ease,color 0.15s ease;
+  }
+  .carousel-nav button:hover{background:var(--coral);color:#fff;border-color:var(--coral);}
+  .carousel-dots{display:flex;justify-content:center;gap:0.5rem;margin-top:0.9rem;}
+  .carousel-dots button{
+    width:0.5rem;height:0.5rem;padding:0;border-radius:50%;border:none;background:var(--line);cursor:pointer;
+  }
+  .carousel-dots button[aria-current="true"]{background:var(--coral);}
+  .photo-credit{margin:0.8rem 0 0;font-size:0.76rem;color:var(--ink-dim);}
+  .venue-facts{
+    list-style:none;margin:1.6rem auto 0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:0.6rem;
+  }
+  .venue-facts li{
+    background:var(--sand);border:1px solid var(--line);padding:0.4rem 0.9rem;
+    font-size:0.82rem;letter-spacing:0.04em;color:var(--ink-dim);
+  }
+  .paphos-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem;margin-top:1.4rem;}
+  .paphos-gallery figure{margin:0;}
+  .paphos-gallery img{width:100%;height:230px;object-fit:cover;display:block;border:1px solid var(--line);}
+  .paphos-gallery figcaption{margin-top:0.4rem;font-size:0.76rem;color:var(--ink-dim);text-align:center;}
+  .paphos-gallery figcaption a{color:var(--ink-dim);}
+
+  /* ---------- Panels ---------- */
+  main{padding-bottom:2rem;}
+  .panel{padding:3.2rem 1.5rem;max-width:640px;margin:0 auto;text-align:center;}
+  .panel h2{
+    font-family:'Cormorant',serif;font-weight:500;font-style:italic;
+    font-size:clamp(1.7rem,4vw,2.3rem);margin:0.3rem 0 1.6rem;color:var(--ink);
+  }
+  .panel > .eyebrow{display:block;}
+  .panel p.lead{color:var(--ink-dim);max-width:52ch;margin:0 auto 1rem;}
+  .ornament-divider{
+    text-align:center;color:var(--gold);font-size:0.9rem;opacity:0.85;letter-spacing:0.4em;padding:0.4rem 0;
+  }
+
+  /* Schedule */
+  .schedule-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.4rem;margin-top:1rem;text-align:left;}
+  .schedule-item{
+    background:var(--sand);border:1px solid var(--line);padding:1.5rem 1.4rem;
+  }
+  .schedule-item .time{
+    display:block;font-family:'Cormorant',serif;font-size:1.6rem;color:var(--coral);font-variant-numeric:tabular-nums;
+  }
+  .schedule-item .time.placeholder{color:var(--ink-dim);font-style:italic;font-family:'Jost',sans-serif;font-size:0.95rem;}
+  .schedule-item .label{
+    display:block;margin-top:0.3rem;font-size:0.78rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--sea);
+  }
+  .schedule-item .desc{display:block;margin-top:0.5rem;color:var(--ink-dim);font-size:0.92rem;}
+
+  /* info cards (travel/dress/gifts) */
+  .info-card{
+    background:var(--sand);border:1px solid var(--line);padding:1.6rem 1.7rem;text-align:left;margin-top:1rem;
+  }
+  .info-card + .info-card{margin-top:1rem;}
+  .info-card h3{
+    font-family:'Cormorant',serif;font-size:1.15rem;font-weight:600;color:var(--coral);margin:0 0 0.4rem;
+  }
+  .info-card p{margin:0;color:var(--ink-dim);font-size:0.95rem;}
+  .edit-flag{color:var(--coral);font-style:italic;}
+
+  /* ---------- RSVP ---------- */
+  .rsvp-panel{max-width:560px;}
+  .rsvp-deadline{color:var(--sea);font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;margin:0 0 0.3rem;}
+  .rsvp-count{color:var(--ink-dim);font-size:0.92rem;margin:0 0 1.6rem;font-variant-numeric:tabular-nums;}
+  form#rsvp-form{display:flex;flex-direction:column;gap:1.1rem;text-align:left;}
+  .field label{display:block;font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--sea);margin-bottom:0.4rem;}
+  .field input[type=text],.field input[type=number],.field textarea{
+    width:100%;background:#fff;border:1px solid var(--line);color:var(--ink);
+    padding:0.75rem 0.9rem;font-family:'Jost',sans-serif;font-size:1rem;font-weight:300;
+  }
+  .field textarea{min-height:5rem;resize:vertical;font-family:'Jost',sans-serif;}
+  .field input:focus,.field textarea:focus,.attend-option input:focus-visible + span{
+    outline:2px solid var(--coral);outline-offset:2px;
+  }
+  .attend-options{display:flex;gap:0.8rem;flex-wrap:wrap;}
+  .attend-option{flex:1;min-width:160px;position:relative;}
+  .attend-option input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer;}
+  .attend-option span{
+    display:block;text-align:center;padding:0.85rem 0.6rem;border:1px solid var(--line);background:#fff;
+    font-family:'Cormorant',serif;font-style:italic;font-size:1.05rem;color:var(--ink-dim);
+  }
+  .attend-option input:checked + span{border-color:var(--coral);color:var(--coral);background:var(--coral-soft);}
+  .guest-count-field{display:none;}
+  .guest-count-field.show{display:block;}
+  button.submit-btn{
+    background:var(--coral);color:#fff;border:none;padding:0.95rem 1.2rem;
+    font-family:'Jost',sans-serif;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;font-size:0.85rem;
+    cursor:pointer;transition:background 0.15s ease;
+  }
+  button.submit-btn:hover{background:var(--sea-deep);}
+  button.submit-btn:disabled{opacity:0.55;cursor:default;}
+  .rsvp-error{color:var(--coral);font-size:0.88rem;display:none;}
+  .rsvp-error.show{display:block;}
+  .rsvp-confirm{text-align:center;padding:2rem 1rem;border:1px solid var(--line);background:var(--sand);}
+  .rsvp-confirm h3{font-family:'Cormorant',serif;font-style:italic;font-size:1.5rem;color:var(--coral);margin:0 0 0.5rem;}
+  .rsvp-confirm p{color:var(--ink-dim);margin:0;}
+  .rsvp-fallback{margin-top:1.4rem;font-size:0.88rem;color:var(--ink-dim);text-align:center;}
+
+  /* ---------- Footer / admin ---------- */
+  footer{padding:3rem 1.5rem 4rem;text-align:center;font-size:0.85rem;color:var(--ink-dim);border-top:1px solid var(--line);margin-top:2rem;}
+  footer p{margin:0 0 0.5rem;}
+  .admin-link{
+    background:none;border:none;color:var(--ink-dim);font-size:0.75rem;letter-spacing:0.08em;
+    text-decoration:underline;cursor:pointer;margin-top:1.5rem;font-family:'Jost',sans-serif;opacity:0.6;
+  }
+  .admin-link:hover{opacity:1;}
+  #admin-panel{max-width:640px;margin:1.2rem auto 0;text-align:left;background:var(--sand);border:1px solid var(--line);padding:1.4rem;}
+  #admin-panel input[type=password]{
+    background:#fff;border:1px solid var(--line);color:var(--ink);padding:0.6rem 0.8rem;font-family:'Jost',sans-serif;
+  }
+  #admin-panel table{width:100%;border-collapse:collapse;font-size:0.85rem;margin-top:1rem;color:var(--ink);}
+  #admin-panel th,#admin-panel td{text-align:left;padding:0.5rem 0.6rem;border-bottom:1px solid var(--line);vertical-align:top;}
+  #admin-panel th{color:var(--sea);font-weight:500;letter-spacing:0.04em;text-transform:uppercase;font-size:0.72rem;}
+  #admin-panel .stats{display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:0.8rem;font-variant-numeric:tabular-nums;}
+  #admin-panel .stats b{color:var(--coral);font-size:1.1rem;display:block;}
+  #admin-summary{width:100%;min-height:8rem;margin-top:1rem;background:#fff;color:var(--ink-dim);
+    border:1px solid var(--line);font-family:ui-monospace,monospace;font-size:0.78rem;padding:0.6rem;}
+  .admin-overflow{overflow-x:auto;}
+
+  /* =========================================================
+     Site layout layer (overrides the base styles above)
+     ========================================================= */
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} }
+  body{background:var(--bg);}
+  main{padding-bottom:0;}
+  section[id],header[id]{scroll-margin-top:68px;}
+  .ornament-divider,.edit-flag{display:none;}
+  .panel{padding:clamp(4rem,9vw,6.5rem) 1.5rem;}
+  .panel.wide-panel{max-width:1120px;}
+  .panel h2{font-size:clamp(2.1rem,4.6vw,3rem);margin:0.4rem 0 1.3rem;}
+  .panel p.lead{font-size:1.05rem;max-width:58ch;}
+  .eyebrow{color:var(--coral);}
+  .hero .eyebrow{color:var(--hero-text-dim);}
+
+  /* full-bleed alternating bands */
+  .band{position:relative;isolation:isolate;}
+  .band::before{
+    content:"";position:absolute;top:0;bottom:0;left:calc(50% - 50vw);right:calc(50% - 50vw);z-index:-1;
+    background:var(--sand);border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  }
+
+  /* fixed navigation */
+  .site-nav{
+    position:fixed;top:0;left:0;right:0;z-index:40;display:flex;align-items:center;gap:1.4rem;
+    padding:1rem clamp(1rem,4vw,2.6rem);color:var(--hero-text);
+    transition:background 0.25s ease,box-shadow 0.25s ease,color 0.25s ease,padding 0.25s ease;
+  }
+  .site-nav.scrolled{
+    background:rgba(252,247,234,0.95);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+    color:var(--ink);box-shadow:0 1px 0 var(--line),0 6px 24px rgba(18,59,71,0.06);
+    padding-top:0.55rem;padding-bottom:0.55rem;
+  }
+  .nav-mono{font-family:'Parisienne',cursive;font-size:1.75rem;line-height:1;color:inherit;text-decoration:none;white-space:nowrap;}
+  .nav-mono span{color:var(--gold);}
+  .nav-links{list-style:none;display:flex;align-items:center;gap:1.7rem;margin:0 0 0 auto;padding:0;}
+  .nav-links a{
+    color:inherit;text-decoration:none;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;font-weight:500;
+    transition:color 0.15s ease;
+  }
+  .nav-links a:hover{color:var(--coral);}
+  .nav-links .nav-rsvp{border:1px solid currentColor;padding:0.5rem 1.1rem;}
+  .site-nav.scrolled .nav-rsvp{background:var(--coral);border-color:var(--coral);color:#fff;}
+  .site-nav .lang-switch{position:static;}
+  .site-nav.scrolled .lang-switch{background:transparent;border-color:var(--line);}
+  .site-nav.scrolled .lang-switch button{color:var(--ink);}
+  .site-nav.scrolled .lang-switch button[aria-pressed="true"]{background:var(--sea-deep);color:#fff;}
+  @media (max-width:860px){
+    .nav-links li:not(.nav-rsvp-item){display:none;}
+    .site-nav{gap:0.7rem;}
+    .nav-links .nav-rsvp{padding:0.4rem 0.8rem;}
+    .lang-switch button{padding:0.35rem 0.55rem;}
+  }
+
+  /* hero */
+  .hero{
+    min-height:100vh;min-height:100svh;display:flex;align-items:center;justify-content:center;
+    padding:6.5rem 1.5rem 7.5rem;
+  }
+  .hero-inner{max-width:1040px;}
+  .names{font-size:clamp(2.8rem,8.4vw,6rem);}
+  .wave-divider{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:64px;z-index:1;}
+
+  /* countdown */
+  .countdown{display:flex;justify-content:center;gap:clamp(0.5rem,2vw,1rem);margin-top:0.4rem;}
+  .cd-unit{
+    min-width:clamp(64px,15vw,92px);padding:0.7rem 0.4rem 0.55rem;text-align:center;
+    background:rgba(9,45,58,0.28);border:1px solid rgba(247,252,251,0.3);
+    -webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);
+  }
+  .cd-num{
+    display:block;font-family:'Cormorant',serif;font-weight:600;line-height:1;
+    font-size:clamp(1.7rem,4.6vw,2.6rem);color:var(--hero-text);font-variant-numeric:tabular-nums;
+  }
+  .cd-label{display:block;margin-top:0.35rem;font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--hero-text-dim);}
+  .cd-done{font-family:'Cormorant',serif;font-style:italic;font-size:clamp(1.4rem,3vw,1.9rem);color:var(--hero-text);margin:0.4rem 0 0;}
+  .cd-done[hidden],.countdown[hidden]{display:none;}
+  .hero-inner{gap:1rem;}
+  .scroll-cue{margin-top:1rem;}
+
+  /* our story mosaic */
+  .story-lead{margin-bottom:0 !important;}
+  .mosaic{
+    display:grid;gap:10px;margin-top:2.8rem;
+    grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(150px,19vw,250px);
+    grid-template-areas:"sax madeira madeira proposal" "sax sunset desert proposal" "boat flowers flowers palms";
+  }
+  .mosaic figure{position:relative;margin:0;overflow:hidden;background:var(--sand);}
+  .mosaic img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.9s ease;}
+  .mosaic figure:hover img{transform:scale(1.04);}
+  @media (prefers-reduced-motion: reduce){ .mosaic img{transition:none;} .mosaic figure:hover img{transform:none;} }
+  .mosaic figcaption{
+    position:absolute;left:0;right:0;bottom:0;padding:2rem 0.9rem 0.6rem;text-align:left;
+    background:linear-gradient(to top,rgba(9,45,58,0.72),transparent);
+    font-family:'Cormorant',serif;font-style:italic;font-size:1.08rem;color:#fff;
+  }
+  .m-sax{grid-area:sax;} .m-sax img{object-position:center 35%;}
+  .m-sunset{grid-area:sunset;}
+  .m-madeira{grid-area:madeira;} .m-madeira img{object-position:center 65%;}
+  .m-boat{grid-area:boat;} .m-boat img{object-position:center 72%;}
+  .m-proposal{grid-area:proposal;} .m-proposal img{object-position:center 60%;}
+  .m-desert{grid-area:desert;}
+  .m-flowers{grid-area:flowers;} .m-flowers img{object-position:center 60%;}
+  .m-palms{grid-area:palms;} .m-palms img{object-position:center 70%;}
+  @media (max-width:700px){
+    .mosaic{
+      gap:6px;grid-template-columns:1fr 1fr;grid-auto-rows:38vw;
+      grid-template-areas:"madeira madeira" "sax proposal" "sax proposal" "sunset desert" "flowers flowers" "boat palms";
+    }
+  }
+
+  /* venue */
+  .carousel-track figure{flex-basis:min(900px,86vw);border:none;}
+  .carousel-track img{height:clamp(280px,48vw,560px);}
+  .band .venue-facts li{background:#fff;}
+
+  /* schedule */
+  .schedule-grid{gap:1.2rem;}
+  .schedule-item{background:#fff;padding:1.8rem 1.6rem;border-top:3px solid var(--coral);}
+  .schedule-item .time.placeholder{font-family:'Cormorant',serif;font-size:1.3rem;color:var(--coral);}
+
+  /* timeline */
+  .timeline{list-style:none;margin:2.2rem auto 0;padding:0;max-width:600px;text-align:left;position:relative;}
+  .timeline::before{content:"";position:absolute;left:8.2rem;top:0.7rem;bottom:2.4rem;width:1px;background:var(--coral);opacity:0.35;}
+  .tl-item{display:grid;grid-template-columns:7rem 1fr;column-gap:2.4rem;padding:0 0 1.9rem;position:relative;}
+  .tl-item::before{
+    content:"";position:absolute;left:calc(8.2rem - 6px);top:0.62rem;width:12px;height:12px;border-radius:50%;
+    background:var(--bg);border:2px solid var(--coral);box-sizing:border-box;
+  }
+  .tl-key::before{background:var(--coral);box-shadow:0 0 0 4px var(--coral-soft);}
+  .tl-time{
+    text-align:right;font-family:'Cormorant',serif;font-weight:600;font-size:1.5rem;line-height:1.25;
+    color:var(--coral);font-variant-numeric:tabular-nums;
+  }
+  .tl-range{font-size:1.15rem;padding-top:0.15rem;}
+  .tl-title{display:block;font-size:0.76rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--sea-deep);font-weight:500;padding-top:0.3rem;}
+  .tl-text{display:block;margin-top:0.25rem;color:var(--ink-dim);font-size:0.95rem;line-height:1.6;}
+  @media (max-width:560px){
+    .timeline::before{left:5.4rem;}
+    .tl-item{grid-template-columns:4.4rem 1fr;column-gap:2rem;padding-bottom:1.6rem;}
+    .tl-item::before{left:calc(5.4rem - 6px);}
+    .tl-time{font-size:1.25rem;}
+    .tl-range{font-size:0.98rem;}
+  }
+
+  /* travel */
+  .paphos-gallery{margin-top:2rem;gap:10px;}
+  .paphos-gallery img{height:clamp(220px,26vw,320px);border:none;}
+  .info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem;margin-top:1.6rem;}
+  .info-grid .info-card{margin-top:0;}
+  .band .info-card{background:#fff;}
+  .info-card{padding:1.8rem;}
+
+  /* dress code + gifts */
+  .duo{display:grid;grid-template-columns:1fr 1fr;max-width:1120px;margin:0 auto;}
+  .duo .panel{max-width:none;margin:0;padding:clamp(3rem,6vw,4.5rem) clamp(1.5rem,4vw,3rem);}
+  .duo .panel + .panel{border-left:1px solid var(--line);}
+  @media (max-width:760px){
+    .duo{grid-template-columns:1fr;}
+    .duo .panel + .panel{border-left:none;border-top:1px solid var(--line);}
+  }
+
+  /* rsvp */
+  .rsvp-panel{max-width:620px;}
+  .attend-option span{padding:1rem 0.6rem;}
+
+  /* footer */
+  footer{
+    background:var(--sea-deep);color:rgba(247,252,251,0.72);border-top:none;margin-top:0;
+    padding:4.5rem 1.5rem 3rem;
+  }
+  footer a{color:#fff;}
+  footer .footer-names{font-family:'Parisienne',cursive;font-size:clamp(2.2rem,6vw,3rem);color:#fff;line-height:1.2;margin:0 0 0.3rem;}
+  footer .footer-date{letter-spacing:0.32em;font-size:0.78rem;color:var(--sea-light);margin:0 0 1.6rem;}
+  footer .admin-link{color:rgba(247,252,251,0.7);}
+  #admin-panel{color:var(--ink);}
+</style>
+
+<div class="page">
+
+  <nav class="site-nav" id="site-nav" aria-label="Main">
+    <a class="nav-mono" href="#top">K <span>&amp;</span> V</a>
+    <ul class="nav-links">
+      <li><a href="#our-story" data-i18n="navStory">Our Story</a></li>
+      <li><a href="#the-villa" data-i18n="navVenue">Venue</a></li>
+      <li><a href="#details" data-i18n="navSchedule">Schedule</a></li>
+      <li><a href="#travel" data-i18n="navTravel">Travel</a></li>
+      <li class="nav-rsvp-item"><a href="#rsvp" class="nav-rsvp">RSVP</a></li>
+    </ul>
+    <div class="lang-switch" role="group" aria-label="Language / Język / Idioma">
+      <button type="button" data-lang="en" lang="en">EN</button>
+      <button type="button" data-lang="pl" lang="pl">PL</button>
+      <button type="button" data-lang="pt" lang="pt">PT</button>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="hero-inner">
+      <p class="eyebrow" data-i18n="heroEyebrow">Together with their families</p>
+      <h1 class="names">Kornelia &amp; Victor</h1>
+      <p class="wedding-label" data-i18n="weddingLabel">Wedding</p>
+      <svg class="ornament" viewBox="0 0 64 20" fill="none" aria-hidden="true">
+        <path d="M2 10 Q16 2 32 10 T62 10" stroke="currentColor" stroke-width="1"/>
+        <circle cx="32" cy="10" r="2.5" fill="currentColor"/>
+      </svg>
+      <p class="invite-line" data-i18n="inviteLine">request the pleasure of your company as they exchange vows by the sea</p>
+      <div class="date-block">
+        <span class="date-day" data-i18n="dateDay">Saturday</span>
+        <span class="date-main" data-i18n="dateMain">02 October 2027</span>
+      </div>
+      <p class="venue-line" data-i18n="venueLine">Villa Kyma &middot; Coral Bay, Paphos, Cyprus</p>
+      <div class="countdown" id="countdown" role="timer" aria-label="Countdown to the wedding">
+        <div class="cd-unit"><span class="cd-num" id="cd-days">&ndash;</span><span class="cd-label" data-i18n="cdDays">Days</span></div>
+        <div class="cd-unit"><span class="cd-num" id="cd-hours">&ndash;</span><span class="cd-label" data-i18n="cdHours">Hours</span></div>
+        <div class="cd-unit"><span class="cd-num" id="cd-mins">&ndash;</span><span class="cd-label" data-i18n="cdMins">Minutes</span></div>
+        <div class="cd-unit"><span class="cd-num" id="cd-secs">&ndash;</span><span class="cd-label" data-i18n="cdSecs">Seconds</span></div>
+      </div>
+      <p class="cd-done" id="cd-done" data-i18n="cdDone" hidden>Today is the day!</p>
+      <a class="scroll-cue" href="#rsvp" data-i18n="scrollCue">Reply to this invitation &darr;</a>
+    </div>
+    <svg class="wave-divider" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true">
+      <path fill="currentColor" d="M0,32 C240,60 480,4 720,24 C960,44 1200,4 1440,28 L1440,60 L0,60 Z"/>
+    </svg>
+  </header>
+
+  <main>
+
+    <section class="panel wide-panel" id="our-story">
+      <p class="eyebrow" data-i18n="storyEyebrow">About Us</p>
+      <h2 data-i18n="storyTitle">Our Story</h2>
+      <p class="lead story-lead" data-i18n="storyText">Two people who are happiest with the sea in view. Over the past few years we have collected sunsets, cliff-top walks and far too many selfies &mdash; from the cliffs of Madeira to the desert outside Dubai. In March 2025, by the lake in Rome&rsquo;s Villa Borghese, Victor got down on one knee and Nela said yes. Now we can&rsquo;t wait to celebrate the next chapter with you, by the sea in Cyprus.</p>
+      <div class="mosaic">
+        <figure class="m-sax"><img src="/wedding/story-2022-sax.jpg" alt="Victor with his saxophone and Nela on a garden lawn" loading="lazy"><figcaption>2022</figcaption></figure>
+        <figure class="m-sunset"><img src="/wedding/story-2022-sunset.jpg" alt="Nela kissing Victor's cheek at sunset" loading="lazy"><figcaption>2022</figcaption></figure>
+        <figure class="m-madeira"><img src="/wedding/story-madeira.jpg" alt="Nela and Victor on a green clifftop above the ocean in Madeira" loading="lazy"><figcaption data-i18n="capMadeira">Madeira &middot; 2024</figcaption></figure>
+        <figure class="m-boat"><img src="/wedding/story-rome-boat.jpg" alt="Nela and Victor in a rowing boat by the temple on the Villa Borghese lake" loading="lazy"><figcaption data-i18n="capRome">Rome &middot; 2025</figcaption></figure>
+        <figure class="m-proposal"><img src="/wedding/story-proposal.jpg" alt="Victor on one knee holding out a ring to Nela beside a fountain" loading="lazy"><figcaption data-i18n="capProposal">The proposal &middot; Rome, 2025</figcaption></figure>
+        <figure class="m-desert"><img src="/wedding/story-desert.jpg" alt="Nela and Victor standing on desert dunes" loading="lazy"><figcaption data-i18n="capDubai">Dubai &middot; 2025</figcaption></figure>
+        <figure class="m-flowers"><img src="/wedding/story-flowers.jpg" alt="Nela kissing Victor in front of white blossoms" loading="lazy"><figcaption>2026</figcaption></figure>
+        <figure class="m-palms"><img src="/wedding/story-sunset-palms.jpg" alt="Nela and Victor kissing at sunset between palm trees by the sea" loading="lazy"><figcaption>2026</figcaption></figure>
+      </div>
+    </section>
+
+    <div class="ornament-divider">&#9670;</div>
+
+    <section class="panel wide-panel band" id="the-villa">
+      <p class="eyebrow" data-i18n="settingEyebrow">The Setting</p>
+      <h2>Villa Kyma</h2>
+      <p class="lead" data-i18n="settingLead">A private seafront villa on the quiet edge of Coral Bay, where a wide lawn and palm-lined garden run straight down to the Mediterranean. <em>Kyma</em> is Greek for &ldquo;wave&rdquo; &mdash; fitting for a day spent by the sea.</p>
+      <div class="carousel" id="villa-carousel">
+        <div class="carousel-track" id="villa-track">
+          <figure><img src="/wedding/kyma-garden.jpg" alt="Villa Kyma's lawn and palm garden leading down to the sea"><figcaption data-i18n="capGarden">The garden, down to the sea</figcaption></figure>
+          <figure><img src="/wedding/kyma-terrace.jpg" alt="Covered terrace beside the infinity pool, with the lawn and sea beyond"><figcaption data-i18n="capTerrace">The terrace &amp; infinity pool</figcaption></figure>
+          <figure><img src="/wedding/kyma-pool.jpg" alt="Villa Kyma's pool terrace with sun loungers and the outdoor bar"><figcaption data-i18n="capPool">Poolside &amp; the outdoor bar</figcaption></figure>
+          <figure><img src="/wedding/kyma-house.jpg" alt="Villa Kyma seen from across the garden lawn"><figcaption data-i18n="capHouse">Villa Kyma from the garden</figcaption></figure>
+          <figure><img src="/wedding/kyma-suite.jpg" alt="Sea-view bedroom opening onto a balcony"><figcaption data-i18n="capSuite">A sea-view suite</figcaption></figure>
+        </div>
+        <div class="carousel-nav">
+          <button type="button" id="villa-prev" aria-label="Previous photo">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 2 4 8l6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button type="button" id="villa-next" aria-label="Next photo">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 2l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <div class="carousel-dots" id="villa-dots"></div>
+      </div>
+      <p class="photo-credit" data-i18n="photoCredit">Photos: Ezoria Villas</p>
+      <ul class="venue-facts">
+        <li data-i18n="fact1">Seafront garden &amp; lawn</li>
+        <li data-i18n="fact2">12.5&thinsp;m infinity pool</li>
+        <li data-i18n="fact3">Outdoor bar &amp; grill</li>
+        <li data-i18n="fact4">2&thinsp;km from Coral Bay Beach</li>
+      </ul>
+    </section>
+
+    <div class="ornament-divider">&#9670;</div>
+
+    <section class="panel" id="details">
+      <p class="eyebrow" data-i18n="celebEyebrow">The Celebration</p>
+      <h2 data-i18n="scheduleTitle">Schedule of Events</h2>
+      <ol class="timeline">
+        <li class="tl-item">
+          <span class="tl-time tl-range">14:30&thinsp;&ndash;&thinsp;15:00</span>
+          <div><span class="tl-title" data-i18n="tl1Title">Arrival</span><span class="tl-text" data-i18n="tl1Text">Guests gather with the groom ahead of the ceremony.</span></div>
+        </li>
+        <li class="tl-item tl-key">
+          <span class="tl-time">15:30</span>
+          <div><span class="tl-title" data-i18n="tl2Title">Ceremony</span><span class="tl-text" data-i18n="tl2Text">Kornelia and Victor exchange vows by the sea.</span></div>
+        </li>
+        <li class="tl-item">
+          <span class="tl-time">16:00</span>
+          <div><span class="tl-title" data-i18n="tl3Title">Confetti &amp; photos</span><span class="tl-text" data-i18n="tl3Text">The ceremony ends with confetti and group photos.</span></div>
+        </li>
+        <li class="tl-item">
+          <span class="tl-time">16:30</span>
+          <div><span class="tl-title" data-i18n="tl4Title">Cocktail reception</span><span class="tl-text" data-i18n="tl4Text">Drinks and conversation as the afternoon turns golden.</span></div>
+        </li>
+        <li class="tl-item">
+          <span class="tl-time">18:00</span>
+          <div><span class="tl-title" data-i18n="tl5Title">Sunset</span><span class="tl-text" data-i18n="tl5Text">The couple slip away for a sunset shoot while guests take their seats for dinner. Official sunset: 18:33.</span></div>
+        </li>
+        <li class="tl-item">
+          <span class="tl-time">18:30</span>
+          <div><span class="tl-title" data-i18n="tl6Title">Grand entrance</span><span class="tl-text" data-i18n="tl6Text">Kornelia and Victor make their entrance and cut the cake, followed by speeches.</span></div>
+        </li>
+        <li class="tl-item">
+          <span class="tl-time">19:00</span>
+          <div><span class="tl-title" data-i18n="tl7Title">Dinner</span><span class="tl-text" data-i18n="tl7Text">Dinner is served.</span></div>
+        </li>
+        <li class="tl-item tl-key">
+          <span class="tl-time">20:00</span>
+          <div><span class="tl-title" data-i18n="tl8Title">First dance &amp; party</span><span class="tl-text" data-i18n="tl8Text">The first dance opens the party.</span></div>
+        </li>
+      </ol>
+    </section>
+
+    <div class="ornament-divider">&#9670;</div>
+
+    <section class="panel wide-panel band" id="travel">
+      <p class="eyebrow" data-i18n="travelEyebrow">Getting Here</p>
+      <h2 data-i18n="travelTitle">Travel &amp; Stay</h2>
+      <p class="lead" data-i18n="travelLead">Paphos International Airport (PFO) is the nearest airport, around 30&ndash;35 minutes&rsquo; drive from Villa Kyma. Larnaca International Airport (LCA) is a further option, roughly 1&frac34;&ndash;2 hours away by road.</p>
+      <div class="paphos-gallery">
+        <figure>
+          <img src="/wedding/paphos-coral-bay.jpg" alt="Coral Bay, Paphos, turquoise water and sandy beach">
+          <figcaption data-i18n="capCoralBay">Coral Bay Beach, about 2&thinsp;km from the villa &mdash; photo: Paul Lakin, CC BY 3.0</figcaption>
+        </figure>
+        <figure>
+          <img src="/wedding/paphos-aphrodites-rock.jpg" alt="Petra tou Romiou, Aphrodite's Rock, Paphos coastline">
+          <figcaption data-i18n="capRock">Aphrodite&rsquo;s Rock, Petra tou Romiou &mdash; photo: Diego Delso, CC BY-SA</figcaption>
+        </figure>
+      </div>
+      <div class="info-grid">
+      <div class="info-card">
+        <h3 data-i18n="stayTitle">Where to Stay</h3>
+        <p><span data-i18n="stayText">Coral Bay and Peyia, just a few minutes from the villa, have hotels, apartments and holiday villas to suit most budgets, with Paphos town about 20 minutes further along the coast.</span> <span class="edit-flag">[Add recommended hotels once you've picked a shortlist.]</span></p>
+      </div>
+      <div class="info-card">
+        <h3 data-i18n="findTitle">Finding the Venue</h3>
+        <p><span data-i18n="findText">Villa Kyma sits on the quiet outskirts of Coral Bay, right on the water. Parking at the villa is limited, so taxis or shared cars are the easiest way to arrive.</span> <a data-i18n="findLink" href="https://www.google.com/maps/search/?api=1&query=Seafront+Villa+Kyma+by+Ezoria+Villas+Coral+Bay+Cyprus" target="_blank" rel="noopener">Get directions to Villa Kyma &rarr;</a></p>
+      </div>
+      </div>
+    </section>
+
+    <div class="ornament-divider">&#9670;</div>
+
+    <div class="duo">
+    <section class="panel" id="dress-code">
+      <p class="eyebrow" data-i18n="dressEyebrow">What to Wear</p>
+      <h2 data-i18n="dressTitle">Dress Code</h2>
+      <p class="lead"><span data-i18n="dressText">Garden Elegant &mdash; light fabrics and comfortable shoes are welcome, as the ceremony takes place outdoors on the villa&rsquo;s garden lawn.</span> <span class="edit-flag">[Confirm this wording matches what you have in mind.]</span></p>
+    </section>
+
+    <section class="panel" id="gifts">
+      <p class="eyebrow" data-i18n="giftsEyebrow">Your Presence</p>
+      <h2 data-i18n="giftsTitle">Gifts</h2>
+      <p class="lead"><span data-i18n="giftsText">Having you with us is the greatest gift of all.</span> <span class="edit-flag">[Add honeymoon fund / registry details here if you'd like one.]</span></p>
+    </section>
+    </div>
+
+    <div class="ornament-divider">&#9670;</div>
+
+    <section class="panel rsvp-panel band" id="rsvp">
+      <p class="eyebrow" data-i18n="rsvpEyebrow">Kindly Reply</p>
+      <h2>RSVP</h2>
+      <p class="rsvp-deadline" data-i18n="rsvpDeadline">Please respond by 02 April 2027</p>
+      <p class="rsvp-count" id="rsvp-count"></p>
+
+      <form id="rsvp-form" novalidate>
+        <div class="field">
+          <label for="f-name" data-i18n="fName">Full name(s)</label>
+          <input type="text" id="f-name" name="name" autocomplete="name" required>
+        </div>
+
+        <div class="field">
+          <label data-i18n="fAttending">Will you be attending?</label>
+          <div class="attend-options">
+            <label class="attend-option">
+              <input type="radio" name="attending" value="yes" required>
+              <span data-i18n="fYes">Joyfully Accepts</span>
+            </label>
+            <label class="attend-option">
+              <input type="radio" name="attending" value="no">
+              <span data-i18n="fNo">Regretfully Declines</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="field guest-count-field" id="guest-count-wrap">
+          <label for="f-count" data-i18n="fCount">Number of guests (including you)</label>
+          <input type="number" id="f-count" name="count" min="1" max="10" value="1">
+        </div>
+
+        <div class="field guest-count-field" id="dietary-wrap">
+          <label for="f-dietary" data-i18n="fDietary">Dietary requirements</label>
+          <input type="text" id="f-dietary" name="dietary" placeholder="Vegetarian, allergies, etc." data-i18n-ph="fDietaryPh">
+        </div>
+
+        <div class="field">
+          <label for="f-message" data-i18n="fMessage">Message to the couple (optional)</label>
+          <textarea id="f-message" name="message"></textarea>
+        </div>
+
+        <p class="rsvp-error" id="rsvp-error"></p>
+
+        <button type="submit" class="submit-btn" id="rsvp-submit" data-i18n="fSubmit">Send RSVP</button>
+      </form>
+
+      <div class="rsvp-confirm" id="rsvp-confirm" hidden>
+        <h3 data-i18n="thanks">Thank you!</h3>
+        <p id="rsvp-confirm-text"></p>
+      </div>
+
+      <p class="rsvp-fallback"><span data-i18n="fallback">Trouble with the form? Message us directly &mdash;</span>
+        <a href="mailto:nelaandvictor@gmail.com?subject=Wedding%20RSVP">nelaandvictor@gmail.com</a> &middot;
+        <a href="https://wa.me/353838980169" target="_blank" rel="noopener" data-i18n="whatsapp">WhatsApp us</a>
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p class="footer-names">Kornelia &amp; Victor</p>
+    <p class="footer-date">02 &middot; 10 &middot; 2027</p>
+    <p><span data-i18n="footerPlace">Villa Kyma &middot; Coral Bay, Paphos, Cyprus</span> &middot; <a data-i18n="footerDirections" href="https://www.google.com/maps/search/?api=1&query=Seafront+Villa+Kyma+by+Ezoria+Villas+Coral+Bay+Cyprus" target="_blank" rel="noopener">Get Directions</a></p>
+    <p data-i18n="footerLove">With love, looking forward to celebrating with you.</p>
+    <button class="admin-link" id="admin-toggle" type="button">couple's dashboard</button>
+    <div id="admin-panel" hidden>
+      <div id="admin-gate">
+        <label for="admin-pass" style="display:block;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--sea);margin-bottom:0.4rem;">Enter passphrase</label>
+        <input type="password" id="admin-pass" placeholder="passphrase">
+        <button type="button" id="admin-unlock" class="submit-btn" style="margin-left:0.5rem;padding:0.6rem 1rem;">Unlock</button>
+        <p id="admin-gate-error" style="color:var(--coral);font-size:0.8rem;display:none;">Incorrect passphrase.</p>
+      </div>
+      <div id="admin-content" hidden>
+        <div class="stats" id="admin-stats"></div>
+        <div class="admin-overflow">
+          <table id="admin-table"><thead><tr>
+            <th>Name</th><th>Attending</th><th>Guests</th><th>Dietary</th><th>Message</th><th>When</th>
+          </tr></thead><tbody></tbody></table>
+        </div>
+        <label style="display:block;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--sea);margin-top:1rem;">Copy as text</label>
+        <textarea id="admin-summary" readonly></textarea>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<div class="lang-modal" id="lang-modal" role="dialog" aria-modal="true" aria-labelledby="lang-modal-title" hidden>
+  <div class="lang-modal-card">
+    <p class="eyebrow">Kornelia &amp; Victor</p>
+    <h3 id="lang-modal-title">Choose your language</h3>
+    <p class="lang-modal-sub"><span lang="pl">Wybierz język</span> &middot; <span lang="pt">Escolha o idioma</span></p>
+    <button type="button" class="lang-choice" data-lang="en" lang="en">English</button>
+    <button type="button" class="lang-choice" data-lang="pl" lang="pl">Polski</button>
+    <button type="button" class="lang-choice" data-lang="pt" lang="pt">Português</button>
+  </div>
+</div>
+
+<script id="rsvp-state" type="application/json">{"rsvps":[]}</script>
+
+<script>window.__WEDDING_RSVP_ENDPOINT = '/api/wedding-rsvp';</script>
+<script>
+(function(){
+  "use strict";
+
+  // Captured before any interaction/mutation -- equivalent to the authored
+  // source, used as the base template for republishing with new RSVP data.
+  var DOC_SHELL = '<!doctype html>' + document.documentElement.outerHTML;
+
+  var ADMIN_PASSPHRASE = 'kyma2027';
+
+  // Set only on the copy hosted at victorjazz.com: RSVPs are emailed through the
+  // site's API there, because the page cannot save into itself outside the artifact.
+  var SITE_ENDPOINT = window.__WEDDING_RSVP_ENDPOINT || null;
+
+  var stateEl = document.getElementById('rsvp-state');
+  var STATE;
+  try { STATE = JSON.parse(stateEl.textContent); } catch(e) { STATE = {rsvps:[]}; }
+  if (!STATE.rsvps) STATE.rsvps = [];
+
+  function esc(s){
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+
+  function buildDoc(newState){
+    var json = JSON.stringify(newState).replace(/</g, '\\u003c');
+    return DOC_SHELL.replace(
+      /(<script id="rsvp-state" type="application\/json">)[\s\S]*?(<\/script>)/,
+      function(_, open, close){ return open + json + close; }
+    );
+  }
+
+  function renderCount(){
+    var accepted = STATE.rsvps.filter(function(r){ return r.attending === 'yes'; });
+    var total = accepted.reduce(function(sum, r){ return sum + (parseInt(r.count,10) || 1); }, 0);
+    var el = document.getElementById('rsvp-count');
+    if (!el) return;
+    if (SITE_ENDPOINT){ el.hidden = true; return; }
+    el.textContent = accepted.length ? t('countN')(total) : t('countFirst');
+  }
+
+  var confirmedRecord = null;
+  function renderConfirm(){
+    if (!confirmedRecord) return;
+    var key = confirmedRecord.attending === 'yes' ? 'confirmYes' : 'confirmNo';
+    document.getElementById('rsvp-confirm-text').textContent = t(key).replace('{name}', confirmedRecord.name);
+  }
+
+  // ---------- Language ----------
+  // Runs after DOC_SHELL is captured, so the republished page stays in the
+  // authored English; each visitor's language is applied in their browser only.
+  var I18N = {
+    en: {
+      countN: function(n){ return n + ' guest' + (n === 1 ? '' : 's') + ' joyfully confirmed so far'; },
+      countFirst: 'Be the first to reply!',
+      errMissing: 'Please add your name and let us know if you can make it.',
+      errSave: 'We couldn’t save your RSVP just now. Please try again in a moment, or message us directly below.',
+      sending: 'Sending…',
+      confirmYes: 'We can’t wait to celebrate with you, {name}.',
+      confirmNo: 'We’ll miss you, {name} — thank you for letting us know.'
+    },
+    pl: {
+      heroEyebrow: 'Wraz z rodzinami',
+      weddingLabel: 'Ślub',
+      inviteLine: 'mają zaszczyt zaprosić Cię na ślub nad brzegiem morza',
+      dateDay: 'Sobota',
+      dateMain: '2 października 2027',
+      venueLine: 'Villa Kyma &middot; Coral Bay, Pafos, Cypr',
+      scrollCue: 'Odpowiedz na zaproszenie &darr;',
+      tl1Title: 'Przyjazd gości',
+      tl1Text: 'Goście zbierają się razem z Panem Młodym przed ceremonią.',
+      tl2Title: 'Ceremonia',
+      tl2Text: 'Kornelia i Victor składają sobie przysięgę nad samym morzem.',
+      tl3Title: 'Konfetti i zdjęcia',
+      tl3Text: 'Zakończenie ceremonii, konfetti i wspólne zdjęcia grupowe.',
+      tl4Title: 'Koktajl',
+      tl4Text: 'Rozpoczyna się przyjęcie koktajlowe &mdash; czas na drinki i rozmowy.',
+      tl5Title: 'Zachód słońca',
+      tl5Text: 'Para Młoda wymyka się na sesję zdjęciową o zachodzie słońca, a goście zajmują miejsca przy stołach. Oficjalny zachód słońca: 18:33.',
+      tl6Title: 'Wejście Pary Młodej',
+      tl6Text: 'Wielkie wejście Kornelii i Victora, krojenie tortu, a potem przemówienia.',
+      tl7Title: 'Kolacja',
+      tl7Text: 'Kolacja zostaje podana.',
+      tl8Title: 'Pierwszy taniec i zabawa',
+      tl8Text: 'Pierwszy taniec otwiera zabawę.',
+      cdDays: 'Dni',
+      cdHours: 'Godziny',
+      cdMins: 'Minuty',
+      cdSecs: 'Sekundy',
+      cdDone: 'To już dziś!',
+      navStory: 'Nasza historia',
+      navVenue: 'Miejsce',
+      navSchedule: 'Plan dnia',
+      navTravel: 'Dojazd',
+      timeTbc: 'Godzina wkrótce',
+      storyEyebrow: 'O nas',
+      storyTitle: 'Nasza historia',
+      storyText: 'Dwoje ludzi, którzy najszczęśliwsi są z widokiem na morze. Przez ostatnie lata zbieraliśmy zachody słońca, spacery po klifach i stanowczo za dużo selfie &mdash; od klifów Madery po pustynię pod Dubajem. W marcu 2025 roku w Rzymie, nad jeziorkiem w Villa Borghese, Victor uklęknął z pierścionkiem, a Nela powiedziała „tak”. Teraz nie możemy się doczekać, by świętować z Tobą kolejny rozdział &mdash; nad morzem, na Cyprze.',
+      capMadeira: 'Madera &middot; 2024',
+      capRome: 'Rzym &middot; 2025',
+      capProposal: 'Oświadczyny &middot; Rzym, 2025',
+      capDubai: 'Dubaj &middot; 2025',
+      settingEyebrow: 'Miejsce',
+      settingLead: 'Prywatna willa nad samym morzem, na spokojnych obrzeżach Coral Bay, gdzie rozległy trawnik i ogród pełen palm schodzą prosto do Morza Śródziemnego. <em>Kyma</em> po grecku znaczy „fala” &mdash; w sam raz na dzień spędzony nad morzem.',
+      capGarden: 'Ogród schodzący do morza',
+      capTerrace: 'Taras i basen infinity',
+      capPool: 'Przy basenie i bar na świeżym powietrzu',
+      capHouse: 'Villa Kyma widziana z ogrodu',
+      capSuite: 'Sypialnia z widokiem na morze',
+      photoCredit: 'Zdjęcia: Ezoria Villas',
+      fact1: 'Ogród nad samym morzem',
+      fact2: 'Basen infinity 12,5&thinsp;m',
+      fact3: 'Bar i grill na świeżym powietrzu',
+      fact4: '2&thinsp;km od plaży Coral Bay',
+      celebEyebrow: 'Uroczystość',
+      scheduleTitle: 'Plan dnia',
+      ceremony: 'Ceremonia',
+      ceremonyDesc: 'Przysięga małżeńska na trawniku nad morzem w Villa Kyma, z Morzem Śródziemnym w tle.',
+      reception: 'Przyjęcie',
+      receptionDesc: 'Kolacja przy basenie i świętowanie na tarasie, gdy słońce zachodzi nad morzem.',
+      travelEyebrow: 'Dojazd',
+      travelTitle: 'Podróż i nocleg',
+      travelLead: 'Najbliższe lotnisko to port lotniczy Pafos (PFO), około 30&ndash;35 minut jazdy samochodem od Villa Kyma. Inną możliwością jest lotnisko w Larnace (LCA), oddalone o około 1&frac34;&ndash;2 godziny drogi.',
+      capCoralBay: 'Plaża Coral Bay, ok. 2&thinsp;km od willi &mdash; fot. Paul Lakin, CC BY 3.0',
+      capRock: 'Skała Afrodyty, Petra tou Romiou &mdash; fot. Diego Delso, CC BY-SA',
+      stayTitle: 'Gdzie się zatrzymać',
+      stayText: 'W Coral Bay i w miejscowości Peyia, zaledwie kilka minut od willi, znajdziesz hotele, apartamenty i domy wakacyjne na każdą kieszeń, a miasto Pafos leży około 20 minut dalej wzdłuż wybrzeża.',
+      findTitle: 'Jak dojechać',
+      findText: 'Villa Kyma leży na spokojnych obrzeżach Coral Bay, tuż nad wodą. Liczba miejsc parkingowych przy willi jest ograniczona, dlatego najwygodniej przyjechać taksówką lub wspólnym samochodem.',
+      findLink: 'Wyznacz trasę do Villa Kyma &rarr;',
+      dressEyebrow: 'Strój',
+      dressTitle: 'Dress code',
+      dressText: 'Elegancko, w ogrodowym stylu &mdash; mile widziane lekkie tkaniny i wygodne buty, ponieważ ceremonia odbędzie się na świeżym powietrzu, na trawniku przy willi.',
+      giftsEyebrow: 'Twoja obecność',
+      giftsTitle: 'Prezenty',
+      giftsText: 'Twoja obecność jest dla nas najpiękniejszym prezentem.',
+      rsvpEyebrow: 'Czekamy na odpowiedź',
+      rsvpDeadline: 'Prosimy o odpowiedź do 2 kwietnia 2027',
+      fName: 'Imię i nazwisko',
+      fAttending: 'Czy będziesz z nami?',
+      fYes: 'Z radością przyjmuję',
+      fNo: 'Niestety nie mogę',
+      fCount: 'Liczba gości (łącznie z Tobą)',
+      fDietary: 'Wymagania dietetyczne',
+      fDietaryPh: 'Dieta wegetariańska, alergie itp.',
+      fMessage: 'Wiadomość dla Pary Młodej (opcjonalnie)',
+      fSubmit: 'Wyślij odpowiedź',
+      thanks: 'Dziękujemy!',
+      fallback: 'Problem z formularzem? Napisz do nas bezpośrednio &mdash;',
+      whatsapp: 'Napisz na WhatsApp',
+      footerPlace: 'Villa Kyma &middot; Coral Bay, Pafos, Cypr',
+      footerDirections: 'Wyznacz trasę',
+      footerLove: 'Z miłością &mdash; nie możemy się doczekać wspólnego świętowania.',
+      countN: function(n){ return 'Potwierdzone osoby: ' + n; },
+      countFirst: 'Bądź pierwszą osobą, która odpowie!',
+      errMissing: 'Wpisz swoje imię i nazwisko oraz daj nam znać, czy będziesz.',
+      errSave: 'Nie udało się zapisać odpowiedzi. Spróbuj ponownie za chwilę lub napisz do nas bezpośrednio (kontakt poniżej).',
+      sending: 'Wysyłanie…',
+      confirmYes: 'Nie możemy się doczekać wspólnego świętowania, {name}!',
+      confirmNo: 'Będzie nam Ciebie brakowało, {name} — dziękujemy za informację.'
+    },
+    pt: {
+      heroEyebrow: 'Juntamente com suas famílias',
+      weddingLabel: 'Casamento',
+      inviteLine: 'têm a alegria de convidar você para a troca de votos à beira-mar',
+      dateDay: 'Sábado',
+      dateMain: '2 de outubro de 2027',
+      venueLine: 'Villa Kyma &middot; Coral Bay, Pafos, Chipre',
+      scrollCue: 'Responda ao convite &darr;',
+      tl1Title: 'Chegada',
+      tl1Text: 'Os convidados se reúnem com o noivo antes da cerimônia.',
+      tl2Title: 'Cerimônia',
+      tl2Text: 'Kornelia e Victor trocam votos à beira-mar.',
+      tl3Title: 'Confete e fotos',
+      tl3Text: 'Fim da cerimônia, chuva de confete e fotos em grupo.',
+      tl4Title: 'Coquetel',
+      tl4Text: 'Começa a recepção com coquetel &mdash; hora de brindar e conversar.',
+      tl5Title: 'Pôr do sol',
+      tl5Text: 'Os noivos saem para uma sessão de fotos ao pôr do sol enquanto os convidados se acomodam nas mesas do jantar. Pôr do sol oficial: 18:33.',
+      tl6Title: 'Entrada dos noivos',
+      tl6Text: 'Kornelia e Victor fazem sua entrada e cortam o bolo, seguidos dos discursos.',
+      tl7Title: 'Jantar',
+      tl7Text: 'O jantar é servido.',
+      tl8Title: 'Primeira dança e festa',
+      tl8Text: 'A primeira dança abre a festa.',
+      cdDays: 'Dias',
+      cdHours: 'Horas',
+      cdMins: 'Minutos',
+      cdSecs: 'Segundos',
+      cdDone: 'Chegou o grande dia!',
+      navStory: 'Nossa História',
+      navVenue: 'O Local',
+      navSchedule: 'Programação',
+      navTravel: 'Viagem',
+      timeTbc: 'Horário a confirmar',
+      storyEyebrow: 'Sobre Nós',
+      storyTitle: 'Nossa História',
+      storyText: 'Duas pessoas que são mais felizes com o mar à vista. Nos últimos anos colecionamos pores do sol, caminhadas à beira de falésias e selfies demais &mdash; das falésias da Madeira ao deserto de Dubai. Em março de 2025, em Roma, à beira do lago da Villa Borghese, Victor se ajoelhou com um anel e Nela disse &ldquo;sim&rdquo;. Agora mal podemos esperar para celebrar o próximo capítulo com você, à beira-mar, em Chipre.',
+      capMadeira: 'Madeira &middot; 2024',
+      capRome: 'Roma &middot; 2025',
+      capProposal: 'O pedido &middot; Roma, 2025',
+      capDubai: 'Dubai &middot; 2025',
+      settingEyebrow: 'O Local',
+      settingLead: 'Uma villa privativa à beira-mar, nos arredores tranquilos de Coral Bay, onde um amplo jardim com palmeiras desce até o Mediterrâneo. <em>Kyma</em> significa &ldquo;onda&rdquo; em grego &mdash; perfeito para um dia à beira-mar.',
+      capGarden: 'O jardim, descendo até o mar',
+      capTerrace: 'O terraço e a piscina de borda infinita',
+      capPool: 'A piscina e o bar ao ar livre',
+      capHouse: 'A Villa Kyma vista do jardim',
+      capSuite: 'Uma suíte com vista para o mar',
+      photoCredit: 'Fotos: Ezoria Villas',
+      fact1: 'Jardim à beira-mar',
+      fact2: 'Piscina de borda infinita de 12,5&thinsp;m',
+      fact3: 'Bar e churrasqueira ao ar livre',
+      fact4: 'A 2&thinsp;km da praia de Coral Bay',
+      celebEyebrow: 'A Celebração',
+      scheduleTitle: 'Programação',
+      ceremony: 'Cerimônia',
+      ceremonyDesc: 'Troca de votos no jardim à beira-mar da Villa Kyma, com o Mediterrâneo ao fundo.',
+      reception: 'Recepção',
+      receptionDesc: 'Jantar à beira da piscina e celebração no terraço enquanto o sol se põe sobre o mar.',
+      travelEyebrow: 'Como Chegar',
+      travelTitle: 'Viagem e Hospedagem',
+      travelLead: 'O aeroporto mais próximo é o Aeroporto Internacional de Pafos (PFO), a cerca de 30&ndash;35 minutos de carro da Villa Kyma. O Aeroporto Internacional de Larnaca (LCA) é outra opção, a cerca de 1h45&ndash;2h de estrada.',
+      capCoralBay: 'Praia de Coral Bay, a cerca de 2&thinsp;km da villa &mdash; foto: Paul Lakin, CC BY 3.0',
+      capRock: 'Rocha de Afrodite, Petra tou Romiou &mdash; foto: Diego Delso, CC BY-SA',
+      stayTitle: 'Onde se Hospedar',
+      stayText: 'Coral Bay e Peyia, a poucos minutos da villa, têm hotéis, apartamentos e casas de temporada para todos os orçamentos, e a cidade de Pafos fica a cerca de 20 minutos pelo litoral.',
+      findTitle: 'Como Chegar ao Local',
+      findText: 'A Villa Kyma fica nos arredores tranquilos de Coral Bay, bem à beira-mar. O estacionamento na villa é limitado, por isso recomendamos ir de táxi ou dividir o carro com outros convidados.',
+      findLink: 'Ver o caminho até a Villa Kyma &rarr;',
+      dressEyebrow: 'O que Vestir',
+      dressTitle: 'Traje',
+      dressText: 'Elegante, em clima de jardim &mdash; tecidos leves e sapatos confortáveis são bem-vindos, pois a cerimônia será ao ar livre, no jardim da villa.',
+      giftsEyebrow: 'Sua Presença',
+      giftsTitle: 'Presentes',
+      giftsText: 'Ter você conosco é o maior presente de todos.',
+      rsvpEyebrow: 'Confirme sua Presença',
+      rsvpDeadline: 'Por favor, responda até 2 de abril de 2027',
+      fName: 'Nome(s) completo(s)',
+      fAttending: 'Você vai comparecer?',
+      fYes: 'Aceito com alegria',
+      fNo: 'Infelizmente não poderei',
+      fCount: 'Número de convidados (incluindo você)',
+      fDietary: 'Restrições alimentares',
+      fDietaryPh: 'Vegetariano, alergias, etc.',
+      fMessage: 'Mensagem para os noivos (opcional)',
+      fSubmit: 'Enviar resposta',
+      thanks: 'Obrigado!',
+      fallback: 'Problemas com o formulário? Fale conosco diretamente &mdash;',
+      whatsapp: 'Fale no WhatsApp',
+      footerPlace: 'Villa Kyma &middot; Coral Bay, Pafos, Chipre',
+      footerDirections: 'Como chegar',
+      footerLove: 'Com carinho, ansiosos para celebrar com você.',
+      countN: function(n){ return n + (n === 1 ? ' convidado confirmado' : ' convidados confirmados') + ' até agora'; },
+      countFirst: 'Seja a primeira pessoa a responder!',
+      errMissing: 'Por favor, informe seu nome e diga se poderá comparecer.',
+      errSave: 'Não conseguimos salvar sua resposta agora. Tente novamente em instantes ou fale conosco diretamente abaixo.',
+      sending: 'Enviando…',
+      confirmYes: 'Mal podemos esperar para celebrar com você, {name}!',
+      confirmNo: 'Vamos sentir sua falta, {name} — obrigado por nos avisar.'
+    }
+  };
+  var LANGS = ['en', 'pl', 'pt'];
+  var LANG = 'en';
+  var LANG_KEY = 'kymaLang';
+  var EN_HTML = {}, EN_PH = {};
+
+  function t(key){
+    var d = I18N[LANG];
+    if (d && d[key] != null) return d[key];
+    if (I18N.en[key] != null) return I18N.en[key];
+    return EN_HTML[key] || '';
+  }
+
+  // Country from the device time zone: no network call, no permission prompt.
+  var TZ_COUNTRY = {
+    'Europe/Warsaw':'PL', 'Poland':'PL',
+    'Europe/Lisbon':'PT', 'Atlantic/Madeira':'PT', 'Atlantic/Azores':'PT', 'Portugal':'PT',
+    'Asia/Nicosia':'CY', 'Asia/Famagusta':'CY', 'Europe/Nicosia':'CY'
+  };
+  ['Sao_Paulo','Araguaina','Bahia','Belem','Boa_Vista','Campo_Grande','Cuiaba','Eirunepe','Fortaleza',
+   'Maceio','Manaus','Noronha','Porto_Velho','Recife','Rio_Branco','Santarem'].forEach(function(z){ TZ_COUNTRY['America/' + z] = 'BR'; });
+  ['Brazil/East','Brazil/West','Brazil/Acre','Brazil/DeNoronha'].forEach(function(z){ TZ_COUNTRY[z] = 'BR'; });
+
+  function detectCountry(){
+    var tz = '';
+    try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch(e){}
+    return TZ_COUNTRY[tz] || '';
+  }
+
+  function browserLang(){
+    var list = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || ''];
+    for (var i = 0; i < list.length; i++){
+      var l = String(list[i]).toLowerCase();
+      if (l.indexOf('pl') === 0) return 'pl';
+      if (l.indexOf('pt') === 0) return 'pt';
+      if (l.indexOf('en') === 0) return 'en';
+    }
+    return 'en';
+  }
+
+  function applyLang(lang){
+    if (LANGS.indexOf(lang) < 0) lang = 'en';
+    LANG = lang;
+    document.documentElement.lang = lang;
+    Array.prototype.forEach.call(document.querySelectorAll('[data-i18n]'), function(el){
+      var key = el.getAttribute('data-i18n');
+      var v = (lang !== 'en' && I18N[lang][key] != null) ? I18N[lang][key] : EN_HTML[key];
+      if (v != null) el.innerHTML = v;
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('[data-i18n-ph]'), function(el){
+      var key = el.getAttribute('data-i18n-ph');
+      el.placeholder = (lang !== 'en' && I18N[lang][key] != null) ? I18N[lang][key] : EN_PH[key];
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('.lang-switch button'), function(b){
+      b.setAttribute('aria-pressed', b.getAttribute('data-lang') === lang ? 'true' : 'false');
+    });
+    var submitBtn = document.getElementById('rsvp-submit');
+    if (submitBtn && submitBtn.disabled) submitBtn.textContent = t('sending');
+    renderCount();
+    renderConfirm();
+  }
+
+  function initLang(){
+    Array.prototype.forEach.call(document.querySelectorAll('[data-i18n]'), function(el){
+      EN_HTML[el.getAttribute('data-i18n')] = el.innerHTML;
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('[data-i18n-ph]'), function(el){
+      EN_PH[el.getAttribute('data-i18n-ph')] = el.placeholder;
+    });
+
+    var modal = document.getElementById('lang-modal');
+    function choose(lang){
+      applyLang(lang);
+      try { localStorage.setItem(LANG_KEY, lang); } catch(e){}
+      if (modal) modal.hidden = true;
+    }
+    Array.prototype.forEach.call(document.querySelectorAll('.lang-switch button, .lang-choice'), function(b){
+      b.addEventListener('click', function(){ choose(b.getAttribute('data-lang')); });
+    });
+    if (modal){
+      modal.addEventListener('keydown', function(e){ if (e.key === 'Escape') modal.hidden = true; });
+    }
+
+    var param = null, saved = null;
+    try { param = new URLSearchParams(location.search).get('lang'); } catch(e){}
+    try { saved = localStorage.getItem(LANG_KEY); } catch(e){}
+    var country = detectCountry();
+
+    if (param && LANGS.indexOf(param) >= 0) applyLang(param);
+    else if (saved && LANGS.indexOf(saved) >= 0) applyLang(saved);
+    else if (country === 'PL') applyLang('pl');
+    else if (country === 'BR' || country === 'PT') applyLang('pt');
+    else {
+      applyLang(browserLang());
+      if (country === 'CY' && modal){
+        modal.hidden = false;
+        var first = modal.querySelector('.lang-choice');
+        if (first) first.focus();
+      }
+    }
+  }
+
+  function initNav(){
+    var nav = document.getElementById('site-nav');
+    if (!nav) return;
+    function update(){ nav.classList.toggle('scrolled', window.scrollY > 40); }
+    window.addEventListener('scroll', update, {passive:true});
+    update();
+  }
+
+  // Ceremony start: 15:30 on 2 October 2027, Cyprus time (EEST, UTC+3).
+  var WEDDING_AT = Date.parse('2027-10-02T15:30:00+03:00');
+  function initCountdown(){
+    var box = document.getElementById('countdown');
+    var done = document.getElementById('cd-done');
+    if (!box) return;
+    var els = {
+      d: document.getElementById('cd-days'), h: document.getElementById('cd-hours'),
+      m: document.getElementById('cd-mins'), s: document.getElementById('cd-secs')
+    };
+    function pad(n){ return n < 10 ? '0' + n : String(n); }
+    var timer;
+    function tick(){
+      var diff = WEDDING_AT - Date.now();
+      if (diff <= 0){
+        box.hidden = true;
+        if (done) done.hidden = false;
+        clearInterval(timer);
+        return;
+      }
+      var secs = Math.floor(diff / 1000);
+      els.d.textContent = Math.floor(secs / 86400);
+      els.h.textContent = pad(Math.floor(secs % 86400 / 3600));
+      els.m.textContent = pad(Math.floor(secs % 3600 / 60));
+      els.s.textContent = pad(secs % 60);
+    }
+    tick();
+    timer = setInterval(tick, 1000);
+  }
+
+  function uid(){
+    return Date.now().toString(36) + Math.random().toString(36).slice(2,8);
+  }
+
+  async function postToSite(record, attempt){
+    try {
+      var res = await fetch(SITE_ENDPOINT, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+          id: record._id, name: record.name, attending: record.attending, count: record.count,
+          dietary: record.dietary, message: record.message, lang: record.lang
+        })
+      });
+      if (res.ok) return {ok:true};
+      if (res.status < 500 && res.status !== 429) return {ok:false, reason:'rejected'};
+    } catch(e){}
+    if (attempt < 2){
+      await new Promise(function(r){ setTimeout(r, 800 + Math.random()*700); });
+      return postToSite(record, attempt + 1);
+    }
+    return {ok:false, reason:'failed'};
+  }
+
+  async function tryPublish(record, attempt){
+    attempt = attempt || 0;
+    if (SITE_ENDPOINT) return postToSite(record, attempt);
+    var artifact;
+    try { artifact = await claude.use('artifact'); } catch(e) { artifact = null; }
+    if (!artifact){
+      return {ok:false, reason:'unavailable'};
+    }
+    var already = STATE.rsvps.some(function(r){ return r._id === record._id; });
+    var newRsvps = already ? STATE.rsvps : STATE.rsvps.concat([record]);
+    var newState = {rsvps: newRsvps};
+    try {
+      await artifact.publish(buildDoc(newState));
+      STATE = newState;
+      return {ok:true};
+    } catch(e){
+      if (attempt < 4){
+        await new Promise(function(r){ setTimeout(r, 400 + Math.random()*500); });
+        return tryPublish(record, attempt + 1);
+      }
+      return {ok:false, reason:'failed'};
+    }
+  }
+
+  function retryPending(){
+    var raw;
+    try { raw = localStorage.getItem('kymaPendingRsvp'); } catch(e) { raw = null; }
+    if (!raw) return;
+    var record;
+    try { record = JSON.parse(raw); } catch(e) { record = null; }
+    if (!record) { try{ localStorage.removeItem('kymaPendingRsvp'); }catch(e){} return; }
+    var already = STATE.rsvps.some(function(r){ return r._id === record._id; });
+    if (already){
+      try { localStorage.removeItem('kymaPendingRsvp'); } catch(e){}
+      return;
+    }
+    tryPublish(record).then(function(res){
+      if (res.ok){
+        try { localStorage.removeItem('kymaPendingRsvp'); } catch(e){}
+        renderCount();
+        renderAdmin();
+      }
+    });
+  }
+
+  function initForm(){
+    var form = document.getElementById('rsvp-form');
+    var errorEl = document.getElementById('rsvp-error');
+    var submitBtn = document.getElementById('rsvp-submit');
+    var guestWrap = document.getElementById('guest-count-wrap');
+    var dietaryWrap = document.getElementById('dietary-wrap');
+
+    form.addEventListener('change', function(e){
+      if (e.target.name === 'attending'){
+        var yes = e.target.value === 'yes' && e.target.checked;
+        var anyChecked = form.querySelector('input[name=attending]:checked');
+        var isYes = anyChecked && anyChecked.value === 'yes';
+        guestWrap.classList.toggle('show', !!isYes);
+        dietaryWrap.classList.toggle('show', !!isYes);
+      }
+    });
+
+    form.addEventListener('submit', async function(e){
+      e.preventDefault();
+      errorEl.classList.remove('show');
+
+      var name = document.getElementById('f-name').value.trim();
+      var attendingEl = form.querySelector('input[name=attending]:checked');
+      if (!name || !attendingEl){
+        errorEl.textContent = t('errMissing');
+        errorEl.classList.add('show');
+        return;
+      }
+
+      var record = {
+        _id: uid(),
+        name: name,
+        attending: attendingEl.value,
+        count: attendingEl.value === 'yes' ? (parseInt(document.getElementById('f-count').value,10) || 1) : 0,
+        dietary: attendingEl.value === 'yes' ? document.getElementById('f-dietary').value.trim() : '',
+        message: document.getElementById('f-message').value.trim(),
+        lang: LANG,
+        ts: new Date().toISOString()
+      };
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = t('sending');
+
+      try { localStorage.setItem('kymaPendingRsvp', JSON.stringify(record)); } catch(e){}
+
+      var res = await tryPublish(record);
+
+      if (res.ok){
+        try { localStorage.removeItem('kymaPendingRsvp'); } catch(e){}
+        form.hidden = true;
+        var confirmEl = document.getElementById('rsvp-confirm');
+        confirmEl.hidden = false;
+        confirmedRecord = record;
+        renderConfirm();
+        renderCount();
+        renderAdmin();
+      } else {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = t('fSubmit');
+        errorEl.textContent = t('errSave');
+        errorEl.classList.add('show');
+      }
+    });
+  }
+
+  function renderAdmin(){
+    var statsEl = document.getElementById('admin-stats');
+    var tbody = document.querySelector('#admin-table tbody');
+    var summaryEl = document.getElementById('admin-summary');
+    if (!statsEl || !tbody) return;
+
+    var accepted = STATE.rsvps.filter(function(r){ return r.attending === 'yes'; });
+    var declined = STATE.rsvps.filter(function(r){ return r.attending === 'no'; });
+    var totalGuests = accepted.reduce(function(s,r){ return s + (parseInt(r.count,10)||1); }, 0);
+
+    statsEl.innerHTML =
+      '<div><b>' + accepted.length + '</b>parties accepted</div>' +
+      '<div><b>' + totalGuests + '</b>total guests</div>' +
+      '<div><b>' + declined.length + '</b>declined</div>';
+
+    var rows = STATE.rsvps.slice().sort(function(a,b){ return (b.ts||'').localeCompare(a.ts||''); });
+    tbody.innerHTML = rows.map(function(r){
+      return '<tr><td>' + esc(r.name) + '</td><td>' + (r.attending === 'yes' ? 'Yes' : 'No') + '</td>' +
+        '<td>' + (r.attending === 'yes' ? esc(r.count) : '—') + '</td>' +
+        '<td>' + esc(r.dietary || '—') + '</td>' +
+        '<td>' + esc(r.message || '—') + '</td>' +
+        '<td>' + esc(r.ts ? new Date(r.ts).toLocaleDateString() : '—') + '</td></tr>';
+    }).join('') || '<tr><td colspan="6" style="color:var(--ink-dim)">No responses yet.</td></tr>';
+
+    summaryEl.value = rows.map(function(r){
+      return r.name + ' — ' + (r.attending === 'yes' ? ('Attending (' + r.count + ')') : 'Not attending') +
+        (r.dietary ? (' — Dietary: ' + r.dietary) : '') +
+        (r.message ? (' — "' + r.message + '"') : '');
+    }).join('\n');
+  }
+
+  function initCarousel(){
+    var track = document.getElementById('villa-track');
+    var dotsWrap = document.getElementById('villa-dots');
+    var prevBtn = document.getElementById('villa-prev');
+    var nextBtn = document.getElementById('villa-next');
+    if (!track) return;
+    var figures = Array.prototype.slice.call(track.children);
+
+    figures.forEach(function(_, i){
+      var dot = document.createElement('button');
+      dot.type = 'button';
+      dot.setAttribute('aria-label', 'Go to photo ' + (i + 1));
+      dot.addEventListener('click', function(){ scrollToIndex(i); });
+      dotsWrap.appendChild(dot);
+    });
+    var dots = Array.prototype.slice.call(dotsWrap.children);
+
+    function currentIndex(){
+      var center = track.scrollLeft + track.clientWidth / 2;
+      var closest = 0, closestDist = Infinity;
+      figures.forEach(function(fig, i){
+        var figCenter = fig.offsetLeft + fig.offsetWidth / 2;
+        var dist = Math.abs(figCenter - center);
+        if (dist < closestDist){ closestDist = dist; closest = i; }
+      });
+      return closest;
+    }
+
+    function updateDots(){
+      var idx = currentIndex();
+      dots.forEach(function(d, i){ d.setAttribute('aria-current', i === idx ? 'true' : 'false'); });
+    }
+
+    function scrollToIndex(i){
+      var fig = figures[i];
+      if (!fig) return;
+      track.scrollTo({ left: fig.offsetLeft - (track.clientWidth - fig.offsetWidth) / 2, behavior: 'smooth' });
+    }
+
+    prevBtn.addEventListener('click', function(){ scrollToIndex(Math.max(0, currentIndex() - 1)); });
+    nextBtn.addEventListener('click', function(){ scrollToIndex(Math.min(figures.length - 1, currentIndex() + 1)); });
+
+    var scrollTimer;
+    track.addEventListener('scroll', function(){
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(updateDots, 80);
+    });
+
+    updateDots();
+  }
+
+  function initAdmin(){
+    var toggle = document.getElementById('admin-toggle');
+    var panel = document.getElementById('admin-panel');
+    var gate = document.getElementById('admin-gate');
+    var content = document.getElementById('admin-content');
+    var passInput = document.getElementById('admin-pass');
+    var unlockBtn = document.getElementById('admin-unlock');
+    var gateError = document.getElementById('admin-gate-error');
+
+    if (SITE_ENDPOINT){ toggle.hidden = true; return; }
+    toggle.addEventListener('click', function(){
+      panel.hidden = !panel.hidden;
+    });
+
+    function unlock(){
+      if (passInput.value === ADMIN_PASSPHRASE){
+        gate.hidden = true;
+        content.hidden = false;
+        renderAdmin();
+      } else {
+        gateError.style.display = 'block';
+      }
+    }
+    unlockBtn.addEventListener('click', unlock);
+    passInput.addEventListener('keydown', function(e){ if (e.key === 'Enter') unlock(); });
+  }
+
+  initLang();
+  initNav();
+  initCountdown();
+  renderCount();
+  initForm();
+  initCarousel();
+  initAdmin();
+  retryPending();
+})();
+</script>

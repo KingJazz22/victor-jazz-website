@@ -43,6 +43,14 @@ const config: NextConfig = {
       permanent: true,
     }))
   },
+  // Kornelia & Victor's wedding page: a standalone static page kept out of the site's
+  // navigation, sitemap and search results (built from Desktop\BlueCoralWedding).
+  async rewrites() {
+    return [
+      { source: '/NelaandVictor', destination: '/wedding/index.html' },
+      { source: '/nelaandvictor', destination: '/wedding/index.html' },
+    ]
+  },
   images: {
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
@@ -85,6 +93,15 @@ const config: NextConfig = {
       headers: [
         { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
       ],
+    },
+    // Wedding page: private invitation, never indexed
+    ...['/NelaandVictor', '/nelaandvictor', '/wedding/:path*'].map((source) => ({
+      source,
+      headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
+    })),
+    {
+      source: '/wedding/:file*.jpg',
+      headers: [{ key: 'Cache-Control', value: 'public, max-age=86400' }],
     },
   ],
 }
