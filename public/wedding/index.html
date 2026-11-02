@@ -205,7 +205,7 @@
   }
   .schedule-item .desc{display:block;margin-top:0.5rem;color:var(--ink-dim);font-size:0.92rem;}
 
-  /* info cards (travel/dress/gifts) */
+  /* info cards (travel/dress) */
   .info-card{
     background:var(--sand);border:1px solid var(--line);padding:1.6rem 1.7rem;text-align:left;margin-top:1rem;
   }
@@ -452,7 +452,7 @@
   .band .info-card{background:#fff;}
   .info-card{padding:1.8rem;}
 
-  /* dress code + gifts */
+  /* dress code */
   .duo{display:grid;grid-template-columns:1fr 1fr;max-width:1120px;margin:0 auto;}
   .duo .panel{max-width:none;margin:0;padding:clamp(3rem,6vw,4.5rem) clamp(1.5rem,4vw,3rem);}
   .duo .panel + .panel{border-left:1px solid var(--line);}
@@ -554,7 +554,6 @@
           <figure><img src="/wedding/kyma-terrace.jpg" alt="Covered terrace beside the infinity pool, with the lawn and sea beyond"><figcaption data-i18n="capTerrace">The terrace &amp; infinity pool</figcaption></figure>
           <figure><img src="/wedding/kyma-pool.jpg" alt="Villa Kyma's pool terrace with sun loungers and the outdoor bar"><figcaption data-i18n="capPool">Poolside &amp; the outdoor bar</figcaption></figure>
           <figure><img src="/wedding/kyma-house.jpg" alt="Villa Kyma seen from across the garden lawn"><figcaption data-i18n="capHouse">Villa Kyma from the garden</figcaption></figure>
-          <figure><img src="/wedding/kyma-suite.jpg" alt="Sea-view bedroom opening onto a balcony"><figcaption data-i18n="capSuite">A sea-view suite</figcaption></figure>
         </div>
         <div class="carousel-nav">
           <button type="button" id="villa-prev" aria-label="Previous photo">
@@ -584,7 +583,7 @@
         <div class="day">
         <span class="day-head" data-i18n="day1Head">Day 1 &middot; Friday 1 October</span>
         <div class="day-card">
-          <h3 data-i18n="day1Title">Welcome Evening &#127829;</h3>
+          <h3 data-i18n="day1Title">Welcome Evening</h3>
           <p data-i18n="day1Text">Let&rsquo;s start the celebrations with a relaxed evening together! Enjoy some delicious pizza from our very own pizza man and ease into the wedding day. We&rsquo;ll gather in the garden by the pool for good food, drinks and great company.</p>
         </div>
         </div>
@@ -601,7 +600,7 @@
           </li>
           <li class="tl-item">
             <span class="tl-time">16:00</span>
-            <div><span class="tl-title" data-i18n="tl3Title">Confetti &amp; photos</span><span class="tl-text" data-i18n="tl3Text">The ceremony ends with confetti and group photos.</span></div>
+            <div><span class="tl-title" data-i18n="tl3Title">Group photos</span><span class="tl-text" data-i18n="tl3Text">The ceremony ends with group photos.</span></div>
           </li>
           <li class="tl-item">
             <span class="tl-time">16:30</span>
@@ -658,26 +657,18 @@
       </div>
       <div class="info-card">
         <h3 data-i18n="findTitle">Finding the Venue</h3>
-        <p><span data-i18n="findText">Villa Kyma sits on the quiet outskirts of Coral Bay, right on the water. Parking at the villa is limited, so taxis or shared cars are the easiest way to arrive.</span> <a data-i18n="findLink" href="https://www.google.com/maps/search/?api=1&query=Seafront+Villa+Kyma+by+Ezoria+Villas+Coral+Bay+Cyprus" target="_blank" rel="noopener">Get directions to Villa Kyma &rarr;</a></p>
+        <p><span data-i18n="findText">Villa Kyma sits on the quiet outskirts of Coral Bay, right on the water. There is plenty of parking at the villa, so you&rsquo;re welcome to drive.</span> <a data-i18n="findLink" href="https://www.google.com/maps/search/?api=1&query=Seafront+Villa+Kyma+by+Ezoria+Villas+Coral+Bay+Cyprus" target="_blank" rel="noopener">Get directions to Villa Kyma &rarr;</a></p>
       </div>
       </div>
     </section>
 
     <div class="ornament-divider">&#9670;</div>
 
-    <div class="duo">
     <section class="panel" id="dress-code">
       <p class="eyebrow" data-i18n="dressEyebrow">What to Wear</p>
       <h2 data-i18n="dressTitle">Dress Code</h2>
       <p class="lead"><span data-i18n="dressText">Garden Elegant &mdash; light fabrics and comfortable shoes are welcome, as the ceremony takes place outdoors on the villa&rsquo;s garden lawn.</span> <span class="edit-flag">[Confirm this wording matches what you have in mind.]</span></p>
     </section>
-
-    <section class="panel" id="gifts">
-      <p class="eyebrow" data-i18n="giftsEyebrow">Your Presence</p>
-      <h2 data-i18n="giftsTitle">Gifts</h2>
-      <p class="lead"><span data-i18n="giftsText">Having you with us is the greatest gift of all.</span> <span class="edit-flag">[Add honeymoon fund / registry details here if you'd like one.]</span></p>
-    </section>
-    </div>
 
     <div class="ornament-divider">&#9670;</div>
 
@@ -856,8 +847,8 @@
       tl1Text: 'Goście zbierają się razem z Panem Młodym przed ceremonią.',
       tl2Title: 'Ceremonia',
       tl2Text: 'Kornelia i Victor składają sobie przysięgę nad samym morzem.',
-      tl3Title: 'Konfetti i zdjęcia',
-      tl3Text: 'Zakończenie ceremonii, konfetti i wspólne zdjęcia grupowe.',
+      tl3Title: 'Zdjęcia grupowe',
+      tl3Text: 'Zakończenie ceremonii i wspólne zdjęcia grupowe.',
       tl4Title: 'Koktajl',
       tl4Text: 'Rozpoczyna się przyjęcie koktajlowe &mdash; czas na drinki i rozmowy.',
       tl5Title: 'Zachód słońca',
@@ -869,7 +860,7 @@
       tl8Title: 'Pierwszy taniec i zabawa',
       tl8Text: 'Pierwszy taniec otwiera zabawę.',
       day1Head: 'Dzień 1 &middot; piątek, 1 października',
-      day1Title: 'Wieczór powitalny &#127829;',
+      day1Title: 'Wieczór powitalny',
       day1Text: 'Zacznijmy świętowanie od wspólnego, luźnego wieczoru! Skosztujcie pysznej pizzy od naszego własnego pizzaiolo i nastrójcie się na dzień ślubu. Spotkamy się w ogrodzie przy basenie przy dobrym jedzeniu, drinkach i w świetnym towarzystwie.',
       day2Head: 'Dzień 2 &middot; sobota, 2 października &middot; Ślub',
       day3Head: 'Dzień 3 &middot; niedziela, 3 października',
@@ -898,7 +889,6 @@
       capTerrace: 'Taras i basen infinity',
       capPool: 'Przy basenie i bar na świeżym powietrzu',
       capHouse: 'Villa Kyma widziana z ogrodu',
-      capSuite: 'Sypialnia z widokiem na morze',
       photoCredit: 'Zdjęcia: Ezoria Villas',
       fact1: 'Ogród nad samym morzem',
       fact2: 'Basen infinity 12,5&thinsp;m',
@@ -918,14 +908,11 @@
       stayTitle: 'Gdzie się zatrzymać',
       stayText: 'W Coral Bay i w miejscowości Peyia, zaledwie kilka minut od willi, znajdziesz hotele, apartamenty i domy wakacyjne na każdą kieszeń, a miasto Pafos leży około 20 minut dalej wzdłuż wybrzeża.',
       findTitle: 'Jak dojechać',
-      findText: 'Villa Kyma leży na spokojnych obrzeżach Coral Bay, tuż nad wodą. Liczba miejsc parkingowych przy willi jest ograniczona, dlatego najwygodniej przyjechać taksówką lub wspólnym samochodem.',
+      findText: 'Villa Kyma leży na spokojnych obrzeżach Coral Bay, tuż nad wodą. Przy willi jest dużo miejsc parkingowych, więc śmiało możecie przyjechać samochodem.',
       findLink: 'Wyznacz trasę do Villa Kyma &rarr;',
       dressEyebrow: 'Strój',
       dressTitle: 'Dress code',
       dressText: 'Elegancko, w ogrodowym stylu &mdash; mile widziane lekkie tkaniny i wygodne buty, ponieważ ceremonia odbędzie się na świeżym powietrzu, na trawniku przy willi.',
-      giftsEyebrow: 'Twoja obecność',
-      giftsTitle: 'Prezenty',
-      giftsText: 'Twoja obecność jest dla nas najpiękniejszym prezentem.',
       rsvpEyebrow: 'Czekamy na odpowiedź',
       rsvpDeadline: 'Prosimy o odpowiedź do 2 kwietnia 2027',
       fName: 'Imię i nazwisko',
@@ -963,8 +950,8 @@
       tl1Text: 'Os convidados se reúnem com o noivo antes da cerimônia.',
       tl2Title: 'Cerimônia',
       tl2Text: 'Kornelia e Victor trocam votos à beira-mar.',
-      tl3Title: 'Confete e fotos',
-      tl3Text: 'Fim da cerimônia, chuva de confete e fotos em grupo.',
+      tl3Title: 'Fotos em grupo',
+      tl3Text: 'Fim da cerimônia e fotos em grupo.',
       tl4Title: 'Coquetel',
       tl4Text: 'Começa a recepção com coquetel &mdash; hora de brindar e conversar.',
       tl5Title: 'Pôr do sol',
@@ -976,7 +963,7 @@
       tl8Title: 'Primeira dança e festa',
       tl8Text: 'A primeira dança abre a festa.',
       day1Head: 'Dia 1 &middot; sexta-feira, 1 de outubro',
-      day1Title: 'Noite de Boas-Vindas &#127829;',
+      day1Title: 'Noite de Boas-Vindas',
       day1Text: 'Vamos começar a celebração com uma noite descontraída juntos! Aproveitem uma pizza deliciosa feita pelo nosso próprio pizzaiolo e entrem no clima do grande dia. Vamos nos reunir no jardim, à beira da piscina, com boa comida, bebidas e ótima companhia.',
       day2Head: 'Dia 2 &middot; sábado, 2 de outubro &middot; O Casamento',
       day3Head: 'Dia 3 &middot; domingo, 3 de outubro',
@@ -1005,7 +992,6 @@
       capTerrace: 'O terraço e a piscina de borda infinita',
       capPool: 'A piscina e o bar ao ar livre',
       capHouse: 'A Villa Kyma vista do jardim',
-      capSuite: 'Uma suíte com vista para o mar',
       photoCredit: 'Fotos: Ezoria Villas',
       fact1: 'Jardim à beira-mar',
       fact2: 'Piscina de borda infinita de 12,5&thinsp;m',
@@ -1025,14 +1011,11 @@
       stayTitle: 'Onde se Hospedar',
       stayText: 'Coral Bay e Peyia, a poucos minutos da villa, têm hotéis, apartamentos e casas de temporada para todos os orçamentos, e a cidade de Pafos fica a cerca de 20 minutos pelo litoral.',
       findTitle: 'Como Chegar ao Local',
-      findText: 'A Villa Kyma fica nos arredores tranquilos de Coral Bay, bem à beira-mar. O estacionamento na villa é limitado, por isso recomendamos ir de táxi ou dividir o carro com outros convidados.',
+      findText: 'A Villa Kyma fica nos arredores tranquilos de Coral Bay, bem à beira-mar. Há bastante estacionamento na villa, então podem vir de carro tranquilamente.',
       findLink: 'Ver o caminho até a Villa Kyma &rarr;',
       dressEyebrow: 'O que Vestir',
       dressTitle: 'Traje',
       dressText: 'Elegante, em clima de jardim &mdash; tecidos leves e sapatos confortáveis são bem-vindos, pois a cerimônia será ao ar livre, no jardim da villa.',
-      giftsEyebrow: 'Sua Presença',
-      giftsTitle: 'Presentes',
-      giftsText: 'Ter você conosco é o maior presente de todos.',
       rsvpEyebrow: 'Confirme sua Presença',
       rsvpDeadline: 'Por favor, responda até 2 de abril de 2027',
       fName: 'Nome(s) completo(s)',
