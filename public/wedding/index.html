@@ -412,6 +412,13 @@
     .tl-range{font-size:0.98rem;}
   }
 
+  /* multi-day */
+  .day-head{display:block;margin:2.6rem 0 0;font-size:0.72rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--coral);font-weight:500;}
+  .day-head + .timeline{margin-top:1.4rem;}
+  .day-card{max-width:600px;margin:1rem auto 0;background:#fff;padding:1.8rem 1.6rem;border-top:3px solid var(--coral);text-align:left;}
+  .day-card h3{margin:0 0 0.6rem;font-family:'Cormorant',serif;font-weight:600;font-size:1.6rem;color:var(--sea-deep);}
+  .day-card p{margin:0;color:var(--ink-dim);font-size:0.95rem;line-height:1.7;}
+
   /* travel */
   .paphos-gallery{margin-top:2rem;gap:10px;}
   .paphos-gallery img{height:clamp(220px,26vw,320px);border:none;}
@@ -548,6 +555,12 @@
     <section class="panel" id="details">
       <p class="eyebrow" data-i18n="celebEyebrow">The Celebration</p>
       <h2 data-i18n="scheduleTitle">Schedule of Events</h2>
+      <span class="day-head" data-i18n="day1Head">Day 1 &middot; Friday 1 October</span>
+      <div class="day-card">
+        <h3 data-i18n="day1Title">Welcome Evening &#127829;</h3>
+        <p data-i18n="day1Text">Let&rsquo;s start the celebrations with a relaxed evening together! Enjoy some delicious pizza from our very own pizza man and ease into the wedding day. We&rsquo;ll gather in the garden by the pool for good food, drinks and great company.</p>
+      </div>
+      <span class="day-head" data-i18n="day2Head">Day 2 &middot; Saturday 2 October &middot; The Wedding</span>
       <ol class="timeline">
         <li class="tl-item">
           <span class="tl-time tl-range">14:30&thinsp;&ndash;&thinsp;15:00</span>
@@ -556,6 +569,10 @@
         <li class="tl-item tl-key">
           <span class="tl-time">15:30</span>
           <div><span class="tl-title" data-i18n="tl2Title">Ceremony</span><span class="tl-text" data-i18n="tl2Text">Kornelia and Victor exchange vows by the sea.</span></div>
+        </li>
+        <li class="tl-item">
+          <span class="tl-time">16:00</span>
+          <div><span class="tl-title" data-i18n="tl3Title">Confetti &amp; photos</span><span class="tl-text" data-i18n="tl3Text">The ceremony ends with confetti and group photos.</span></div>
         </li>
         <li class="tl-item">
           <span class="tl-time">16:30</span>
@@ -575,9 +592,14 @@
         </li>
         <li class="tl-item tl-key">
           <span class="tl-time">20:00</span>
-          <div><span class="tl-title" data-i18n="tl8Title">First Dance</span><span class="tl-text" data-i18n="tl8Text">Kornelia and Victor&rsquo;s first dance at 8:00 PM opens the party.</span></div>
+          <div><span class="tl-title" data-i18n="tl8Title">First dance &amp; party</span><span class="tl-text" data-i18n="tl8Text">The first dance opens the party.</span></div>
         </li>
       </ol>
+      <span class="day-head" data-i18n="day3Head">Day 3 &middot; Sunday 3 October</span>
+      <div class="day-card">
+        <h3 data-i18n="day3Title">The Day After the Wedding</h3>
+        <p data-i18n="day3Text">No rush, no plans &ndash; just a relaxed day to unwind after the wedding! Join us at the villa to enjoy the sunshine and spend some quality time together.</p>
+      </div>
     </section>
 
     <div class="ornament-divider">&#9670;</div>
@@ -801,6 +823,8 @@
       tl1Text: 'Goście zbierają się razem z Panem Młodym przed ceremonią.',
       tl2Title: 'Ceremonia',
       tl2Text: 'Kornelia i Victor składają sobie przysięgę nad samym morzem.',
+      tl3Title: 'Konfetti i zdjęcia',
+      tl3Text: 'Zakończenie ceremonii, konfetti i wspólne zdjęcia grupowe.',
       tl4Title: 'Koktajl',
       tl4Text: 'Rozpoczyna się przyjęcie koktajlowe &mdash; czas na drinki i rozmowy.',
       tl5Title: 'Zachód słońca',
@@ -809,8 +833,15 @@
       tl6Text: 'Wielkie wejście Kornelii i Victora, krojenie tortu, a potem przemówienia.',
       tl7Title: 'Kolacja',
       tl7Text: 'Kolacja zostaje podana.',
-      tl8Title: 'Pierwszy taniec',
-      tl8Text: 'Pierwszy taniec pary o 20:00 otwiera zabawę.',
+      tl8Title: 'Pierwszy taniec i zabawa',
+      tl8Text: 'Pierwszy taniec otwiera zabawę.',
+      day1Head: 'Dzień 1 &middot; piątek, 1 października',
+      day1Title: 'Wieczór powitalny &#127829;',
+      day1Text: 'Zacznijmy świętowanie od wspólnego, luźnego wieczoru! Skosztujcie pysznej pizzy od naszego własnego pizzaiolo i nastrójcie się na dzień ślubu. Spotkamy się w ogrodzie przy basenie przy dobrym jedzeniu, drinkach i w świetnym towarzystwie.',
+      day2Head: 'Dzień 2 &middot; sobota, 2 października &middot; Ślub',
+      day3Head: 'Dzień 3 &middot; niedziela, 3 października',
+      day3Title: 'Dzień po ślubie',
+      day3Text: 'Bez pośpiechu, bez planów &ndash; po prostu spokojny dzień na odpoczynek po weselu! Dołączcie do nas w willi, by nacieszyć się słońcem i spędzić razem trochę czasu.',
       cdDays: 'Dni',
       cdHours: 'Godziny',
       cdMins: 'Minuty',
@@ -841,7 +872,7 @@
       fact3: 'Bar i grill na świeżym powietrzu',
       fact4: '2&thinsp;km od plaży Coral Bay',
       celebEyebrow: 'Uroczystość',
-      scheduleTitle: 'Plan dnia',
+      scheduleTitle: 'Plan wydarzeń',
       ceremony: 'Ceremonia',
       ceremonyDesc: 'Przysięga małżeńska na trawniku nad morzem w Villa Kyma, z Morzem Śródziemnym w tle.',
       reception: 'Przyjęcie',
@@ -899,6 +930,8 @@
       tl1Text: 'Os convidados se reúnem com o noivo antes da cerimônia.',
       tl2Title: 'Cerimônia',
       tl2Text: 'Kornelia e Victor trocam votos à beira-mar.',
+      tl3Title: 'Confete e fotos',
+      tl3Text: 'Fim da cerimônia, chuva de confete e fotos em grupo.',
       tl4Title: 'Coquetel',
       tl4Text: 'Começa a recepção com coquetel &mdash; hora de brindar e conversar.',
       tl5Title: 'Pôr do sol',
@@ -907,8 +940,15 @@
       tl6Text: 'Kornelia e Victor fazem sua entrada e cortam o bolo, seguidos dos discursos.',
       tl7Title: 'Jantar',
       tl7Text: 'O jantar é servido.',
-      tl8Title: 'Primeira dança',
-      tl8Text: 'A primeira dança do casal, às 20:00, abre a festa.',
+      tl8Title: 'Primeira dança e festa',
+      tl8Text: 'A primeira dança abre a festa.',
+      day1Head: 'Dia 1 &middot; sexta-feira, 1 de outubro',
+      day1Title: 'Noite de Boas-Vindas &#127829;',
+      day1Text: 'Vamos começar a celebração com uma noite descontraída juntos! Aproveitem uma pizza deliciosa feita pelo nosso próprio pizzaiolo e entrem no clima do grande dia. Vamos nos reunir no jardim, à beira da piscina, com boa comida, bebidas e ótima companhia.',
+      day2Head: 'Dia 2 &middot; sábado, 2 de outubro &middot; O Casamento',
+      day3Head: 'Dia 3 &middot; domingo, 3 de outubro',
+      day3Title: 'O Dia Depois do Casamento',
+      day3Text: 'Sem pressa, sem planos &ndash; só um dia tranquilo para descansar depois do casamento! Venham para a villa aproveitar o sol e passar um tempo de qualidade juntos.',
       cdDays: 'Dias',
       cdHours: 'Horas',
       cdMins: 'Minutos',
