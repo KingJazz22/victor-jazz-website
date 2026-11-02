@@ -413,11 +413,27 @@
   }
 
   /* multi-day */
-  .day-head{display:block;margin:2.6rem 0 0;font-size:0.72rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--coral);font-weight:500;}
-  .day-head + .timeline{margin-top:1.4rem;}
-  .day-card{max-width:600px;margin:1rem auto 0;background:#fff;padding:1.8rem 1.6rem;border-top:3px solid var(--coral);text-align:left;}
-  .day-card h3{margin:0 0 0.6rem;font-family:'Cormorant',serif;font-weight:600;font-size:1.6rem;color:var(--sea-deep);}
+  .days{display:grid;grid-template-columns:1fr 1.7fr 1fr;gap:1.6rem;align-items:start;margin-top:2.4rem;text-align:left;}
+  .day{display:flex;flex-direction:column;min-width:0;}
+  .day-head{display:block;margin:0 0 1rem;font-size:0.72rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--coral);font-weight:500;line-height:1.7;}
+  .day-card{background:#fff;padding:1.8rem 1.6rem;border-top:3px solid var(--coral);}
+  .day-card h3{margin:0 0 0.6rem;line-height:1.2;font-family:'Cormorant',serif;font-weight:600;font-size:1.6rem;color:var(--sea-deep);}
   .day-card p{margin:0;color:var(--ink-dim);font-size:0.95rem;line-height:1.7;}
+  .day-main .timeline{margin:0;max-width:none;background:#fff;padding:1.8rem 1.6rem 0.4rem;border-top:3px solid var(--coral);}
+  .day-main .timeline::before{left:calc(1.6rem + 6.6rem);top:2.5rem;bottom:3.4rem;}
+  .day-main .tl-item{grid-template-columns:5.4rem 1fr;column-gap:2.4rem;}
+  .day-main .tl-item::before{left:calc(6.6rem - 6px);}
+  .day-main .tl-time{font-size:1.3rem;}
+  .day-main .tl-range{font-size:1rem;}
+  @media (max-width:900px){
+    .days{grid-template-columns:1fr;max-width:600px;margin-left:auto;margin-right:auto;}
+  }
+  @media (max-width:560px){
+    .day-main .timeline{padding:1.4rem 1rem 0.2rem;}
+    .day-main .timeline::before{left:calc(1rem + 5.4rem);top:2.1rem;}
+    .day-main .tl-item{grid-template-columns:4.4rem 1fr;column-gap:2rem;}
+    .day-main .tl-item::before{left:calc(5.4rem - 6px);}
+  }
 
   /* travel */
   .paphos-gallery{margin-top:2rem;gap:10px;}
@@ -552,53 +568,61 @@
 
     <div class="ornament-divider">&#9670;</div>
 
-    <section class="panel" id="details">
+    <section class="panel wide-panel" id="details">
       <p class="eyebrow" data-i18n="celebEyebrow">The Celebration</p>
       <h2 data-i18n="scheduleTitle">Schedule of Events</h2>
-      <span class="day-head" data-i18n="day1Head">Day 1 &middot; Friday 1 October</span>
-      <div class="day-card">
-        <h3 data-i18n="day1Title">Welcome Evening &#127829;</h3>
-        <p data-i18n="day1Text">Let&rsquo;s start the celebrations with a relaxed evening together! Enjoy some delicious pizza from our very own pizza man and ease into the wedding day. We&rsquo;ll gather in the garden by the pool for good food, drinks and great company.</p>
-      </div>
-      <span class="day-head" data-i18n="day2Head">Day 2 &middot; Saturday 2 October &middot; The Wedding</span>
-      <ol class="timeline">
-        <li class="tl-item">
-          <span class="tl-time tl-range">14:30&thinsp;&ndash;&thinsp;15:00</span>
-          <div><span class="tl-title" data-i18n="tl1Title">Arrival</span><span class="tl-text" data-i18n="tl1Text">Guests gather with the groom ahead of the ceremony.</span></div>
-        </li>
-        <li class="tl-item tl-key">
-          <span class="tl-time">15:30</span>
-          <div><span class="tl-title" data-i18n="tl2Title">Ceremony</span><span class="tl-text" data-i18n="tl2Text">Kornelia and Victor exchange vows by the sea.</span></div>
-        </li>
-        <li class="tl-item">
-          <span class="tl-time">16:00</span>
-          <div><span class="tl-title" data-i18n="tl3Title">Confetti &amp; photos</span><span class="tl-text" data-i18n="tl3Text">The ceremony ends with confetti and group photos.</span></div>
-        </li>
-        <li class="tl-item">
-          <span class="tl-time">16:30</span>
-          <div><span class="tl-title" data-i18n="tl4Title">Cocktail reception</span><span class="tl-text" data-i18n="tl4Text">Drinks and conversation as the afternoon turns golden.</span></div>
-        </li>
-        <li class="tl-item">
-          <span class="tl-time">18:00</span>
-          <div><span class="tl-title" data-i18n="tl5Title">Sunset</span><span class="tl-text" data-i18n="tl5Text">The couple slip away for a sunset shoot while guests take their seats for dinner. Official sunset: 18:33.</span></div>
-        </li>
-        <li class="tl-item">
-          <span class="tl-time">18:30</span>
-          <div><span class="tl-title" data-i18n="tl6Title">Grand entrance</span><span class="tl-text" data-i18n="tl6Text">Kornelia and Victor make their entrance and cut the cake, followed by speeches.</span></div>
-        </li>
-        <li class="tl-item">
-          <span class="tl-time">19:00</span>
-          <div><span class="tl-title" data-i18n="tl7Title">Dinner</span><span class="tl-text" data-i18n="tl7Text">Dinner is served.</span></div>
-        </li>
-        <li class="tl-item tl-key">
-          <span class="tl-time">20:00</span>
-          <div><span class="tl-title" data-i18n="tl8Title">First dance &amp; party</span><span class="tl-text" data-i18n="tl8Text">The first dance opens the party.</span></div>
-        </li>
-      </ol>
-      <span class="day-head" data-i18n="day3Head">Day 3 &middot; Sunday 3 October</span>
-      <div class="day-card">
-        <h3 data-i18n="day3Title">The Day After the Wedding</h3>
-        <p data-i18n="day3Text">No rush, no plans &ndash; just a relaxed day to unwind after the wedding! Join us at the villa to enjoy the sunshine and spend some quality time together.</p>
+      <div class="days">
+        <div class="day">
+        <span class="day-head" data-i18n="day1Head">Day 1 &middot; Friday 1 October</span>
+        <div class="day-card">
+          <h3 data-i18n="day1Title">Welcome Evening &#127829;</h3>
+          <p data-i18n="day1Text">Let&rsquo;s start the celebrations with a relaxed evening together! Enjoy some delicious pizza from our very own pizza man and ease into the wedding day. We&rsquo;ll gather in the garden by the pool for good food, drinks and great company.</p>
+        </div>
+        </div>
+        <div class="day day-main">
+        <span class="day-head" data-i18n="day2Head">Day 2 &middot; Saturday 2 October &middot; The Wedding</span>
+        <ol class="timeline">
+          <li class="tl-item">
+            <span class="tl-time tl-range">14:30&thinsp;&ndash;&thinsp;15:00</span>
+            <div><span class="tl-title" data-i18n="tl1Title">Arrival</span><span class="tl-text" data-i18n="tl1Text">Guests gather with the groom ahead of the ceremony.</span></div>
+          </li>
+          <li class="tl-item tl-key">
+            <span class="tl-time">15:30</span>
+            <div><span class="tl-title" data-i18n="tl2Title">Ceremony</span><span class="tl-text" data-i18n="tl2Text">Kornelia and Victor exchange vows by the sea.</span></div>
+          </li>
+          <li class="tl-item">
+            <span class="tl-time">16:00</span>
+            <div><span class="tl-title" data-i18n="tl3Title">Confetti &amp; photos</span><span class="tl-text" data-i18n="tl3Text">The ceremony ends with confetti and group photos.</span></div>
+          </li>
+          <li class="tl-item">
+            <span class="tl-time">16:30</span>
+            <div><span class="tl-title" data-i18n="tl4Title">Cocktail reception</span><span class="tl-text" data-i18n="tl4Text">Drinks and conversation as the afternoon turns golden.</span></div>
+          </li>
+          <li class="tl-item">
+            <span class="tl-time">18:00</span>
+            <div><span class="tl-title" data-i18n="tl5Title">Sunset</span><span class="tl-text" data-i18n="tl5Text">The couple slip away for a sunset shoot while guests take their seats for dinner. Official sunset: 18:33.</span></div>
+          </li>
+          <li class="tl-item">
+            <span class="tl-time">18:30</span>
+            <div><span class="tl-title" data-i18n="tl6Title">Grand entrance</span><span class="tl-text" data-i18n="tl6Text">Kornelia and Victor make their entrance and cut the cake, followed by speeches.</span></div>
+          </li>
+          <li class="tl-item">
+            <span class="tl-time">19:00</span>
+            <div><span class="tl-title" data-i18n="tl7Title">Dinner</span><span class="tl-text" data-i18n="tl7Text">Dinner is served.</span></div>
+          </li>
+          <li class="tl-item tl-key">
+            <span class="tl-time">20:00</span>
+            <div><span class="tl-title" data-i18n="tl8Title">First dance &amp; party</span><span class="tl-text" data-i18n="tl8Text">The first dance opens the party.</span></div>
+          </li>
+        </ol>
+        </div>
+        <div class="day">
+        <span class="day-head" data-i18n="day3Head">Day 3 &middot; Sunday 3 October</span>
+        <div class="day-card">
+          <h3 data-i18n="day3Title">The Day After the Wedding</h3>
+          <p data-i18n="day3Text">No rush, no plans &ndash; just a relaxed day to unwind after the wedding! Join us at the villa to enjoy the sunshine and spend some quality time together.</p>
+        </div>
+        </div>
       </div>
     </section>
 
